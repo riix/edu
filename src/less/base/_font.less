@@ -1,6 +1,15 @@
-@import "./font/_font_gilroy.less";
-@import "./font/_font_noto_sans.less";
-@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+.eng, .font-eng {
+    font-family: 'Gilroy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+.eng-bold {
+    font-family: 'Gilroy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 800;
+}
+
+// @import "./font/_font_gilroy.less";
+// @import "./font/_font_noto_sans.less";
+// @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 
 // default ================== //
 @kor: undefined;
@@ -38,13 +47,25 @@
     }
 }
 
+& when (@eng = undefined){
+    .eng {
+        font-family: '나눔고딕';
+    }
+    html {
+        .eng;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        &, small {
+            .eng;
+        }
+    }
+}
+
 & when not(@eng = undefined){
     .eng {
         font-family: @eng, sans-serif;
     }
 }
-
-
 
 button,
 input,

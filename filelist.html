@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>기사퍼스트</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style type="text/css">
+      html{width:100%;min-height:100%;padding: 0px;margin: 0px;}
+      body{color: #363636;min-height:100%;font-size:12px;font-family:"돋움",arial,Dotum,AppleGothic,sans-serif;line-height:1.2;padding:0;margin:0;-webkit-text-size-adjust:none;background:#f5f5f5;word-wrap: break-word; word-break: keep-all;letter-spacing:0.5;}
+
+      div, p, ol, ul, li, img, a, h1, h2, h3, h4, h5, h6 form, span, iframe, dl, dt, dd, button, span{margin:0px;padding:0px;border:0;}
+      ul, ol, li{list-style:none;}
+      button, span, label{display:inline-block;background:none;border:0;}
+      table, th, td{border-collapse:collapse;margin:0;padding:0;}
+      table caption{display:none;}
+      select, input, textarea{font-family:dotum,AppleGothic,sans-serif;color:#363636;padding:0;margin:0;}
+      textarea, iframe{font-size:12px;font-family:dotum,AppleGothic,sans-serif;color:#363636;outline-style:none;}
+      input, select{outline-style:none;outline:none;background:#fff;color:#363636;}
+      fieldset{border:0;margin:0;padding:0;}
+      legend{display:none;}
+      a:link, a:visited, a:active{color:#6c6c6c;text-decoration:none;padding:0;/*outline-style:none;*/}
+      a:hover{color:#6c6c6c;text-decoration:underline;}
+      img{border:0;margin:0;}
+
+      .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;margin:0;padding:0;}
+      .clearfix{display:inline-block;}
+
+      /* Hides from IE-mac \*/
+      * html .clearfix{height:1%;}
+      .clearfix{display: block;}
+      /* End hide from IE-mac */
+
+      body{background:#fff;}
+      #wrap{width:98%;margin:10px auto;padding-bottom:50px;}
+      .tit{width:100%;padding:20px 0 10px;overflow:hidden;}
+      .tit h1{font-size:22px;padding:0;float:left;}
+      .tit p{padding:10px 10px 0 0;float:right;}
+      .tit p .date{font-size:14px;font-weight:bold;color:red;}
+
+      table.list{width:100%;}
+      table.list th{background:#000;color:#fff;}
+      table.list th, table.list td{border:1px solid #ccc;padding:4px 7px;}
+      table.list td{color:#555;}
+      table.list tbody .hover td{background:#FFFFC0;}
+      table.list td a {color:blue;text-decoration:underline;} 
+      table.list td:first-child{text-align:right;}/* number */
+      table.list td:nth-child(2){font-weight:bold;}/* 1depth */
+      table.list tr:nth-child(even){background:#f1f1f1;}
+      table.list tr.cut td{border-top:2px solid #999;}
+      table.list tr.del td,
+      table.list tr.del td *{color:#999 !important;}
+      table.list tr.del td{text-decoration:line-through;}
+      table.list tr.del td:first-child{text-decoration:none;font-size:11px;}
+      table.list tr.del td.bigo{text-decoration:none;}
+
+      .type{text-align:center;}
+      .html{color:#666 !important;}
+      .bbs{color:#00cc00 !important;}
+      .pgm{color:#cc0000 !important;}
+      .link{color:#0000cc !important;}
+
+      .date{text-align:center;}
+      .last{background:#F63 !important;color:#fff !important;}
+      .nowork{background:#666 !important;color:#fff !important;}
+      .rate{text-align:right;}
+      .bigo{font-size:11px;}
+      .red{color:red;}
+
+      .menu{width:99%;background:#000;position:fixed;bottom:0;left:0;}
+      .menu li{float:right;}
+      .menu li a{display:inline-block;padding:5px 10px;color:#fff;}
+    </style>
+    <script type="text/javascript" src="/js/plugins.min.js"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    	//테이블 tr over효과
+    	$(document).ready(function() {
+    		$("tbody tr").hover(
+    			function() { $(this).addClass("hover"); },
+    			function() { $(this).removeClass("hover"); }
+    		);
+
+    		var tot = 0, remain = 0, rate = 0;
+    		$("tbody tr:not(.del)").each(function(index){
+    			$("td:first-child", this).text(index+1);
+
+    			tot++;
+    			if(!$.isNumeric($("td.rate", this).text()) || parseInt($("td.rate", this).text()) == 0){
+    				remain++;
+    				$(this).css("color","red");
+    			}else{
+    				rate += parseInt($("td.rate", this).text());
+    			}
+    		});
+    		$("tbody tr.del td:first-child").text("삭제");
+    		$tr = $("tbody tr:not(.del)");
+    		$("#rate").html("( 총:"+tot+"p / 잔여:"+remain+"p / 진행:"+parseInt(rate*100/tot)/100+"% )");
+    	});
+    	//'table tr:gt(0) 0보다 큰것만 마우스 오버 효과가 나타남
+    //]]>
+    </script>
+</head>
+<body>
+	<div id="wrap">
+		<ul class="menu">
+			<li style="padding-left:30px;"><a href="#"><strong>Top</strong></a></li>
+			<li><a href="#layout">레이아웃</a></li>
+			<li><a href="#main">메인</a></li>
+			<li><a href="#login">로그인</a></li>
+		</ul>
+
+		<div class="tit">
+			<h1>2018 기사퍼스트 목록</h1>
+			<p>
+				<span class="date">2017-10-26</span>
+				<span id="rate"></span><br />
+				<!-- <span>※ 변경내용은 각 페이지 소스 상단의 주석 확인</span> -->
+			</p>
+		</div>
+
+		<table class="list">
+			<colgroup>
+				<col width="20px" />
+				<col width="150px" />
+				<col width="" />
+				<col width="" />
+				<col width="" />
+				<col width="" />
+				<col width="" />
+				<col width="" />
+				<col width="100px" />
+				<col width="35px" />
+				<col width="" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>1depth</th>
+					<th>2depth</th>
+					<th>3depth</th>
+					<th>TAB</th>
+					<th>etc</th>
+					<th>directory</th>
+					<th>html</th>
+					<th>date</th>
+					<th>%</th>
+					<th>비고</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="main" class="cut">
+						<td></td>
+						<td>메인</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>home.html</td>
+						<td><a href="home.html" target="_blank">home</a></td>
+						<td class="date">2017.10.18</td>
+						<td class="rate">100</td>
+						<td class="bigo">
+							<p style="color:red;">2017.10.19 메인 수정사항 반영 및 top btn 추가</p>
+							<p style="color:red;">2017.10.24 로그인, 회원가입 modal 추가</p>
+						</td>
+				</tr>
+
+			</tbody>
+		</table>
+</div>
+</body>
+</html>

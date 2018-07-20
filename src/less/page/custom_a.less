@@ -1,7 +1,3 @@
-html, body {
-    min-height: 100%;
-}
-
 a {
     cursor: default;
     &[href] {
@@ -116,53 +112,6 @@ a {
     }
 }
 
-#header {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    right: 0;
-    .wrap {
-        width: 1280px;
-        min-width: 1280px;
-        box-sizing: content-box;
-    }
-    .logo {
-        width: 200px;
-    }
-    .nav {
-        width: 880px;
-        text-align: center;
-        ul.tab {
-            display: inline-block;
-            margin: 0 auto;
-        }
-        li {
-            padding: 25px 16px 21px;
-        }
-        a {
-            display: block;
-            overflow: hidden;
-        }
-        img {
-            opacity: 0.7;
-        }
-        a:hover img,
-        .in img {
-            opacity: 1;
-        }
-    }
-    .tel {
-        width: 200px;
-    }
-    a {
-        cursor: default;
-        &[href] {
-            cursor: pointer;
-        }
-    }
-}
-
 #stickyNav {
 
     position: fixed;
@@ -187,14 +136,6 @@ a {
 
 .bg-baige {
     background-color: #f2f2f2;
-}
-
-#footer {
-
-    .eng();
-    .wrap {
-        max-width: 1280px;
-    }
 }
 
 span.pipe {
@@ -371,21 +312,6 @@ span.pipe {
         height: 4px;
         border-radius: 0;
         background: #71bf44;
-    }
-}
-
-#header {
-    background-color: transparent;
-    transition: height ease-out .1s, background ease-out .1s;
-    height: 100px;
-    // transition: all @base-easing .1s;
-    // transition: padding ease-out .1s;
-    .wrap {
-        padding: 10px 0;
-        transition: padding ease-out .1s;
-    }
-    .col {
-        min-height: 80px;
     }
 }
 

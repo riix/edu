@@ -2,8 +2,8 @@
 * 필수 탑재
 @prepros-prepend './module/_inView.js'
 @prepros-prepend './module/_parallax.js'
-@prepros-prepend './module/_smoothScroll.js'
-@prepros-prepend './module/_distortion.js'
+// !prepros-prepend './module/_smoothScroll.js'
+// !prepros-prepend './module/_distortion.js'
 
 // !prepros-prepend './module/_pointer.js', 보강 필요
 // !prepros-prepend './module/_paroller.js'
@@ -11,9 +11,9 @@
 
 /**
 * 기본 탑재
-@prepros-prepend './module/_getColor.js'
-@prepros-prepend './module/_tilt.js'
-@prepros-prepend './module/_underline.js'
+// !prepros-prepend './module/_getColor.js'
+// !prepros-prepend './module/_tilt.js'
+// !prepros-prepend './module/_underline.js'
 @prepros-prepend './module/_textMotion.func.js'
 @prepros-prepend './module/_textMotion.js'
 */
