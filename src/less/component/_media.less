@@ -15,28 +15,6 @@
     }
 }
 
-.set-alignment(@type:a) when (@type = a) {
-    overflow: hidden;
-    zoom: 1;
-    margin: 10px 0;
-    .image, .head, .body {
-        display: table-cell;
-        vertical-align: top;
-        word-wrap:break-word;
-    }
-    &:after {
-        display: block;
-        content: " ";
-        height: 0;
-        clear: both;
-    }
-    .image {
-        img {
-            max-width: initial;
-        }
-    }
-}
-
 //* less ================================================================== */
 .media-aspect {
   .set-media-aspect(640, 480);

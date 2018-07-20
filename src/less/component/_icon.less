@@ -33,66 +33,9 @@
     }
 }
 //* less ================================================================= */
-.icon {
-
-    .set-icon();
-
-    &.close {
-        .set-icon(24px, 24px, 'common/icon_close', false);
-    }
-
-    &.free {
-        .set-icon(46px, 24px, 'common/icon_free_lg', false);
-    }
-
-    &.file {
-        .set-icon(26px, 38px, 'common/icon_file_01', true);
-        @media @desktop {
-            .set-icon(20px, 20px, 'common/icon_file_lg');
-        }
-    }
-
-    &.datepicker {
-        .set-icon(74px, 74px, 'common/icon_date', true);
-    }
-
-    &.search {
-        .button & {
-            .set-icon(36px, 36px, 'common/icon_search_01', true);
-        }
-    }
-
-    &.remove {
-        .set-icon(30px, 30px, 'common/icon_remove', true);
-    }
-    &.vod {
-        .set-icon(34px, 34px, 'custom/icon_play_sm', true);
-        @media @desktop {
-            .set-icon(22px, 22px, 'custom/icon_play_lg');
-        }
-    }
-    &.download {
-        .set-icon(30px, 36px, 'common/icon_download_sm', true);
-        @media @desktop {
-            .set-icon(20px, 20px, 'common/icon_download_lg');
-        }
-    }
-
-
-    // &.playing {
-    //     .set-icon(52px, 20px, 'common/icon_playing');
-    // }
-    // &.blank {
-    //     .set-icon(35px, 35px, 'common/icon_url_blank');
-    // }
-    // &.blank-b {
-    //     .set-icon(35px, 35px, 'common/icon_url_blank_2');
-    // }
-
+i em {
+    &:extend(.sr-only);
 }
-
-i {
-    em {
-        &:extend(.sr-only);
-    }
+.icon {
+    .set-icon();
 }
