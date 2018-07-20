@@ -1,0 +1,79 @@
+/* responsive ================================================================== */
+
+// Import Base
+.detector-sm,
+.detector-md,
+.detector-lg {
+    position: fixed;
+    display: block;
+    top: -1px;
+    left: -1px;
+    width: 1px;
+    height: 1px;
+    overflow: block;
+}
+
+@media @phoneOnly {
+    .detector-sm { display: block; }
+    .detector-lg { display: none; }
+}
+@media @desktop {
+    .detector-sm { display: none; }
+    .detector-lg { display: block; }
+}
+
+.lt-ie8  {
+    .detector-sm {
+        display: none;
+    }
+    .detector-lg {
+        display: block;
+    }
+}
+
+& when (@base-device-toggle = true) { // 토글 기능
+    .sm, .md, .lg, .xl, .mobile-only, .pc-only {
+        display: none;
+    }
+    @media (min-width: 1px) and (max-width: 767px) { // sm, mobile
+        .sm,
+        .mobile-only {
+            display: block;
+            &.inline-block {
+                display: inline-block;
+            }
+        }
+    }
+    @media (min-width: 1024px) { // pc
+        .pc-only {
+            display: block;
+            &.inline-block {
+                display: inline-block;
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) { // md
+        .md {
+            display: block;
+            &.inline-block {
+                display: inline-block;
+            }
+        }
+    }
+    @media (min-width: 1024px) and (max-width: 1921px) { // lg
+        .lg {
+            display: block;
+            &.inline-block {
+                display: inline-block;
+            }
+        }
+    }
+    @media (min-width: 1922px) { // xl
+        .xl {
+            display: block;
+            &.inline-block {
+                display: inline-block;
+            }
+        }
+    }
+}

@@ -1,0 +1,260 @@
+* {
+     background-repeat: no-repeat;
+     background-position: center center;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-height: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+canvas {
+    display: inline-block;
+}
+body, td, th, font {
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+a {
+    background-color: transparent; /* 1 */
+    -webkit-text-decoration-skip: objects; /* 2 */
+    &:active,
+    &:hover {
+      outline-width: 0;
+    }
+}
+i, u, em {
+    font-style: normal;
+    text-decoration: none;
+}
+img {
+    -webkit-user-drag: none; // 드래그 방지
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    background-size: cover;
+    vertical-align: middle;
+}
+menu {
+    display: block;
+}
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+legend {
+    color: inherit;
+    display: table;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    white-space: normal;
+}
+#skipToContent {
+    &:extend(.clear-both);
+    a {
+        transition: height 0.2s;
+        display: block;
+        position: absolute;
+        overflow: hidden;
+        left: -1px;
+        top: -1px;
+        margin: -1px;
+        width: 1px;
+        height: 1px;
+        &:focus {
+            background-color: #fff;
+            font-size: 12px;
+            height: 30px;
+            line-height: 30px;
+            font-weight: bold;
+            margin: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            text-align: center;
+            text-decoration: underline;
+        }
+    }
+}
+#container,
+#footer,
+#gnb,
+#header,
+#inner,
+#innerWrapper,
+#top,
+#wrapper,
+.container {
+    &:extend(.clear-both);
+}
+.container {
+    text-align: center;
+}
+.wrap {
+    margin: 0 auto;
+    text-align: left;
+}
+p {
+    position: relative;
+    word-break: break-word;
+    > input[type="checkbox"],
+    > input[type="radio"] {
+        vertical-align: middle;
+    }
+}
+.browsehappy {
+    margin: 0.2em 0;
+    padding: 0.2em 0;
+    color: #000;
+    background: #ccc;
+}
+label {
+    cursor: pointer;
+    input[type="radio"],
+    input[type="checkbox"] {
+        vertical-align: middle;
+        cursor: pointer;
+    }
+}
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+}
+input {
+    [type="checkbox"],
+    [type="radio"] {
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    &.number, &.spinner, &.tel, &[type="number"] {
+        ime-mode: disabled;
+    }
+}
+table, .table {
+    display: table;
+    table-layout: auto;
+    margin: 0;
+    width: 100%;
+    border-spacing: 0;
+    font-size: inherit;
+    border-collapse: separate;
+    &.collapse { border-collapse: collapse; }
+    &.fixed { table-layout: fixed; }
+    tr,
+    .row {
+        display: table-row;
+    }
+    td,
+    .cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    th, td {
+        position: relative;
+    }
+    caption {
+        display: none;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+        font-size: inherit;
+        text-align: left;
+    }
+}
+table {
+    img, select, input, button, optgroup, textarea, .button {
+        vertical-align: middle;
+    }
+}
+input {
+    &.text,
+    &[type="date"],
+    &[type="number"],
+    &[type="password"],
+    &[type="search"],
+    &[type="tel"],
+    &[type="text"],
+    &.eng {
+        box-sizing: border-box;
+        appearance: none;
+        appearance: textfield;
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        max-width: 100%;
+    }
+}
+
+// 스크롤바 색상
+@scroll-thumb-bgcolor: #999;
+@scroll-thumb-bgcolor-active: #000;
+@scroll-track-bgcolor: #eee;
+@scroll-track-bgcolor-active: #eee;
+
+.set-scrollbar(@thumb-bgcolor: @scroll-thumb-bgcolor, @thumb-bgcolor-active: @scroll-thumb-bgcolor-active, @track-bgcolor: @scroll-track-bgcolor, @track-bgcolor-active: @scroll-track-bgcolor-active) {
+    /*
+    scrollbar-3dlight-color: @track-bgcolor-active;
+    scrollbar-arrow-color: @thumb-bgcolor;
+    scrollbar-base-color: @track-bgcolor;
+    scrollbar-face-color: @track-bgcolor;
+    scrollbar-track-color: @track-bgcolor-active;
+    scrollbar-darkshadow-color: @track-bgcolor-active;
+    scrollbar-highlight-color: @track-bgcolor;
+    scrollbar-shadow-color: @track-bgcolor;
+    */
+    &::-webkit-scrollbar {
+        margin: 0;
+        padding: 0;
+        width: 10px;
+    }
+    &::-webkit-scrollbar-button {
+        background-color: @track-bgcolor;
+        height: 1px;
+        width: 12px;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: @thumb-bgcolor;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: @thumb-bgcolor;
+        border-radius: 0;
+        &:hover,
+        &:active {
+            background: @thumb-bgcolor-active;
+        }
+    }
+    &::-webkit-scrollbar-track {
+        background-color: @track-bgcolor;
+        border-radius: 0;
+        border: 0;
+        &:hover,
+        &:active {
+            background: @track-bgcolor-active;
+        }
+    }
+}
+
+* {
+    .set-scrollbar();
+}

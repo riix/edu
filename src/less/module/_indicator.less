@@ -1,0 +1,86 @@
+/*  epass indicator ====================================================== */
+
+.md-indicator {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    width: 300px;
+    margin-top: -34px;
+    margin-right: -156px;
+    text-align: center;
+    & > span {
+        position: relative;
+        text-indent: -9999em;
+        font-size: 10px;
+    }
+    visibility: visible;
+    z-index: -1;
+    transform: scale(.9);
+    opacity: 0;
+    transition: z-index 0s linear .4s, visibility 0s linear 0s, opacity .4s linear 0s, transform .4s ease-in-out 0s;
+    .is-indicator & {
+        z-index: 1000;
+        opacity: 1;
+        transform: scale(1);
+        transition: z-index 0s linear 0s, visibility 0s linear 0s, opacity .4s linear 0s, transform .4s ease-in-out 0s;
+    }
+}
+
+.no-ie .md-indicator::before { // no ie, 정렬문제로 ie 제외
+    content: 'Alleyway';
+    .eng();
+    font-size: 14px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.indicator-load8 .md-indicator > span {
+    display: block;
+    margin: 0 auto;
+    // border-top: 7px solid rgba(0, 0, 0, .2);
+    // border-right: 7px solid rgba(0, 0, 0, .2);
+    // border-bottom: 7px solid rgba(0, 0, 0, .2);
+    // border-left: 7px solid rgba(0, 0, 0, 1);
+
+    border-top: 7px solid rgba(255, 255, 255, 1);
+    border-right: 7px solid rgba(255, 255, 255, 1);
+    border-bottom: 7px solid rgba(255, 255, 255, 1);
+    border-left: 7px solid rgba(255, 255, 255, .2);
+
+    background: transparent;
+    animation: load8 .6s infinite linear;
+    transition: background-color .2s ease-in-out 0s;
+}
+
+.indicator-load8.is-dark-middle .md-indicator > span {
+    // border-top: 7px solid rgba(255, 255, 255, .2);
+    // border-right: 7px solid rgba(255, 255, 255, .2);
+    // border-bottom: 7px solid rgba(255, 255, 255, .2);
+    // border-left: 7px solid rgba(255, 255, 255, 1);
+}
+
+.indicator-load8 .md-indicator > span {
+    display: none;
+}
+.indicator-load8 .md-indicator > span:first-child {
+    display: block;
+}
+.indicator-load8 .md-indicator > span,
+.indicator-load8 .md-indicator > span:after {
+    width: 74px;
+    height: 74px;
+    border-radius: 100%;
+}
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}

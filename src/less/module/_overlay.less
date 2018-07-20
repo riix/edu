@@ -1,0 +1,66 @@
+@overlay-z-index: 900;
+@overlay-ms-min: .4s;
+@overlay-ms-max: .8s;
+
+/*  epass overlay ====================================================== */
+
+.md-overlay {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .65);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+
+    // transform: translate(0, 100%);
+    .transition(~"transform @{overlay-ms-min} ease-in-out .4s, opacity @{overlay-ms-min} ease .4s, visibility 0s ease @{overlay-ms-max}, z-index 0s ease @{overlay-ms-max}");
+
+    .is-overlay & {
+        z-index: @overlay-z-index;
+        opacity: 1;
+        visibility: visible;
+
+        // transform: translate(0, 0);
+
+        .transition(~"transform @{overlay-ms-min} ease-in-out 0s, opacity @{overlay-ms-min} ease 0s, visibility 0s ease 0s, z-index 0s ease 0s");
+    }
+
+    .is-video.is-overlay & {
+        z-index: 5000;
+    }
+
+    .no-rgba.is-overlay & {
+        background-color: #000;
+        opacity: 0.5;
+    }
+}
+
+.csstransitions {
+    .md-overlay {
+        opacity: 0;
+        visibility: hidden;
+    }
+    &.is-overlay {
+        .md-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+}
+.no-csstransitions {
+    .md-overlay {
+        display: none;
+    }
+    .is-overlay {
+        .md-overlay {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,98 @@
+//* class ================================================================= */
+.set-icon(){
+    min-width: 18px;
+    min-height: 18px; // 행 정렬 이슈로 최소 높이는 18px 로 제한합니다.
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center center;
+    line-height: 1;
+    vertical-align: middle;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    em {
+        &:extend(.sr-only);
+        width: 0 !important;
+    }
+    &.has-hover {
+        opacity: .9;
+        a:hover & {
+            opacity: 1;
+        }
+    }
+}
+.set-fonti(@char: '\e407'){
+    &:after {
+        display: block;
+        content: @char;
+    }
+}
+//* less ================================================================= */
+.icon {
+
+    .set-icon();
+
+    &.close {
+        .set-icon(24px, 24px, 'common/icon_close', false);
+    }
+
+    &.free {
+        .set-icon(46px, 24px, 'common/icon_free_lg', false);
+    }
+
+    &.file {
+        .set-icon(26px, 38px, 'common/icon_file_01', true);
+        @media @desktop {
+            .set-icon(20px, 20px, 'common/icon_file_lg');
+        }
+    }
+
+    &.datepicker {
+        .set-icon(74px, 74px, 'common/icon_date', true);
+    }
+
+    &.search {
+        .button & {
+            .set-icon(36px, 36px, 'common/icon_search_01', true);
+        }
+    }
+
+    &.remove {
+        .set-icon(30px, 30px, 'common/icon_remove', true);
+    }
+    &.vod {
+        .set-icon(34px, 34px, 'custom/icon_play_sm', true);
+        @media @desktop {
+            .set-icon(22px, 22px, 'custom/icon_play_lg');
+        }
+    }
+    &.download {
+        .set-icon(30px, 36px, 'common/icon_download_sm', true);
+        @media @desktop {
+            .set-icon(20px, 20px, 'common/icon_download_lg');
+        }
+    }
+
+
+    // &.playing {
+    //     .set-icon(52px, 20px, 'common/icon_playing');
+    // }
+    // &.blank {
+    //     .set-icon(35px, 35px, 'common/icon_url_blank');
+    // }
+    // &.blank-b {
+    //     .set-icon(35px, 35px, 'common/icon_url_blank_2');
+    // }
+
+}
+
+i {
+    em {
+        &:extend(.sr-only);
+    }
+}

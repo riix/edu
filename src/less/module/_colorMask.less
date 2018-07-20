@@ -1,0 +1,107 @@
+@easeInQuart   : cubic-bezier(0.895, 0.03, 0.685, 0.22);
+@easeOutQuart  : cubic-bezier(0.165, 0.84, 0.44, 1);
+@easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1);
+
+.set-color-mask-hidden() {
+    position: relative;
+    overflow: hidden;
+    .color-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        background-color: #f7f7f7;
+        transform: translate(-100%, 0);
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear .1s, opacity 0s linear .1s;
+        animation-duration: 1000ms;
+        animation-timing-function: 'cubic-bezier(0.77, 0, 0.175, 1)';
+        &.nth-child-1 {
+            animation-delay: 0;
+        }
+        &.nth-child-2 {
+            background-color: #000;
+            animation-delay: 150ms;
+        }
+    }
+    .js-color-mask-el {
+        opacity: 0;
+        animation-duration: 1200ms;
+        animation-timing-function: ease;
+    }
+}
+
+.set-color-mask-show(){
+    .color-mask {
+        visibility: visible;
+        opacity: 1;
+        &.nth-child-1 {
+            animation-name: colorMaskAfter1;
+            animation-fill-mode: both;
+            // animation-fill-mode: both;
+        }
+        &.nth-child-2{
+            animation-name: colorMaskAfter2;
+            animation-fill-mode: both;
+            // animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+        }
+    }
+    .js-color-mask-el {
+        opacity: 0;
+        animation-name: colorMaskImgAfter;
+        animation-delay: 1000ms;
+        animation-duration: 600ms;
+        animation-fill-mode: both;
+        animation-timing-function: @easeInOutQuart;
+    }
+}
+
+.in-color-mask,
+.is-inview {
+    // .set-color-mask-before();
+}
+
+.js-color-mask {
+    .set-color-mask-hidden();
+}
+
+.is-parallax-after { // inview 처음만 실행
+    .js-color-mask {
+        overflow: hidden;
+        .set-color-mask-show();
+    }
+}
+
+@keyframes colorMaskAfter1 {
+    0% {
+        width: 100%;
+        transform: translate(-100%, 0);
+    }
+    100% {
+        width: 100%;
+        transform: translate(101%, 0);
+    }
+}
+@keyframes colorMaskAfter2 {
+    0% {
+        width: 100%;
+        transform: translate(-100%, 0);
+    }
+    100% {
+        width: 50%;
+        transform: translate(201%, 0);
+    }
+}
+@keyframes colorMaskImgAfter {
+    0% {
+        opacity: 0;
+        transform: translate(-10%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

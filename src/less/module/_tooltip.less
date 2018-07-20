@@ -1,0 +1,144 @@
+@tooltip-primary :  #999; // @primary;
+@tooltip-z-index :  100;
+@tooltip-color   :  #000;
+
+// @import "_tooltip_fx.less";
+
+/*  epass tooltip ====================================================== */
+
+.js-tooltip {
+    // cursor: help;
+    cursor: pointer;
+    &.has-click {
+        cursor: pointer;
+    }
+    i.icon {
+        // .set-icon(40px, 40px, 'common/icon_tooltip', true);
+        vertical-align: top;
+    }
+    .pos-relative & {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin-top: -10px;
+    }
+}
+
+
+.md-tooltip {
+    position: fixed;
+    z-index: @tooltip-z-index;
+    top: 50%;
+    left: 50%;
+
+    max-height: 100%;
+    visibility: hidden;
+    backface-visibility: hidden;
+
+    @media (max-width: 1023px) {
+        position: absolute;
+        width: 300px;
+    }
+    @media (min-width: 1024px) {
+        width: 400px;
+    }
+
+    .md-content {
+        position: relative;
+        z-index: @tooltip-z-index + 2;
+        color: @tooltip-color;
+        background: #f2f2f2;
+        min-width: 200px;
+        margin: 0 auto;;
+
+        transition: all .3s;
+
+        > .title {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            text-indent: 10px;
+            font-weight: bold;
+            color: #fff;
+            height: 50px;
+            line-height: 50px;
+            background-color: @tooltip-primary;
+            cursor: inherit;
+            user-select: none;
+            a {
+                color: #fff;
+                text-decoration: none;
+                outline: none;
+                cursor: default;
+                user-select: none;
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            margin-bottom: -10px;
+            border-style: solid;
+            border-width: 10px 7px 0 7px;
+            border-color: #f2f2f2 transparent transparent transparent;
+            @media (max-width: 1023px) {
+                right: 0;
+                margin-right: 13px;
+            }
+            @media (min-width: 1024px) {
+                right: 193px;
+            }
+        }
+    }
+
+    .md-close {
+        position: absolute;
+        z-index: @tooltip-z-index + 1;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        // .transition(~"all .2s");
+        .icon {
+            width: 20px;
+            height: 20px;
+            display: block;
+            background-color: @tooltip-primary;
+            background-size: 20px 20px;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDhEQ0RCMUM5RTFEMTFFNTkzMzFGRDQ0NjlDRkM3RDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDhEQ0RCMUQ5RTFEMTFFNTkzMzFGRDQ0NjlDRkM3RDAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEOERDREIxQTlFMUQxMUU1OTMzMUZENDQ2OUNGQzdEMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEOERDREIxQjlFMUQxMUU1OTMzMUZENDQ2OUNGQzdEMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnuyMsUAAADmSURBVHja7NhRCsMgDAbgdneIB+n9X9Yeod7HKUthSFc1/khoI+RNkg+qUTuHECbN4zUpHwY0oAGfAFxirDEIWDflenPu65EadSG28B0+BlXML0XKsXPOtTS/JqFjHAL5i6vKVZsYgWzGtQCPAlKkCNcKlCLFOAmwFUm9S6NnsZcKE2Jz9baLfwBC7XxET8shBGxL3cAzpEc2dgQwRyJPHf2Xhdt/YtWbRHWbUd2oVR910suCH3FZyAu5EVe1Ebgu5CicGNn6aHLgxg55NC2MdKBz+0BunPty7mz/Bw1oQAM+HPgRYABB6sQUEWsleQAAAABJRU5ErkJggg==);
+            color: #fff;
+        }
+    }
+    .inner-wrapper {
+        padding: 10px 20px 10px 10px;
+    }
+    .section-buttons {
+        margin: 0 15px;
+        padding: 10px 0 20px;
+        clear: both;
+        text-align: center;
+        opacity: 0;
+        transition: opacity .2s;
+        a {
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+    }
+
+    // clicked absolute
+    &.is-clicked {
+        position: absolute;
+        z-index: 10;
+        .md-content {
+            z-index: 11;
+        }
+        .md-close {
+            opacity: 1;
+        }
+    }
+
+}

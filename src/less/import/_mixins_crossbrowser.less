@@ -1,0 +1,175 @@
+.backface-visibility(@visibility) {
+    -webkit-backface-visibility: @visibility;
+    backface-visibility: @visibility;
+}
+.box-shadow(@shadow) {
+    -webkit-box-shadow: @shadow;
+    box-shadow: @shadow;
+}
+.box-shadow-rgba(@px, @r, @g, @b, @a) {
+    -webkit-box-shadow: @px @px @px rgba(@r, @g, @b, @a);
+    box-shadow: @px @px @px lighten(rgb(@r, @g, @b), @a);
+    box-shadow: @px @px @px rgba(@r, @g, @b, @a);
+}
+
+.box-sizing(@boxmodel:border-box) {
+    -webkit-box-sizing: @boxmodel;
+    -moz-box-sizing: @boxmodel;
+    box-sizing: @boxmodel;
+}
+.min-height(@size) {
+    min-height: @size;
+    height: auto !important;
+    height: @size;
+}
+.min-width(@size) {
+    min-width: @size;
+    width: auto !important;
+    width: @size;
+}
+.max-width(@size) {
+    max-width: @size;
+    width: auto !important;
+    width: @size;
+}
+
+// opacity
+.opacity(@opacity: 1, @polyfill-ie: false) when (@polyfill-ie = false) {
+    opacity: @opacity;
+}
+
+.opacity(@opacity: 1, @polyfill-ie: false) when (@polyfill-ie = true) {
+    opacity: @opacity;
+    // @opacity-ie: (@opacity * 100); // IE8 filter
+    // filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+// Transitions
+.transition(@transition: all 0.3s) {
+    -webkit-transition: @transition;
+    transition: @transition;
+}
+.transition-property(@transition-property) {
+    -webkit-transition-property: @transition-property;
+    transition-property: @transition-property;
+}
+.transition-delay(@transition-delay) {
+    -webkit-transition-delay: @transition-delay;
+    transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+    -webkit-transition-duration: @transition-duration;
+    transition-duration: @transition-duration;
+}
+.transition-timing-function(@trainsition-timing) {
+    -webkit-transition-timing-function: @trainsition-timing;
+    -moz-transition-timing-function: @trainsition-timing;
+    transition-timing-function: @trainsition-timing;
+}
+.transition-transform(@transition) {
+    -webkit-transition: -webkit-transform @transition;
+    -moz-transition: transform @transition;
+    transition: transform @transition;
+}
+// Transformations
+.rotate(@degrees) {
+    -webkit-transform: rotate(@degrees);
+    -ms-transform: rotate(@degrees); // IE9 only
+    transform: rotate(@degrees);
+}
+.scale(@ratio; @ratio-y...) {
+    //-webkit-transform: scale(@ratio, @ratio-y);
+    -ms-transform: scale(@ratio, @ratio-y); // IE9 only
+    transform: scale(@ratio, @ratio-y);
+}
+.translate(@x; @y) {
+    -webkit-transform: translate(@x, @y);
+    -ms-transform: translate(@x, @y); // IE9 only
+    transform: translate(@x, @y);
+}
+.translateZ(@z) {
+    -webkit-transform: translateZ(@z);
+    -ms-transform: translateZ(@z); // IE9 only
+    transform: translateZ(@z);
+}
+.skew(@x; @y) {
+    -webkit-transform: skew(@x, @y);
+    -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+    transform: skew(@x, @y);
+}
+.translate3d(@x; @y; @z) {
+    -webkit-transform: translate3d(@x, @y, @z);
+    transform: translate3d(@x, @y, @z);
+}
+.rotateX(@degrees) {
+    -webkit-transform: rotateX(@degrees);
+    -ms-transform: rotateX(@degrees); // IE9 only
+    transform: rotateX(@degrees);
+}
+.rotateY(@degrees) {
+    -webkit-transform: rotateY(@degrees);
+    -ms-transform: rotateY(@degrees); // IE9 only
+    transform: rotateY(@degrees);
+}
+.perspective(@perspective) {
+    -webkit-perspective: @perspective;
+    -moz-perspective: @perspective;
+    perspective: @perspective;
+}
+.perspective-origin(@perspective) {
+    -webkit-perspective-origin: @perspective;
+    -moz-perspective-origin: @perspective;
+    perspective-origin: @perspective;
+}
+.transform-origin(@origin) {
+    -webkit-transform-origin: @origin;
+    -moz-transform-origin: @origin;
+    -ms-transform-origin: @origin; // IE9 only
+    transform-origin: @origin;
+}
+.transform-style(@style) {
+    -webkit-transform-style: @style;
+    -moz-transform-style: @style;
+    -ms-transform-style: @style; // IE9 only
+    transform-style: @style;
+}
+// Animations
+.animation(@animation) {
+    -webkit-animation: @animation;
+    animation: @animation;
+}
+.animation-name(@name) {
+    -webkit-animation-name: @name;
+    animation-name: @name;
+}
+.animation-duration(@duration) {
+    -webkit-animation-duration: @duration;
+    animation-duration: @duration;
+    animation-fill-mode: both;
+}
+.animation-timing-function(@timing-function) {
+    -webkit-animation-timing-function: @timing-function;
+    animation-timing-function: @timing-function;
+}
+.animation-delay(@delay) {
+    -webkit-animation-delay: @delay;
+    animation-delay: @delay;
+}
+.animation-iteration-count(@iteration-count) {
+    -webkit-animation-iteration-count: @iteration-count;
+    animation-iteration-count: @iteration-count;
+}
+.animation-direction(@direction) {
+    -webkit-animation-direction: @direction;
+    animation-direction: @direction;
+}
+.animation-fill-mode(@fill-mode) {
+    -webkit-animation-fill-mode: @fill-mode;
+    animation-fill-mode: @fill-mode;
+}
+.user-select(@select:none) {
+    -webkit-user-select: @select;
+    -moz-user-select: @select;
+    -ms-user-select: @select; // IE10+
+    user-select: @select;
+}

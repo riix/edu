@@ -1,0 +1,16 @@
+.set-transit-hide (@ms: .4s, @easing: @base-easing){
+    z-index: -1;
+    opacity: 0;
+    transition: transform @ms @easing 0s, visibility 0s ease @ms, z-index 0s ease @ms, opacity @ms ease 0s;
+    transform: translate(0, 100%) scale(1, 1);
+    transform: translate3d(0, 100%, 0) scale(1, 1);
+    visibility: hidden;
+}
+.set-transit-show (@ms: .4s, @easing: @base-easing){
+    z-index: 1;
+    opacity: 1;
+    transition: transform @ms @easing .2s, visibility 0s ease .2s, z-index 0s ease .2s, opacity @ms ease .2s;
+    transform: translate(0, 0) scale(1, 1);
+    transform: translate3d(0, 0, 0) scale(1, 1);
+    visibility: visible;
+}

@@ -1,0 +1,49 @@
+/* 퍼포먼스 이슈로 ie에서는 opacity 제외 */
+.no-ie {
+    .js-parallax-el { opacity: 0; }
+    .is-parallax-out { opacity: 0; }
+    .is-parallax-in { opacity: 1; }
+}
+
+// when off smooth scroll
+.js-parallax-el {
+    transition: opacity .4s ease-out, transform .2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.container:hover .js-parallax-el {
+    will-change: transform, opacity;
+}
+
+// smooth scroll 작동할때
+.init-smooth-scroll {
+    .js-parallax-el,
+    .is-parallax-out {
+        transition: opacity .4s ease-out, transform 0ms linear;
+    }
+    .is-parallax-in {
+        transition: opacity .6s ease-out, transform 0ms linear;
+        &:nth-child(2) {
+            transition: opacity .4s ease-out, transform 0ms linear;
+        }
+        &:nth-child(3) {
+            transition: opacity .3s ease-out, transform 0ms linear;
+        }
+    }
+}
+
+// smooth scroll이 tweenmax로 작동할때
+.init-smooth-scroll.is-smooth-scroll-tweenmax {
+    .js-parallax-el,
+    .is-parallax-out {
+        transition: opacity .4s ease-out, transform 0 linear;
+    }
+    .is-parallax-in {
+        transition: opacity .6s ease-out, transform 0 linear;
+        &:nth-child(2) {
+            transition: opacity .4s ease-out, transform 0 linear;
+        }
+        &:nth-child(3) {
+            transition: opacity .3s ease-out, transform 0 linear;
+        }
+    }
+}

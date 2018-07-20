@@ -1,0 +1,61 @@
+// Responsive Breakpoints
+@breakpoint-sm     : 320px; // smartphones
+@breakpoint-md     : 768px; // tablets portrait
+// @breakpoint-lg  : 992px; // tablets landscape, desktops
+@breakpoint-lg     : 1024px; // tablets landscape, desktops
+@breakpoint-xl     : 1200px; // wide screens
+
+@breakpoint-sm-off : (@breakpoint-sm - 1); // smartphones
+@breakpoint-md-off : (@breakpoint-md - 1); // tablets portrait
+@breakpoint-lg-off : (@breakpoint-lg - 1); // tablets landscape, desktops
+@breakpoint-xl-off : (@breakpoint-xl - 1); // wide screens
+
+// Grid Containers
+@wrap-width        : 100%;
+@wrap-width-sm     : @breakpoint-sm; // 640px;
+@wrap-width-md     : @breakpoint-md; // 768px;
+@wrap-width-lg     : (@breakpoint-lg - 20); // 970px
+@wrap-width-xl     : (@breakpoint-xl - 20); // 1180px
+
+@landscape         : ~"and (orientation: landscape)";
+@portrait          : ~"and (orientation: portrait)";
+
+@breakpoint-lg-over: (@breakpoint-lg + 1);
+
+// mediaquery, @media @phone {}
+@phone             : ~"only screen and (min-width : 1px)"; // smartphones
+@tablet            : ~"only screen and (min-width : @{breakpoint-md})"; // smartphone, tablets portrait
+@desktop           : ~"only screen and (min-width : @{breakpoint-lg})"; // tablets landscape, desktops
+
+@phoneAndTablet    : ~"only screen and (min-width : 1px) and (max-width: @{breakpoint-lg})"; // smartphones
+@desktopNotTablet  : ~"only screen and (min-width : @{breakpoint-lg-over})"; // tablets landscape, desktops
+
+@wide              : ~"only screen and (min-width : @{breakpoint-xl})"; // wide screens
+
+@phoneOnly         : ~"only screen and (min-width : 1px) and (max-width: @{breakpoint-lg-off})"; // smartphones
+@desktopOnly       : ~"only screen and (min-width : @{breakpoint-lg}) and (max-width: @{breakpoint-xl-off})"; // tablets landscape, desktops
+@wideOnly          : @wide;
+
+@ipad              : ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) ";
+@laptops           : ~"only screen and (min-width : 1824px) ";
+@iphone4           : ~"only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)";
+@iphone5           : ~"only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2)";
+@iphone6           : ~"only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2)";
+@iphone6Plus       : ~"only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 2)";
+@galaxyS3          : ~"only screen and (min-device-width: 320px) and (max-device-height: 640px) and (-webkit-device-pixel-ratio: 2)";
+@galaxyS4          : ~"only screen and (min-device-width: 320px) and (max-device-height: 640px) and (-webkit-device-pixel-ratio: 3)";
+@galaxyS5          : ~"only screen and (min-device-width: 360px) and (max-device-height: 640px) and (-webkit-device-pixel-ratio: 3)";
+
+@min(@tt           : 200): ~"only screen and (min-width : @tt)";
+
+.media-phone {
+    @media @phone {
+
+    }
+}
+
+.iphone-landscape {
+    @media @iphone5 @landscape {
+        color: #ff0000;
+    }
+}

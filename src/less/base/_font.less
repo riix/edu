@@ -1,0 +1,55 @@
+@import "./font/_font_gilroy.less";
+@import "./font/_font_noto_sans.less";
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+// default ================== //
+@kor: undefined;
+
+// setting ================== //
+@kor: 'Noto Sans CJK KR';
+@eng: 'Gilroy';
+
+
+& when (@kor = undefined){
+    .kor() {
+        font-family: '나눔고딕';
+    }
+    html {
+        .kor();
+    }
+    h1, h2, h3, h4, h5, h6 {
+        &, small {
+            .kor();
+        }
+    }
+}
+
+& when not(@kor = undefined){
+    .kor() {
+        font-family: @kor, 'Apple SD Gothic Neo', sans-serif, 'Nanum Barun Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', 'nanumgothic', '나눔고딕';
+    }
+    html {
+        .kor();
+    }
+    h1, h2, h3, h4, h5, h6 {
+        &, small {
+            .kor();
+        }
+    }
+}
+
+& when not(@eng = undefined){
+    .eng {
+        font-family: @eng, sans-serif;
+    }
+}
+
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+}

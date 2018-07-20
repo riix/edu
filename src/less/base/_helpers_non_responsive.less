@@ -1,0 +1,207 @@
+.full {
+    width: 100%;
+}
+.reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: normal;
+    font-style: normal;
+}
+.border-box {
+    box-sizing: border-box;
+}
+.content-box {
+    box-sizing: content-box;
+}
+.ir {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    word-break: keep-all;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .em,
+    em {
+        position: absolute;
+        z-index: -1;
+        visibility: hidden;
+        text-indent: -1000px;
+    }
+}
+// Hide only visually, but have it available for screenreaders: : h5bp.com/v
+.semantic,
+.sr-only {
+    box-sizing: content-box;
+    position: absolute;
+    text-indent: -9999px;
+    z-index: -1;
+    display: inline-block;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    word-break: keep-all;
+    white-space: nowrap;
+    border: 0;
+    color: transparent;
+    font: 0/0 a;
+    *height: 0; // for ie7
+}
+.hide-text {
+    color: transparent;
+    border: none;
+    background-color: transparent;
+    text-shadow: none;
+    font: ~"0/0" a;
+}
+.hidden {
+    visibility: hidden;
+}
+// Lists
+ul.reset,
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+.list-inline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+}
+.no-background {
+    background: transparent;
+}
+.no-border {
+    border: 0;
+}
+.no-select {
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+// Font Styles
+.font-normal {
+    font-style: normal;
+}
+.font-italic {
+    font-style: italic;
+}
+// Text Modifications
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+
+.field {
+    width: 100%;
+}
+.form-group {
+    overflow: hidden;
+    label {
+        display: inline-block;
+        padding-top: 8px;
+    }
+}
+.disabled, [disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.2;
+}
+// Checkbox and Radio
+.checkbox, .radio {
+    position: relative;
+    display: inline-block;
+    label {
+        display: inline-block;
+        padding-top: 0;
+        padding-left: 20px;
+    }
+    input[type='checkbox'],
+    input[type='radio'] {
+        position: absolute;
+        top: 4px;
+        left: 0;
+    }
+}
+.scroll {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+// background
+.background-none(@important:false) when (@important = false) {
+    background: none;
+}
+.background-none(@important:false) when (@important = true) {
+    background: none !important;
+}
+.background-repeat {
+    background-repeat: repeat;
+}
+.background-no-repeat {
+    background-repeat: no-repeat;
+}
+.background-repeat-x {
+    background-repeat: repeat-x;
+}
+.background-repeat-y {
+    background-repeat: repeat-y;
+}
+// webkit style focus
+.tab-focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color; // webkit
+    outline-offset: -2px;
+}
+// placeholder text
+.set-placeholder(@color:@before-input-placeholder-color) {
+    &:-moz-placeholder {
+        color: @color;
+    }
+    // Firefox 4-18
+    &::-moz-placeholder {
+        // Firefox 19+
+        opacity: 1;
+        color: @color;
+    }
+    // See https://github.com/twbs/bootstrap/pull/11526
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+    // Internet Explorer 10+
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+    // Safari and Chrome
+    &.set-placeholder {
+        color: @color;
+    }
+}
+.pos-relative {
+    position: relative;
+}
+.pos-absolute {
+    position: absolute;
+}
+.no-drag {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}

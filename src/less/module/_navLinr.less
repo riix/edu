@@ -1,0 +1,27 @@
+@easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+#navLinr {
+    opacity: 0;
+    transition: opacity .4s linear 0s;
+    span {
+        z-index: 2000;
+        top: 0;
+        left: 50%;
+        width: 800px;
+        height: 3px;
+        transform: translate3d(50%, 0, 0);
+        opacity: 0;
+        background-color: #000000;
+        transition: transform .4s @easeOutCubic, background-color .6s linear 0s, width .4s @easeOutCubic;
+        &:nth-child(2) {
+            transition: transform .7s @easeOutCubic, background-color .6s linear 0s, width .4s @easeOutCubic;
+        }
+        .is-dark-upper & { background-color: #fff; }
+    }
+    &.in {
+        opacity: 1;
+        span {
+            opacity: 1;
+        }
+    }
+}

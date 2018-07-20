@@ -1,0 +1,42 @@
+@canvas-width: 640;
+
+// 디자인 PSD 소스 너비 기준으로 percent 단위로 변환
+.m-width(@size, @full: @canvas-width, @important: false) when (@important = true) {
+    width: percentage(@size / @full) !important;
+}
+
+.m-width(@size, @full: @canvas-width, @important: false) when (@important = false) {
+    width: percentage(@size / @full);
+}
+
+.m-margin-left(@size, @full: @canvas-width, @important: false) when (@important = true) {
+    margin-left: percentage(@size / @full) !important;
+}
+
+.m-margin-left(@size, @full: @canvas-width, @important: false) when (@important = false) {
+    margin-left: percentage(@size / @full);
+}
+
+.m-margin-right(@size, @full: @canvas-width, @important: false) when (@important = true) {
+    margin-right: percentage(@size / @full) !important;
+}
+
+.m-margin-right(@size, @full: @canvas-width, @important: false) when (@important = false) {
+    margin-right: percentage(@size / @full);
+}
+
+.m-padding-left(@size, @full: @canvas-width, @important: false) when (@important = true) {
+    padding-left: percentage(@size / @full) !important;
+}
+
+.m-padding-left(@size, @full: @canvas-width, @important: false) when (@important = false) {
+    padding-left: percentage(@size / @full);
+}
+
+.m-padding-right(@size, @full: @canvas-width, @important: false) when (@important = true) {
+    padding-right: percentage(@size / @full) !important;
+}
+
+.m-padding-right(@size, @full: @canvas-width, @important: false) when (@important = false) {
+    padding-right: percentage(@size / @full);
+}

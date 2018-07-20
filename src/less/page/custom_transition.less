@@ -1,0 +1,107 @@
+.set-smooth-in(@name: animModuleStart, @duration: 0.4s, @delay: 0s, @timing: @base-easing) {
+    animation-name: @name;
+    animation-duration: @duration;
+    animation-delay: @delay;
+    transition-timing-function: @timing;
+    animation-fill-mode: both;
+}
+
+.set-smooth-out(@name: animModuleStart, @duration: 0.4s, @delay: 0s, @timing: @base-easing) {
+    animation-name: @name;
+    animation-duration: @duration;
+    animation-delay: @delay;
+    transition-timing-function: @timing;
+    animation-fill-mode: both;
+}
+
+.module {
+    position: relative;
+    overflow: hidden;
+}
+
+//////////////////// in
+#inner {
+    .set-smooth-in(innerIn, 0.6s, 0s);
+    .in .mask-enter-in,
+    .mask-enter {
+        &::after {
+            .set-smooth-in(moduleInMask, 0.6s, 0.6s);
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #fff;
+        }
+        &.idx-1::after {
+            animation-delay: 0.8s;
+        }
+        &.idx-2::after {
+            animation-delay: 1s;
+        }
+        &.idx-3::after {
+            animation-delay: 1.2s;
+        }
+        &.idx-4::after {
+            animation-delay: 1.4s;
+        }
+        &.idx-5::after {
+            animation-delay: 1.6s;
+        }
+        &.idx-6::after {
+            animation-delay: 1.8s;
+        }
+    }
+
+    .is-dark .mask-enter::after {
+        background-color: #000;
+    }
+
+}
+#footer {
+    .set-smooth-in(footerIn, 0.6s, 0s);
+}
+
+////////////////////// out
+
+.is-exiting {
+    #inner {
+        .set-smooth-out(innerOut, 0.6s, 0.6s);
+        .mask-exit {
+            &::after {
+                .set-smooth-out(moduleOutMask, 0.6s, 0s);
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #fff;
+            }
+            &.idx-1::after {
+                animation-delay: 0.2s;
+            }
+            &.idx-2::after {
+                animation-delay: 0.4s;
+            }
+            &.idx-3::after {
+                animation-delay: 0.6s;
+            }
+            &.idx-4::after {
+                animation-delay: 0.8s;
+            }
+            &.idx-5::after {
+                animation-delay: 1s;
+            }
+        }
+        .is-dark .mask-exit::after {
+            background-color: #000;
+        }
+    }
+    #footer {
+        .set-smooth-out(footerOut, 0.6s, 0.6s);
+    }
+}

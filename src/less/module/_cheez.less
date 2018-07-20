@@ -1,0 +1,22 @@
+.cheez-container {
+    line-height: 0;
+    &.is-cheez-prepend { // 상단
+        margin-bottom: 1px;
+        .csstransforms & {
+            margin-bottom: 0;
+            transform: translate(0, 1px);
+        }
+    }
+    &.is-cheez-append { // 하단
+        margin-top: -2px;
+        .csstransforms & {
+            margin-top: 0;
+            transform: translate(0, -2px);
+        }
+    }
+}
+.cheez-inner {
+    .cssvhunit & {
+        height: 10vh;
+    }
+}

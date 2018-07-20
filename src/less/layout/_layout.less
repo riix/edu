@@ -1,0 +1,80 @@
+.container {
+    background-color: #FFF;
+    min-width: 1280px;
+    max-width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    &.overflow-visible {
+        overflow: visible;
+    }
+}
+
+.wrap {
+    max-width: 1920px;
+    min-width: 1280px;
+    margin: 0 auto;
+    max-width: 1280px;
+    &.is-full {
+        padding: 0;
+        max-width: none;
+    }
+}
+
+.page-mobile {
+    .container {
+        width: 100%;
+        min-width: 320px;
+    }
+    .wrap {
+        max-width: 320px;
+        min-width: 320px;
+        width: 320px;
+        img {
+            width: 320px;
+        }
+    }
+}
+
+img {
+    &.sm, &.md, &.lg, &.mobile-only, &.pc-only {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media @phoneOnly {
+    .padder-sm {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+body {
+    overflow: hidden;
+    overflow-y: scroll;
+    min-width: 1280px;
+    background-color: #000;
+    &.bg-sub,
+    &.bg-detail {
+        background-color: #fff;
+    }
+}
+
+#skipToContent a {
+    position: fixed;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    &:focus {
+        overflow: visible;
+        width: auto;
+        height: 30px;
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+    }
+}
+
+#stickyNav {
+    display: none;
+}

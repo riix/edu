@@ -1,0 +1,321 @@
+//* modal fx ================================================================= */
+
+.md-modal {
+
+    &.fx-full {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        .translate(0, 0);
+        .md-content {
+            min-height: 100%;
+        }
+        .md-close {
+            z-index: @modal-z-index + 2;
+            margin-right: 0 - @modal-border-width;
+            box-shadow: none;
+        }
+    }
+
+    // Effect 1: Fade in and scale up
+    &.fx-1 .md-content {
+        .scale(0.7, 0.7);
+        opacity: 0;
+    }
+    // Effect 2: Slide from the right
+    &.fx-2 .md-content {
+        .translate(20%; 0);
+        .transition(~"all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)");
+        opacity: 0;
+    }
+    // Effect 3: Slide from the bottom
+    &.fx-3 .md-content {
+        .translate(0; 20%);
+        opacity: 0;
+    }
+    // Effect 4: Newspaper
+    &.fx-4 .md-content {
+        .scale(0, 0);
+        .rotate(180deg);
+        opacity: 0;
+    }
+    // Effect 5: fall
+    &.fx-5 {
+        .perspective(600px);
+        .md-content {
+            .transform-style(preserve-3d);
+            .translateZ(600px);
+            .rotateX(20deg);
+            opacity: 0;
+        }
+    }
+    // Effect 6: side fall
+    &.fx-6 {
+        .perspective(600px);
+        .md-content {
+            .transform-style(preserve-3d);
+            .translateZ(600px);
+            .translate(30%; 30%);
+            .rotate(10deg);
+            opacity: 0;
+        }
+    }
+    // Effect 7:  slide and stick to top
+    &.fx-7 {
+        top: 0;
+        .translate(-50%; 0);
+        .md-content {
+            .translate(0; -200%);
+            opacity: 0;
+        }
+    }
+    // Effect 8: 3D flip horizontal
+    &.fx-8 {
+        .perspective(1300px);
+        .md-content {
+            .transform-style(preserve-3d);
+            .rotateY(-70deg);
+            opacity: 0;
+        }
+    }
+    // Effect 9: 3D flip vertical
+    &.fx-9 {
+        .perspective(1300px);
+        .md-content {
+            .transform-style(preserve-3d);
+            .rotateX(-70deg);
+            opacity: 0;
+        }
+    }
+    // Effect 10: 3D sign
+    &.fx-10 {
+        .perspective(1300px);
+        .md-content {
+            .transform-style(preserve-3d);
+            .rotateX(-60deg);
+            .transform-origin(50% 0);
+            opacity: 0;
+        }
+    }
+    // Effect 11: Super scaled
+    &.fx-11 .md-content {
+        .scale(2, 2);
+        opacity: 0;
+    }
+
+
+    // Effect 12:  Just me
+    &.fx-12 {
+        .fx-full();
+        .md-content {
+            .scale(0.8, 0.8);
+            opacity: 0;
+            // background-color: @md-primary;
+            > .title {
+                // background-color: @md-primary;
+            }
+        }
+    }
+    // Effect 13: 3D slit
+    &.fx-13 {
+        .perspective(1300px);
+        .md-content {
+            .transform-style(preserve-3d);
+            .translateZ(-3000px);
+            .rotateY(90deg);
+            opacity: 0;
+        }
+    }
+    // Effect 14:  3D Rotate from bottom
+    &.fx-14 {
+        .perspective(1300px);
+        .md-content {
+            .transform-style(preserve-3d);
+            .translate(0; 100%);
+            .rotateX(90deg);
+            .transform-origin(0 100%);
+            .transition(~"all 0.3s ease-out");
+            opacity: 0;
+        }
+    }
+    // Effect 15:  3D Rotate in from left
+    &.fx-15 {
+        .perspective(1300px);
+        .md-content {
+            .transform-style(preserve-3d);
+            .translateZ(100px);
+            .translate(-30%, 0);
+            .rotateY(90deg);
+            .transform-origin(0 100%);
+            opacity: 0;
+        }
+    }
+    &.fx-16 .md-content {
+        .translate(0; -5%);
+        opacity: 0;
+    }
+    &.fx-17 .md-content {
+        opacity: 0;
+        .translate(0; 100%);
+    }
+    &.fx-18 .md-content {
+        .translate(100%; 0);
+        opacity: 0;
+    }
+    &.fx-19 .md-content {
+        .translate(0; -100%);
+        opacity: 0;
+    }
+
+    &.md-show {
+        visibility: visible;
+
+        .md-content {
+            opacity: 1;
+            .translateZ(0);
+            .translate(0; 0);
+            .scale(1, 1);
+            .rotateX(0deg);
+            .rotateY(0deg);
+            .rotate(0deg);
+        }
+
+        &.fx-7 .md-content {
+            .translate(0; 0);
+            border-radius: 0 0 3px 3px;
+            opacity: 1;
+        }
+        &.fx-12 ~ .md-overlay {
+            background: #e74c3c;
+        }
+        &.fx-13 .md-content {
+            .animation-name(slit);
+            .animation-duration(.7s);
+            .animation-fill-mode(forwards);
+            .animation-timing-function(ease-out);
+        }
+        // Effect 16:  Blur
+        &.fx-16 ~ .md-overlay {
+            background: rgb(180,46,32);
+            background: rgba(180,46,32,0.5);
+        }
+
+        &.fx-16 ~ .container {
+            -webkit-filter: blur(3px);
+            -moz-filter: blur(3px);
+            filter: blur(3px);
+            .transition(~"all 0.3s");
+        }
+
+        // Effect 17:  Slide in from bottom with perspective on container
+        &.fx-17 ~ .container {
+            height: 100%;
+            overflow: hidden;
+            .transition(~"transform 0.3s");
+        }
+        &.fx-17 ~ .container,
+        &.fx-17 ~ .md-overlay  {
+            .rotateX(-2deg);
+            .transform-origin(50% 0%);
+            .transform-style(preserve-3d);
+        }
+        &.fx-17 .md-content {
+            .translate(0; 0%);
+            opacity: 1;
+            .transition(~"all 0.3s 0.2s");
+        }
+        // Effect 18:  Slide from right with perspective on container
+        &.fx-18 ~ .container {
+            height: 100%;
+            overflow: hidden;
+        }
+        &.fx-18 ~ .md-overlay {
+            .transition(~"all 0.5s");
+        }
+        &.fx-18 ~ .container,
+        &.fx-18 ~ .md-overlay {
+            .transform-style(preserve-3d);
+            .transform-origin(0% 50%);
+            .animation-name(rotateRightSideFirst);
+            .animation-duration(.5s);
+            .animation-fill-mode(forwards);
+            .animation-timing-function(ease-in);
+        }
+        &.fx-18 .md-content {
+            .translate(0%; 0);
+            opacity: 1;
+            .transition(~"all 0.5s 0.1s");
+        }
+        // Effect 19:  Slip in from the top with perspective on container
+        &.fx-19 ~ .container {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        &.fx-19 ~ .md-overlay {
+            .transition(~"all 0.5s");
+        }
+
+        &.fx-19 ~ .container,
+        &.fx-19 ~ .md-overlay {
+            .transform-style(preserve-3d);
+            .transform-origin(50% 100%);
+            .animation-name(OpenTop);
+            .animation-duration(.5s);
+            .animation-fill-mode(forwards);
+            .animation-timing-function(ease-in);
+        }
+    }
+}
+
+@-webkit-keyframes slit {
+    50% { -webkit-transform: translateZ(-250px) rotateY(89deg); opacity: .5; -webkit-animation-timing-function: ease-out; }
+    100% { -webkit-transform: translateZ(0) rotateY(0deg); opacity: 1; }
+}
+
+@-moz-keyframes slit {
+    50% { -moz-transform: translateZ(-250px) rotateY(89deg); opacity: .5; -moz-animation-timing-function: ease-out;}
+    100% { -moz-transform: translateZ(0) rotateY(0deg); opacity: 1; }
+}
+
+@keyframes slit {
+    50% { transform: translateZ(-250px) rotateY(89deg); opacity: 1; animation-timing-function: ease-in;}
+    100% { transform: translateZ(0) rotateY(0deg); opacity: 1; }
+}
+
+@-webkit-keyframes rotateRightSideFirst {
+    50% { -webkit-transform: translateZ(-50px) rotateY(5deg); -webkit-animation-timing-function: ease-out; }
+    100% { -webkit-transform: translateZ(-200px); }
+}
+
+@-moz-keyframes rotateRightSideFirst {
+    50% { -moz-transform: translateZ(-50px) rotateY(5deg); -moz-animation-timing-function: ease-out; }
+    100% { -moz-transform: translateZ(-200px); }
+}
+
+@keyframes rotateRightSideFirst {
+    50% { transform: translateZ(-50px) rotateY(5deg); animation-timing-function: ease-out; }
+    100% { transform: translateZ(-200px); }
+}
+
+@-webkit-keyframes OpenTop {
+    50% {
+        -webkit-transform: rotateX(10deg);
+        -webkit-animation-timing-function: ease-out;
+    }
+}
+
+@-moz-keyframes OpenTop {
+    50% {
+        -moz-transform: rotateX(10deg);
+        -moz-animation-timing-function: ease-out;
+    }
+}
+
+@keyframes OpenTop {
+    50% {
+        transform: rotateX(10deg);
+        animation-timing-function: ease-out;
+    }
+}

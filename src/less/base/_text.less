@@ -1,0 +1,204 @@
+/* text ================================================================== */
+
+.set-heading(@font-size: @before-h1-font-size, @font-weight: @before-h1-font-weight, @line-height: @before-h1-line-height, @color: @before-h1-color){
+    font-size: @font-size;
+    font-weight: @font-weight;
+    line-height: @line-height;
+    color: @color;
+}
+
+body, td, th, font {
+    // font-family: @before-font-family;
+    // font-weight: @before-font-weight;
+    // font-size: @before-font-size;
+    // @media @phoneOnly {
+    //     font-size: 12px;
+    // }
+}
+
+// .line-height { line-height: @before-line-height; } // 1.4
+
+// .light { font-weight: @before-font-weight-light; }
+// .normal { font-weight: @before-font-weight; }
+// .medium { font-weight: 500; }
+// .bold { font-weight: @before-font-weight-bold; }
+
+// .thin { &:extend(.light); }
+// .thick { &:extend(.bold); }
+
+.stroke,
+.strike {
+    text-decoration: strike !important;
+    color: #666;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.text-overflow, .ellipsis {
+    display: inline;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal !important;
+    word-break: keep-all;
+    white-space: nowrap;
+    width: 99%;
+    &.block {
+        display: block;
+    }
+}
+
+.pre-line {
+  white-space: pre-line;
+  *white-space: pre;
+  word-wrap: break-word;
+}
+
+.pre,
+.break-all {
+  white-space: pre-wrap; // CSS 2.1
+  white-space: pre-line; // CSS 3.0
+  white-space: -moz-pre-wrap; // Mozilla
+  word-wrap: break-word; // IE 5+
+}
+
+.no-font-smooth {
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+}
+
+.break-all { word-break: break-all; }
+
+div, span, strong, em, table, ul, p, small {
+    &.primary { color: @primary; }
+    &.secondary { color: @secondary; }
+    &.warning { color: @warning; }
+    &.info { color: @info; }
+    &.danger { color: @danger; }
+    // &.small {
+    //     font-size: @before-font-size-small;
+    // }
+    &.large {
+        margin: 10px 0 0;
+        // font-size: @before-font-size-large;
+    }
+    &.xlarge {
+        font-size: 19px;
+    }
+    &.xxlarge {
+        margin: 20px 0 0;
+        font-size: 20px;
+        font-weight: 300;
+        &.eng {
+            font-weight: 300;
+        }
+    }
+    @media @desktop {
+        &.large {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        &.xlarge {
+            font-size: 30px;
+        }
+        &.xxlarge {
+            margin-top: 50px;
+            font-size: 40px;
+        }
+    }
+    @media only screen and (min-width: 1500px) {
+        &.xlarge {
+            font-size: 30px;
+        }
+        &.xxlarge {
+            font-size: 50px;
+        }
+    }
+}
+
+a {
+    color: @before-link-color;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    outline-width: 0;
+
+    // &:link { text-decoration: none; color: @before-link-color; }
+    // &:visited { text-decoration: none; color: @before-link-color; }
+    // &:hover { text-decoration: underline; color: @before-link-hover-color; outline-width: 0; }
+    // &:active { text-decoration: none; color: @before-link-hover-color; outline-width: 0; }
+    &:hover .link { text-decoration: underline; }
+
+    // 전화번호 링크
+    &[href*="tel:"] {
+        cursor: default;
+        &:hover {
+            text-decoration: none;
+        }
+        @media @tablet {
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.primary {
+        color: @primary;
+        border-bottom: dotted 1px @primary;
+        &:hover {
+            text-decoration: none;
+            border-bottom: solid 1px @primary;
+        }
+    }
+    &.no-underline {
+        border-bottom: 0;
+    }
+}
+
+// .strong, b, strong {
+//     font-weight: @before-font-weight-bold;
+// }
+
+// .small, small {
+//     font-size: @before-font-size-small;
+// }
+
+// outline
+a, input, button, textarea {
+    &.has-outline {
+        .set-focus-outline();
+    }
+}
+.has-outline {
+    a, input, button, textarea {
+        .set-focus-outline();
+    }
+}
+
+
+// notify
+.notify {
+    .clearfix();
+    margin: 0;
+    padding: 5px 0;
+    display: none;
+    text-align: left;
+    &.info {
+        color: #588fc8;
+    }
+    &.in {
+        display: block;
+    }
+    font-size: 13px;
+    @media @desktop {
+        font-size: 16px;
+    }
+}
+
+
+// i, u, em {
+//     font-family: @before-font-family;
+// }

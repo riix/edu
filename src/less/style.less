@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* ==================================================================
+ * 주의, less 로 제작된 컴파일 문서이므로 임의 수정 사용을 제한합니다.
+ * 수정 필요시 제작 담당자의 확인을 요구합니다.
+ * =============================================================== */
+
+// .js-fittext {
+//     visibility: hidden;
+//     &.in {
+//         visibility: visible;
+//     }
+// }
+
+@import "./import/_setting.less"; // setting
+@import "./import/_mixins.less";
+@import "./import/_mixins_crossbrowser.less";
+@import "./import/_mixins_responsive.less";
+@import "./import/_easing.less"; // easing
+@import "./import/_base64.less";
+@import "./import/_base.less";
+@import "./import/_color.less";
+@import "./import/_mediaquery.less";
+@import "./import/_transition.less";
+
+@import "./base/_helpers_non_responsive.less";
+@import "./base/_helpers_responsive.less";
+
+// base
+@import "./base/_font.less";
+@import "./base/_grid.less";
+@import "./base/_responsive.less";
+@import "./base/_common.less";
+@import "./base/_text.less";
+
+@import "./base/_slider.less";
+
+@import "./component/_form.less";
+@import "./component/_button.less";
+@import "./component/_icon.less";
+@import "./component/_tab.less";
+@import "./component/_transition.less";
+
+// layout
+@import "./layout/_layout.less";
+@import "./layout/_theme.less";
+@import "./layout/_header.less";
+@import "./layout/_navigation.less";
+@import "./layout/_title.less";
+@import "./layout/_footer.less"; 
+@import "./layout/_visual.less";
+
+// module
+@import "./module/_overlay.less";
+@import "./module/_indicator.less";
+
+// page
+@import "./page/custom_keyframe.less";
+@import "./page/custom_transition.less";
+@import "./page/custom_l.less";
+@import "./page/custom_a.less";
+
+.js-hover-spin a { display: inline-block; margin: 0 auto; position: relative; overflow: hidden; text-align: center; }
+.js-hover-spin .default { visibility: hidden; }
+.js-hover-spin .prev,
+.js-hover-spin .next { position: absolute; top: 0; left: 0; transition: transform .3s ease-in-out 0s; transform: translate(0, 0); }
+.js-hover-spin .next { transform: translate(0, 110%); }
+@media (min-width: 1024px) {
+    .js-hover-spin a:hover,
+    .js-hover-spin a:focus {
+        & .prev { transform: translate(0, -110%); }
+        & .next { transform: translate(0, 0); }
+        &::before { transform: translate(0%, 0%); }
+    }
+}

@@ -1,0 +1,19 @@
+.set-label-variant(@color, @bgcolor, @bordercolor){
+    border-color: @bordercolor;
+    background-color: @bgcolor;
+    color: @color;
+    &:hover {
+        background-color: lighten(@bgcolor, 10%);
+    }
+}
+
+.label {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    font-size: 12px;
+    transition: all .2s;
+}
