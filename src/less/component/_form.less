@@ -93,16 +93,6 @@ textarea {
     line-height: @n-form-height-lg;
     font-size: @n-form-font-size-sm;
 
-    @media @phoneOnly {
-        height: @n-form-height-sm;
-        line-height: @n-form-height-sm;
-        font-size: @n-form-font-size-lg;
-    }
-
-    @media @desktop {
-        font-size: 16px;
-    }
-
     color: @n-form-font-color;
 
     margin: 0;
@@ -114,14 +104,6 @@ textarea {
         width: 100%;
     }
 
-    @media @phoneOnly {
-        padding-left: 10px;
-        padding-right: 10px;
-        &.full-sm {
-            width: 100%;
-        }
-    }
-
     &.file,
     &[type="file"] {
         margin: 0;
@@ -131,10 +113,6 @@ textarea {
         height: auto;
         line-height: inherit;
         vertical-align: middle;
-        @media @phoneOnly {
-            height: auto;
-            line-height: inherit;
-        }
     }
 
 }
@@ -160,8 +138,5 @@ select {
     .ie & {
         background: none;
         padding-right: 0;
-    }
-    @media @desktop {
-        height: 52px;
     }
 }

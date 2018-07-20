@@ -95,27 +95,6 @@ div, span, strong, em, table, ul, p, small {
             font-weight: 300;
         }
     }
-    @media @desktop {
-        &.large {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        &.xlarge {
-            font-size: 30px;
-        }
-        &.xxlarge {
-            margin-top: 50px;
-            font-size: 40px;
-        }
-    }
-    @media only screen and (min-width: 1500px) {
-        &.xlarge {
-            font-size: 30px;
-        }
-        &.xxlarge {
-            font-size: 50px;
-        }
-    }
 }
 
 a {
@@ -153,9 +132,7 @@ a {
             border-bottom: solid 1px @primary;
         }
     }
-    &.no-underline {
-        border-bottom: 0;
-    }
+
 }
 
 // .strong, b, strong {
@@ -177,28 +154,3 @@ a, input, button, textarea {
         .set-focus-outline();
     }
 }
-
-
-// notify
-.notify {
-    .clearfix();
-    margin: 0;
-    padding: 5px 0;
-    display: none;
-    text-align: left;
-    &.info {
-        color: #588fc8;
-    }
-    &.in {
-        display: block;
-    }
-    font-size: 13px;
-    @media @desktop {
-        font-size: 16px;
-    }
-}
-
-
-// i, u, em {
-//     font-family: @before-font-family;
-// }
