@@ -52,6 +52,8 @@
       table.list tr.del td{text-decoration:line-through;}
       table.list tr.del td:first-child{text-decoration:none;font-size:11px;}
       table.list tr.del td.bigo{text-decoration:none;}
+      table.list tr.disabled td,
+      table.list tr.disabled td * { color: #999 !important; }
 
       .type{text-align:center;}
       .html{color:#666 !important;}
@@ -70,35 +72,10 @@
       .menu li{float:right;}
       .menu li a{display:inline-block;padding:5px 10px;color:#fff;}
     </style>
-    <script type="text/javascript" src="/js/plugins.min.js"></script>
-    <script type="text/javascript">
-    //<![CDATA[
-    	//테이블 tr over효과
-    	$(document).ready(function() {
-    		$("tbody tr").hover(
-    			function() { $(this).addClass("hover"); },
-    			function() { $(this).removeClass("hover"); }
-    		);
-
-    		var tot = 0, remain = 0, rate = 0;
-    		$("tbody tr:not(.del)").each(function(index){
-    			$("td:first-child", this).text(index+1);
-
-    			tot++;
-    			if(!$.isNumeric($("td.rate", this).text()) || parseInt($("td.rate", this).text()) == 0){
-    				remain++;
-    				$(this).css("color","red");
-    			}else{
-    				rate += parseInt($("td.rate", this).text());
-    			}
-    		});
-    		$("tbody tr.del td:first-child").text("삭제");
-    		$tr = $("tbody tr:not(.del)");
-    		$("#rate").html("( 총:"+tot+"p / 잔여:"+remain+"p / 진행:"+parseInt(rate*100/tot)/100+"% )");
-    	});
-    	//'table tr:gt(0) 0보다 큰것만 마우스 오버 효과가 나타남
-    //]]>
-    </script>
+    <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -112,7 +89,7 @@
 		<div class="tit">
 			<h1>2018 기사퍼스트 목록</h1>
 			<p>
-				<span class="date">2017-10-26</span>
+				<span class="date">2018-07-21</span>
 				<span id="rate"></span><br />
 				<!-- <span>※ 변경내용은 각 페이지 소스 상단의 주석 확인</span> -->
 			</p>
@@ -155,18 +132,280 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td>home.html</td>
+					<td>html</td>
 					<td><a href="./html/gisafirst/index.html" target="_blank">index</a></td>
-					<td class="date">2017.10.18</td>
+					<td class="date">2018.07.21</td>
 					<td class="rate">100</td>
 					<td class="bigo">
-						<p style="color:red;">2017.10.19 메인 수정사항 반영 및 top btn 추가</p>
-						<p style="color:red;">2017.10.24 로그인, 회원가입 modal 추가</p>
+						완료
 					</td>
 				</tr>
-
+                <tr id="" class="cut">
+                    <td></td>
+                    <td>수강신청</td>
+                    <td>강의상세</td>
+                    <td>단과</td>
+                    <td></td>
+                    <td></td>
+                    <td>html</td>
+                    <td><a href="./html/gisafirst/lecture_item.html" target="_blank">lecture_item</a></td>
+                    <td class="date">2018.07</td>
+                    <td class="rate">0</td>
+                    <td class="bigo">
+                    </td>
+                </tr>
+                <tr id="">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>패키지</td>
+                    <td></td>
+                    <td></td>
+                    <td>html</td>
+                    <td><a href="./html/gisafirst/lecture_package.html" target="_blank">lecture_package</a></td>
+                    <td class="date">2018.07</td>
+                    <td class="rate">0</td>
+                    <td class="bigo">
+                    </td>
+                </tr>
+                <tr id="" class="cut">
+                    <td></td>
+                    <td>선생님</td>
+                    <td>강사소개</td>
+                    <td>권우석</td>
+                    <td></td>
+                    <td></td>
+                    <td>html</td>
+                    <td><a href="./html/gisafirst/" target="_blank">teacher_list</a></td>
+                    <td class="date">2018.07</td>
+                    <td class="rate">0</td>
+                    <td class="bigo">
+                    </td>
+                </tr>
+                <tr id="" class="cut">
+                    <td></td>
+                    <td>시험정보</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>html</td>
+                    <td><a href="./html/gisafirst/test_list.html" target="_blank">test_list</a></td>
+                    <td class="date">2018.07</td>
+                    <td class="rate">0</td>
+                    <td class="bigo">
+                    </td>
+                </tr>
+                <tr id="" class="cut">
+					<td></td>
+					<td>커뮤니티</td>
+					<td>공지사항(일반게시판)</td>
+					<td>목록</td>
+					<td></td>
+					<td></td>
+					<td>html</td>
+					<td><a href="./html/gisafirst/community_notice_list.html" target="_blank">community_notice_list</a></td>
+					<td class="date">2018.07.23</td>
+					<td class="rate">100</td>
+					<td class="bigo">
+						&nbsp;
+					</td>
+				</tr>
+                <tr id="">
+                    <td></td>
+					<td></td>
+					<td></td>
+					<td>쓰기</td>
+					<td></td>
+					<td></td>
+					<td>html</td>
+					<td><a href="./html/gisafirst/community_notice_write.html" target="_blank">community_notice_write</a></td>
+					<td class="date">2018.07.23</td>
+					<td class="rate">0</td>
+					<td class="bigo">
+						&nbsp;
+					</td>
+                </tr>
+                <tr id="">
+                    <td></td>
+					<td></td>
+					<td></td>
+					<td>보기</td>
+					<td></td>
+					<td></td>
+					<td>html</td>
+					<td><a href="./html/gisafirst/community_notice_view.html" target="_blank">community_notice_view</a></td>
+					<td class="date">2018.07.23</td>
+					<td class="rate">0</td>
+					<td class="bigo">
+						&nbsp;
+					</td>
+                </tr>
+                <tr id="" class="cut">
+					<td></td>
+					<td>수강후기</td>
+					<td>수강후기</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>html</td>
+					<td><a href="./html/gisafirst/review_list.html" target="_blank">review_list</a></td>
+					<td class="date">2018.07.23</td>
+					<td class="rate">100</td>
+					<td class="bigo">
+						&nbsp;
+					</td>
+				</tr>
+                <tr id="" class="cut">
+					<td></td>
+					<td>학습자료실</td>
+					<td>공개자료실</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>html</td>
+					<td><a href="./html/gisafirst/pds_public_list.html" target="_blank">pds_public_list</a></td>
+					<td class="date">2018.07.23</td>
+					<td class="rate">100</td>
+					<td class="bigo">
+						&nbsp;
+					</td>
+				</tr>
+                <tr id="" class="cut">
+					<td></td>
+					<td>내강의실</td>
+					<td>내강의실 홈</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>html</td>
+					<td><a href="./html/gisafirst/classroom.html" target="_blank">classroom</a></td>
+					<td class="date">2018.07.20</td>
+					<td class="rate">100</td>
+					<td class="bigo">
+						&nbsp;
+					</td>
+				</tr>
+                <tr id="">
+					<td></td>
+					<td></td>
+					<td>강의목차</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>html</td>
+					<td><a href="./html/gisafirst/classroom_list.html" target="_blank">classroom_list</a></td>
+					<td class="date">2018.07.20</td>
+					<td class="rate">100</td>
+					<td class="bigo">
+						&nbsp;
+					</td>
+				</tr>
+                <tr id="">
+					<td></td>
+					<td></td>
+					<td>학습공지사항</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>html</td>
+					<td><a href="./html/gisafirst/classroom_notice_list.html" target="_blank">classroom_notice_list</a></td>
+					<td class="date">2018.07.23</td>
+					<td class="rate">100</td>
+					<td class="bigo">
+						&nbsp;
+					</td>
+				</tr>
+                <tr id="">
+					<td></td>
+					<td></td>
+					<td>학습질문답변</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>html</td>
+					<td><a href="./html/gisafirst/classroom_qna_list.html" target="_blank">classroom_qna_list</a></td>
+					<td class="date">2018.07.23</td>
+					<td class="rate">100</td>
+					<td class="bigo">
+						&nbsp;
+					</td>
+				</tr>
+                <tr id="" class="cut">
+                    <td></td>
+                    <td>결제</td>
+                    <td>주문결제</td>
+                    <td>주문결제</td>
+                    <td></td>
+                    <td></td>
+                    <td>html</td>
+                    <td><a href="./html/gisafirst/order.html" target="_blank">order</a></td>
+                    <td class="date">2018.07.21</td>
+                    <td class="rate">90</td>
+                    <td class="bigo">
+                        개인정보~ 주의사항 작업 예정<br />
+                        체크박스/라디오버튼은<br />
+                        css 적용 예정
+                    </td>
+                </tr>
+                <tr id="">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>결제완료</td>
+                    <td></td>
+                    <td></td>
+                    <td>html</td>
+                    <td><a href="./html/gisafirst/order_ok.html" target="_blank">order_ok</a></td>
+                    <td class="date">2018.07.22</td>
+                    <td class="rate">100</td>
+                    <td class="bigo">
+                        완료
+                    </td>
+                </tr>
 			</tbody>
 		</table>
 </div>
+
+<p>
+    gnb 새창 아이콘 추가 예정<br />
+    aside 새창 아이콘 추가 예정
+</p>
+<script type="text/javascript">
+//<![CDATA[
+    //테이블 tr over효과
+    $(document).ready(function() {
+        $("tbody tr").hover(
+            function() { $(this).addClass("hover"); },
+            function() { $(this).removeClass("hover"); }
+        );
+
+        var tot = 0, remain = 0, rate = 0;
+        $("tbody tr:not(.del)").each(function(index){
+            $("td:first-child", this).text(index+1);
+
+            tot++;
+            if(!$.isNumeric($("td.rate", this).text()) || parseInt($("td.rate", this).text()) == 0){
+                remain++;
+                $(this).css("color","red");
+            }else{
+                rate += parseInt($("td.rate", this).text());
+            }
+        });
+        $("tbody tr.del td:first-child").text("삭제");
+        $tr = $("tbody tr:not(.del)");
+        $("#rate").html("( 총:"+tot+"p / 잔여:"+remain+"p / 진행:"+parseInt(rate*100/tot)/100+"% )");
+
+
+        $('td.rate').each(function(){
+            var _rate = $(this).text() * 1;
+            if (_rate < 1) {
+                $(this).closest('tr').addClass('disabled').find('a').removeAttr('href');
+            }
+        })
+    });
+    //'table tr:gt(0) 0보다 큰것만 마우스 오버 효과가 나타남
+//]]>
+</script>
 </body>
 </html>

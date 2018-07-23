@@ -37,9 +37,10 @@ select, input[type="text"], input[type="password"], input[type="email"], textare
         background-color: #f7f7f7;
     }
 }
-textarea {
-    padding-top: 20px;
-    padding-bottom: 20px;
+textarea.textarea {
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
     min-height: 70px;
     line-height: 1.4;
 }
@@ -89,16 +90,15 @@ textarea {
 
     .set-placeholder();
 
-    height: @n-form-height-lg;
-    line-height: @n-form-height-lg;
-    font-size: @n-form-font-size-sm;
-
-    color: @n-form-font-color;
+    box-sizing: border-box;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 10px;
+    border: solid 1px #e1e4e6;
+    width: 120px;
 
     margin: 0;
     font: inherit;
-
-    padding: 0 20px;
 
     &.full {
         width: 100%;
@@ -138,5 +138,49 @@ select {
     .ie & {
         background: none;
         padding-right: 0;
+    }
+}
+
+.ranges {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: solid 1px #ced3d6;
+    border-radius: 3px;
+    input.text,
+    input[type="text"] {
+        box-sizing: content-box;
+        margin: 0;
+        padding: 0 28px;
+        border: 0;
+        height: 28px;
+        line-height: 28px;
+        max-width: 200px;
+        width: 48px;
+        outline: 0;
+        text-align: center;
+    }
+    .minus,
+    .plus {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        width: 33px;
+        height: 28px;
+        background-color: #f1f3f5;
+        .icon {
+            .set-icon(33px, 28px, 'common/range_minus');
+        }
+        em {
+            .sr-only();
+        }
+    }
+    .minus {
+        left: 0;
+    }
+    .plus {
+        right: 0;
+        .img('common/range_plus');
     }
 }

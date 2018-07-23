@@ -2,14 +2,12 @@
 @base-mode-mobile                     : false; // 모바일 모드일때 true
 @base-device-toggle                   : true; // 토글기능
 
-// path
-@base-path                            : '..';
-@base-path-images                     : '@{base-path}/img';
+@base-path                            : '../..';
+@base-path-images                     : '@{base-path}/images/gisafirst';
 @base-path-images-components          : '@{base-path-images}/module';
 @base-path-css                        : '@{base-path}/css';
 @base-path-fonts                      : '@{base-path}/fonts';
 
-// z-index
 @base-z-index-invisible               : -10;
 @base-z-index-contents                : 10;
 @base-z-index-visible                 : 20;
@@ -24,3 +22,30 @@
 @base-z-index-indicator               : 110;
 @base-z-index-modal                   : 120;
 @base-z-index-modal-util              : 130;
+
+// theme 색상
+
+@primary:               #4c80f1; // blue
+@secondary:             #ff8540; // orange
+@info:                  #43c15a; // green
+@warning:               #999;
+@danger:                #ee3440;
+@disabled:              #6a737b;
+
+
+@line-height: 1.4;
+@background-color: #fff;
+@color: #333;
+
+//////////////////////////////
+
+html, body {
+    line-height: @line-height;
+}
+body {
+    background: @background-color;
+}
+body, td, th, font {
+    font-size: 14px;
+    color: @color;
+}

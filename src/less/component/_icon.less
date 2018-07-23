@@ -38,4 +38,91 @@ i em {
 }
 .icon {
     .set-icon();
+    &.open-sale {
+        .set-icon(109px, 27px, 'common/icon_open_sale');
+    }
+    &.notice {
+        .set-icon(28px, 28px, 'common/icon_notice');
+    }
+    &.board-notice {
+        .set-icon(14px, 18px, 'common/icon_bbs_notice');
+    }
+    &.confirm {
+        .set-icon(20px, 20px, 'common/icon_confirm_off');
+        &.in {
+            .img('common/icon_confirm_on');
+        }
+    }
+    &.file {
+        .set-icon(18px, 22px, 'common/icon_file');
+    }
+}
+
+.rates {
+    height: 18px;
+    line-height: 18px;
+    em {
+        &:extend(.sr-only);
+    }
+    strong.rate {
+        display: inline-block;
+        box-sizing: content-box;
+        width: 83px;
+        height: 15px;
+        background: url('../../images/gisafirst/common/rate_star.png');
+        background-size: 83px 90px;
+        background-position: left top;
+        background-repeat: no-no-repeat;
+        vertical-align: middle;
+        &.rate-0-5 {
+            background-position: left 15px;
+        }
+        &.rate-1-5 {
+            background-position: left 30px;
+        }
+        &.rate-2-5 {
+            background-position: left 45px;
+        }
+        &.rate-3-5 {
+            background-position: left 60px;
+        }
+        &.rate-4-5 {
+            background-position: left 75px;
+        }
+    }
+    span {
+        display: inline-block;
+        padding-top: 2px;
+        vertical-align: middle;
+        font-size: 13px;
+        color: #5b5b5b;
+    }
+}
+
+.favorites {
+    .favorite {
+        .set-icon(27px, 26px, 'common/favorite_off');
+    }
+    &.in .favorite {
+        .set-icon(27px, 26px, 'common/favorite_on');
+    }
+}
+
+.won {
+    em {
+        .sr-only();
+    }
+}
+
+i.tag {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    border: solid 1px #ced4da;
+    border-radius: 2px;
+    background: #fff;
+    color: #4d5256;
+    cursor: default;
 }

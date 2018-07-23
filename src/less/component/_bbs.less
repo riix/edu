@@ -1,0 +1,189 @@
+.bbs-list {
+    border-top: solid 2px #495057;
+    border-bottom: solid 1px #e1e4e6;
+    width: 100%;
+    &.is-fixed {
+        table-layout: fixed;
+    }
+    th, td {
+        text-align: center;
+    }
+    thead {
+        th {
+            height: 47px;
+            line-height: 47px;
+            background: #f1f3f5;
+            font-size: 14px;
+            font-weight: normal;
+            color: #383838;
+        }
+    }
+    tbody {
+        tr:hover td {
+            background: rgba(241, 243, 245, .3);
+        }
+        td {
+            vertical-align: middle;
+            height: 49px;
+            border-top: solid 1px #e1e4e6;
+            background: #fff;
+            color: #adb5bd;
+            font-size: 14px;
+            &.subject {
+                color: #495057;
+                .icon {
+                    margin-left: 5px;
+                    vertical-align: middle;
+                }
+                .icon:first-of-type {
+                    margin-left: 5px;
+                }
+                a {
+                    color: #495057;
+                    transition: opacity .2 @base-easing 0s;
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+            &.subject {
+                text-align: left;
+                &.is-summary {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    font-size: 16px;
+                    a {
+                        display: inline-block;
+                    }
+                    p {
+                        .ellipsis();
+                        .light();
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        color: #868e96;
+                        font-size: 14px;
+                    }
+                }
+            }
+            &.status {
+                p {
+                    margin: 0 auto;
+                    padding: 0;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.bbs-write {
+
+}
+
+.bbs-view {
+
+}
+
+.bbs-util {
+    position: relative;
+    .inner {
+        position: absolute;
+        margin-bottom: 8px;
+        bottom: 100%;
+        right: 0;
+    }
+    strong, .select {
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 12px;
+        height: 30px;
+        line-height: 28px;
+    }
+    strong {
+        font-size: 14px;
+        margin-right: 5px;
+        font-weight: normal;
+    }
+}
+
+.bbs-module {
+    margin-top: 20px;
+    .button, .text, .select , .form-wrap{
+        display: inline-block;
+        height: 44px;
+        line-height: 42px;
+        font-size: 15px;
+        vertical-align: top;
+        border-radius: 5px;
+    }
+    .searchs {
+        position: relative;
+        width: 60%;
+        font-size: 0;
+        .select {
+            margin-right: 5px;
+            font-size: 12px;
+        }
+        .text {
+            box-sizing: border-box;
+            width: 220px;
+        }
+    }
+    .action {
+        width: 40%;
+        text-align: right;
+        font-size: 0;
+        .button {
+            font-size: 15px;
+        }
+    }
+}
+
+.bbs-pagination {
+    margin-top: 47px;
+    text-align: center;
+    .wrap {
+        margin: 0 auto;
+        width: auto;
+        display: inline-block;
+        font-size: 0;
+    }
+    a {
+        display: inline-block;
+        margin: 0 4px;
+        vertical-align: middle;
+        font-size: 15px;
+        width: 34px;
+        height: 34px;
+        line-height: 32px;
+        text-align: center;
+        color: #495057;
+        &:hover {
+            color: rgba(73,80,87,0.6);
+        }
+        &.in {
+            border: solid 1px #d5d9dc;
+            border-radius: 34px;
+        }
+        &.nav {
+            .icon();
+            .set-icon(34px, 34px, 'common/pager_next');
+            margin: 0 1px;
+        }
+        &.prev {
+            margin-right: 15px;
+            .img('common/pager_prev');
+        }
+        &.next {
+            margin-left: 15px;
+            .img('common/pager_next');
+        }
+        &.first {
+            .img('common/pager_first');
+        }
+        &.last {
+            .img('common/pager_last');
+        }
+    }
+}

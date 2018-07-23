@@ -1,0 +1,325 @@
+.grid {
+    &.is-not-gutter {
+        .col {
+            margin-top: 20px;
+            &:nth-child(4n+1) {
+                width: 260px;
+            }
+            &:nth-child(4n+2) {
+                width: 270px;
+            }
+            &:nth-child(4n+3) {
+                width: 270px;
+            }
+            &:nth-child(4n+4) {
+                width: 260px;
+            }
+        }
+    }
+    &.is-gutter {
+        .module {
+            margin: 0 10px;
+        }
+        .col {
+            margin-top: 20px;
+            &:nth-child(4n+1) {
+                width: 260px;
+                .module {
+                    margin-left: 0;
+                }
+            }
+            &:nth-child(4n+2) {
+                width: 270px;
+            }
+            &:nth-child(4n+3) {
+                width: 270px;
+            }
+            &:nth-child(4n+4) {
+                width: 260px;
+                .module {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.page-main {
+    .section-visual {
+        .module {
+            position: relative;
+            height: 420px;
+        }
+        .slide-item {
+            background: #fff;
+            background-size: auto 100%;
+            background-size: cover;
+        }
+        .slider-pager {
+            top: 0;
+            left: 50%;
+            margin-left: 311px;
+            text-align: left;
+            width: 219px;
+            ul {
+                padding-top: 54px;
+                width: 168px;
+                display: table;
+            }
+            li {
+                .inner {
+                    position: relative;
+                    height: 72px;
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background: #fff;
+                        transition: width .2s @base-easing 0s;
+                    }
+                }
+                a {
+                    font-size: 14px;
+                    .bold();
+                    color: rgba(0, 0, 0, .5);
+                    transition: all .2s;
+                }
+                p {
+                    position: relative;
+                    margin: 0;
+                    padding: 0 0 0 26px;
+                    strong {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        font-size: 26px;
+                        .light();
+                    }
+                }
+                &.in {
+                    .inner::before {
+                        width: 100%;
+                        transition: width .4s @base-easing 0s;
+                    }
+                    a {
+                        color: rgba(255, 255, 255, 1);
+                    }
+                }
+            }
+        }
+    }
+    .section-news {
+        margin-top: 45px;
+        .promos {
+            position: relative;
+            width: 670px;
+            .module {
+                position: relative;
+                height: 249px;
+            }
+            .slider-pager {
+                left: 0;
+                right: 0;
+                border-top: solid 1px rgba(255, 255, 255, .6);
+                li {
+                    position: relative;
+                    border-right: solid 1px rgba(255, 255, 255, .6);
+                    &::before {
+                        display: block;
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        left: 0;
+                        height: 2px;
+                        background-color: #fff;
+                        overflow: hidden;
+                        margin-top: -1px;
+                        margin-right: -1px;
+                        width: 0;
+                        transition: width .2s @base-easing 0s;
+                    }
+                    a {
+                        padding: 0 25px;
+                        font-size: 14px;
+                        color: #fff;
+                        display: block;
+                        height: 36px;
+                        line-height: 36px;
+                        opacity: .6;
+                    }
+                    &.in {
+                        &::before {
+                            width: 100%;
+                            transition: width .4s @base-easing 0s;
+                        }
+                        a {
+                            color: #fff;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            .is-light {
+        	    .slider-pager {
+                    border-top: solid 1px rgba(100, 100, 100, .6);
+                    li {
+                        border-right: solid 1px rgba(100, 100, 100, .6);
+                        &::before {
+                            background-color: #000;
+                        }
+                        a {
+                            color: #000;
+                        }
+                        &.in {
+                            a {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+        	}
+        }
+        .notices {
+            float: right;
+            width: 340px;
+            .title {
+                margin: 0;
+                padding: 5px 0 0;
+                font-size: 20px;
+                color: #4d5256;
+                .bold();
+                .more {
+                    margin-left: 8px;
+                    span {
+                        font-size: 12px;
+                        color: #4d5256;
+                        .light();
+                    }
+                }
+            }
+            ul {
+                padding-top: 4px;
+            }
+            li {
+                padding: 2px 0;
+                font-size: 14px;
+                color: #4d5256;
+            }
+            .subject {
+                display: block;
+                width: 100%;
+            }
+            .date {
+                font-size: 12px;
+                color: #adb5bd;
+                .light();
+            }
+        }
+    }
+    .section-links {
+        margin-top: 41px;
+        line-height: 1;
+        .module {
+            box-sizing: content-box;
+            border: solid 1px #ced4da;
+            border-left: 0;
+            height: 165px;
+            background: url('../../images/gisafirst/custom/main_link_01.png') right bottom no-repeat;
+            a {
+                display: block;
+                height: 165px;
+            }
+            span {
+                display: block;
+                padding-left: 25px;
+                &.subject {
+                    padding-top: 20px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #4d5256;
+                }
+                &.desc {
+                    padding-top: 6px;
+                    line-height: 1.3;
+                    font-size: 15px;
+                    color: #868e96;
+                }
+            }
+        }
+        .col.nth-child-1 {
+            .module {
+                border-left: solid 1px #ced4da;
+            }
+        }
+        .col.nth-child-2 {
+            .module {
+                background-image: url('../../images/gisafirst/custom/main_link_02.png');
+            }
+        }
+        .col.nth-child-3 {
+            .module {
+                background-image: url('../../images/gisafirst/custom/main_link_03.png');
+            }
+        }
+        .col.nth-child-4 {
+            .module {
+                background-image: url('../../images/gisafirst/custom/main_link_04.png');
+            }
+        }
+    }
+    .section-main-list {
+        margin-top: 41px;
+        line-height: 1;
+        .module {
+            position: relative;
+            box-sizing: content-box;
+            height: 271px;
+            border: solid 1px #ced4da;
+        }
+        .pic {
+            span {
+                display: block;
+                height: 135px;
+            }
+            background: url('../../images/gisafirst/custom/main_list_01.png');
+            background-size: auto 100%;
+            background-size: cover;
+        }
+        .desc {
+            padding-top: 12px;
+            text-align: center;
+            p {
+                margin: 0;
+                padding: 4px 0;
+                line-height: 1.2;
+                text-align: center;
+                font-size: 13px;
+                &.subject {
+                    font-size: 17px;
+                    color: #343a40;
+                }
+                &.time {
+                    color: #adb5bd;
+                }
+                &.who {
+                    padding: 5px;
+                    color: #343a40;
+                }
+            }
+            .rates {
+                margin: 0 auto;
+                padding: 5px 0;
+            }
+        }
+        .action {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 7px;
+        }
+    }
+}

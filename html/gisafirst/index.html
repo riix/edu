@@ -39,7 +39,8 @@
 window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"><\/script>');
 </script>
 <script>
-window.base = (typeof window.base !== 'undefined') ? window.base : {};
+window.params = (typeof window.params !== 'undefined') ? window.params : {};
+window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
 </script>
 <script src="../../js/gisafirst/app-dist.js?ver=1"></script>
 </head>
@@ -55,19 +56,148 @@ window.base = (typeof window.base !== 'undefined') ? window.base : {};
 <div id="container"><!-- container -->
 
     <div id="header"><!-- header -->
+        <h2 class="sr-only">헤더 영역</h2>
         <div class="container upper">
-            <div class="wrap">
-                <img src="../../images/gisafirst/temp/pic_02.png" alt="" />
+            <div class="wrap is-full">
+                <div class="grid">
+                    <div id="topLink" class="col col-1-2 toplinks">
+                        <ul class="tab">
+                            <li><a href="javascript:;"><img src="../../images/gisafirst/common/toplink_01.png" alt="에듀온" /></a></li>
+                            <li><a href="javascript:;"><img src="../../images/gisafirst/common/toplink_02.png" alt="유상통" /></a></li>
+                            <li><a href="javascript:;"><img src="../../images/gisafirst/common/toplink_03.png" alt="기가퍼스트" /></a></li>
+                        </ul>
+                    </div>
+                    <div id="utility" class="col col-1-2 utils">
+                        <ul class="tab">
+                            <li><a href="javascript:;"><span>로그인</span></a></li>
+                            <li><a href="javascript:;"></span>회원가입</span></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container downer">
+        <div id="promo" class="container downer">
             <div class="wrap">
-                <img src="../../images/gisafirst/temp/pic_04.png" alt="" />
+                <a href="javascript:;"><img src="../../images/gisafirst/temp/pic_04.png" alt="" /></a>
             </div>
         </div>
         <div class="container navigation">
             <div class="wrap">
-                <img src="../../images/gisafirst/temp/pic_05.png" alt="" />
+                <div class="grid">
+                    <div id="logo" class="col logo">
+                        <a href="index.html"><img src="../../images/gisafirst/common/logo.png" alt="Home" /></a>
+                    </div>
+                    <div id="navigation" class="col nav">
+                        <ul class="tab d1">
+                            <li class="d1 in">
+                                <a href="javascript:;" class="d1"><span>수강신청</span></a>
+                                <div class="sub-d2">
+                                    <ul class="d2">
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>강좌안내</span></a></li>
+                                        <li class="d2 in">
+                                            <a href="javascript:;" class="d2"><span>정보처리기사/산업기사</span></a>
+                                            <div class="sub-d3">
+                                                <ul class="d3">
+                                                    <li class="d3 in"><a href="javascript:;" class="d3"><span>필기</span></a></li>
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>실기</span></a></li>
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>패키지</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="d2">
+                                            <a href="javascript:;" class="d2"><span>사무자동화산업기사</span></a>
+                                            <div class="sub-d3">
+                                                <ul class="d3">
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>필기</span></a></li>
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>실기</span></a></li>
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>패키지</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="d2">
+                                            <a href="javascript:;" class="d2"><span>컴퓨터활용능력1급</span></a>
+                                            <div class="sub-d3">
+                                                <ul class="d3">
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>필기</span></a></li>
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>실기</span></a></li>
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>패키지</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="d2">
+                                            <a href="javascript:;" class="d2"><span>컴퓨터활용능력2급</span></a>
+                                            <div class="sub-d3">
+                                                <ul class="d3">
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>필기</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="d1">
+                                <a href="teacher_list.html" class="d1"><span>선생님</span></a>
+                                <div class="sub-d2">
+                                    <ul class="d2">
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>선생님</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="d1">
+                                <a href="test_schedule.html" class="d1"><span>시험정보</span></a>
+                                <div class="sub-d2">
+                                    <ul class="d2">
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>시험일정</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>자격증정보</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>컴퓨터자격증 기초정보</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>공무원 가산점정보</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="d1">
+                                <a href="community_notice_list.html" class="d1"><span>커뮤니티</span></a>
+                                <div class="sub-d2">
+                                    <ul class="d2">
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>공지사항</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>이벤트</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>자유게시판</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>합격수기</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>1:1 상담게시판</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="d1">
+                                <a href="review_list.html" class="d1"><span>수강후기</span></a>
+                                <div class="sub-d2">
+                                    <ul class="d2">
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>수강후기</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="d1">
+                                <a href="pds_public_list.html" class="d1"><span>학습자료실</span></a>
+                                <div class="sub-d2">
+                                    <ul class="d2">
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>공개자료실</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>컴활 함수사전</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>컴활상세유형족보집</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>컴활상세복원자료실</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="d1">
+                                <a href="classroom.html" class="d1"><span>내강의실</span></a>
+                                <div class="sub-d2">
+                                    <ul class="d2">
+                                        <li class="d2"><a href="classroom_list.html" class="d2"><span>내강의실 홈</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2"><span>수강관리</span></a></li>
+                                        <li class="d2"><a href="javascript:;" class="d2 external" title="새 창으로"><span>개인정보관리</span></a></li><!-- 새창 -->
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -75,41 +205,454 @@ window.base = (typeof window.base !== 'undefined') ? window.base : {};
 
     <div id="wrapper">
         <div id="inner"><!-- inner -->
-
+            <h2 class="sr-only">본문 영역</h2>
             <div id="content"><!-- content -->
-
-                <div class="container">
-                    <div class="wrap">
-                        <img src="../../images/gisafirst/temp/pic_06.png" alt="" />
+                <div class="container section-visual">
+                    <div id="visualSlider" class="js-slider module">
+                        <div class="slider-wrap">
+                            <div class="slider-inner">
+                                <div class="slider-item" style="background: #254fb5;"><!-- 색상 배경 -->
+                                    <div class="wrap">
+                                        <img src="../../images/gisafirst/temp/pic_06.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="slider-item" style="background: url('../../images/gisafirst/temp/pic_06_03_bg.png');"><!-- 이미지 배경 -->
+                                    <div class="wrap">
+                                        <img src="../../images/gisafirst/temp/pic_06_03.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="slider-item" style="background: #0e7a00;">
+                                    <div class="wrap">
+                                        <img src="../../images/gisafirst/temp/pic_06_02.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="slider-item" style="background: #254fb5;">
+                                    <div class="wrap">
+                                        <img src="../../images/gisafirst/temp/pic_06_04.png" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-pager">
+                                <ul class="table">
+                                    <li class="in">
+                                        <div class="inner">
+                                            <a href="javascript:;">
+                                                <p>
+                                                    <strong>1</strong>
+                                                    정보처리기사/산업기사<br />
+                                                    필기+실기 패키지
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="in">
+                                        <div class="inner">
+                                            <a href="javascript:;">
+                                                <p>
+                                                    <strong>2</strong>
+                                                    정보처리기사/산업기사<br />
+                                                    필기+실기 패키지
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="in">
+                                        <div class="inner">
+                                            <a href="javascript:;">
+                                                <p>
+                                                    <strong>3</strong>
+                                                    정보처리기사/산업기사<br />
+                                                    필기+실기 패키지
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="in">
+                                        <div class="inner">
+                                            <a href="javascript:;">
+                                                <p>
+                                                    <strong>4</strong>
+                                                    정보처리기사/산업기사<br />
+                                                    필기+실기 패키지
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="container">
+                <div class="container section-news">
                     <div class="wrap">
-                        <img src="../../images/gisafirst/temp/pic_08.png" alt="" />
+                        <div class="grid">
+                            <div class="col promos"><!-- slider -->
+                                <div id="newsSlider" class="js-slider module">
+                                    <div class="slider-wrap">
+                                        <div class="slider-inner">
+                                            <div class="slider-item in is-dark">
+                                                <a href="javascript:;"><img src="../../images/gisafirst/temp/pic_08.png" alt="" /></a>
+                                            </div>
+                                            <div class="slider-item is-light"><!-- 밝은 배경일때 -->
+                                                <a href="javascript:;"><img src="../../images/gisafirst/temp/pic_08_02.png" alt="" /></a>
+                                            </div>
+                                            <div class="slider-item is-dark">
+                                                <a href="javascript:;"><img src="../../images/gisafirst/temp/pic_08_03.png" alt="" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slider-pager is-bottom">
+                                        <ul class="tab">
+                                            <li class="in"><a href="javascript:;"><span>정보처리</span></a></li>
+                                            <li><a href="javascript:;"><span>사무자동화</span></a></li>
+                                            <li><a href="javascript:;"><span>컴활1급</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col notices">
+                                <div class="grid">
+                                    <h3 class="title">
+                                        <span>공지사항</span>
+                                        <a href="javascript:;" class="more"><span>더보기 +</span></a>
+                                    </h3>
+                                    <ul class="reset list">
+                                        <li>
+                                            <a href="javascript:;"><span class="subject ellipsis">정보처리기사/산업기사 15일 단기 합격법 정보처리기사/산업기사 15일 단기 합격법 정보처리기사/산업기사 15일 단기 합격법</span></a>
+                                            <span class="date">2018.09.01</span>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"><span class="subject ellipsis">정보처리 실기 2회 대비 업데이트 일정</span></a>
+                                            <span class="date">2018.09.01</span>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"><span class="subject ellipsis">[18년2회] 정보처리산업기사 필기 합격자명단</span></a>
+                                            <span class="date">2018.09.01</span>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"><span class="subject ellipsis">[18년2회대비] 정보처리 실기 암기 프로그램/용어집</span></a>
+                                            <span class="date">2018.09.01</span>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"><span class="subject ellipsis">정보처리기사/산업기사 실기 과목별 합격전략</span></a>
+                                            <span class="date">2018.09.01</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="container">
+                <div class="container section-links">
                     <div class="wrap">
-                        <img src="../../images/gisafirst/temp/pic_10.png" alt="" />
+                        <div class="grid is-not-gutter">
+                            <div class="col col-1-4 nth-child-1">
+                                <div class="module">
+                                    <a href="javascript:;">
+                                        <span class="subject">컴활 상시복원</span>
+                                        <span class="desc">컴활 상시복원<br />학습자료</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-2">
+                                <div class="module">
+                                    <a href="javascript:;">
+                                        <span class="subject">컴활 한수사전</span>
+                                        <span class="desc">컴활 1급,2급<br />엑셀출제 함수</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-3">
+                                <div class="module">
+                                    <a href="javascript:;">
+                                        <span class="subject">유형족보집</span>
+                                        <span class="desc">권우석 컴활1급 실기<br />유형별 족보집</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-4">
+                                <div class="module">
+                                    <a href="javascript:;">
+                                        <span class="subject">자격중 시험일정</span>
+                                        <span class="desc">2017년 컴퓨터자격증<br />시험일정</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="container">
+                <div class="container section-main-list">
                     <div class="wrap">
-                        <img src="../../images/gisafirst/temp/pic_12.png" alt="" />
+                        <div class="grid is-gutter">
+                            <div class="col col-1-4 nth-child-1"><!-- 브라우저 호환성을 위해 클래스를 넣어주시면 좋습니다. 4의 배수, nth-child-1 -->
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_01.png');"><!-- 썸네일 경로 -->
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-1-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites in"><i class="icon favorite"><em>좋아요</em></i></a><!-- in 일 경우 선택됨 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-2">
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_02.png');">
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-2-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites in"><i class="icon favorite"><em>좋아요</em></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-3">
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_03.png');">
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-3-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites"><i class="icon favorite"><em>좋아요</em></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-4">
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_04.png');">
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-4-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites"><i class="icon favorite"><em>좋아요</em></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-1">
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_05.png');">
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-5-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites"><i class="icon favorite"><em>좋아요</em></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-2">
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_06.png');">
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-0-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites"><i class="icon favorite"><em>좋아요</em></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-3">
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_07.png');">
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-5-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites"><i class="icon favorite"><em>좋아요</em></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-4">
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_08.png');">
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-5-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites"><i class="icon favorite"><em>좋아요</em></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-1">
+                                &nbsp;
+                            </div>
+                            <div class="col col-1-4 nth-child-2">
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_09.png');">
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-5-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites"><i class="icon favorite"><em>좋아요</em></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-3">
+                                <div class="module">
+                                    <div class="pic" style="background-image: url('../../images/gisafirst/custom/main_list_10.png');">
+                                        <a href="javascript:;"><span></span></a>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="javascript:;">
+                                            <p class="subject">정보처리 기사/산업기사 실기</p>
+                                            <p class="time">(총 32강 12시간 32분)</p>
+                                            <p class="who">정선선아샘</p>
+                                            <div class="rates">
+                                                <strong class="rate rate-5-5"><em>별 5개 만점의 3개</em></strong>
+                                                <span>(3)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="action">
+                                        <a href="javascript:;" class="js-toggle-this favorites"><i class="icon favorite"><em>좋아요</em></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-1-4 nth-child-4">
+                                &nbsp;
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bottom-spacer" aria-hidden="true"></div>
+                <div class="bottom-spacer" aria-hidden="true"></div><!-- 하단 여백 -->
 
             </div><!-- // content -->
 
             <div id="footer"><!-- footer -->
-                <div class="container">
+                <h2 class="sr-only">풋터 영역</h2>
+                <div class="container quicklaunch">
                     <div class="wrap">
-                        <img src="../../images/gisafirst/temp/pic_14.png" alt="" />
+                        <ul class="tab">
+                            <li><a href="javascript:;"><span>세진에듀소개</span></a></li>
+                            <li><a href="javascript:;"><span>사이트 이용약관</span></a></li>
+                            <li><a href="javascript:;"><span>개인정보취급방침</span></a></li>
+                            <li><a href="javascript:;"><span>이메일무단수집거부</span></a></li>
+                            <li><a href="javascript:;"><span>제휴문의</span></a></li>
+                            <li><a href="javascript:;"><span>강의제작 지원센터</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container copyrights">
+                    <div class="wrap">
+                        <p>
+                            상호명 : (주)세진에듀 SEJIN Edu
+                            <span class="pipe"><em>|</em></span>
+                            대표이사 : 이재헌
+                            <span class="pipe"><em>|</em></span>
+                            개인정보책임자 : 이흥직 (sjedu04@nate.com)
+                        </p>
+                        <p>
+                            사업자등록번호 : 304-81-27235  [사업자 정보확인]
+                            <span class="pipe"><em>|</em></span>
+                            통신판매업신고 : 2014-강원원주-00278호
+                            <span class="pipe"><em>|</em></span>
+                            출판사 신고 : 도서출판 세진에듀 (제2008-1호)
+                        </p>
+                        <p>
+                            소재지 : 서울시 송파구 문정동 법원로 127 , 1309호(문정동 대명벨리온 지식산업센터 1309호)
+                            <span class="pipe"><em>|</em></span>
+                            (대표전화) 1599-9477
+                            <span class="pipe"><em>|</em></span>
+                            FAX : 02-2179-9477
+                        </p>
+                        <p>
+                            기업부설연구소 : 강원도 원주시 시청로 33-1 (무실동, 오천빌딩 5층)
+                            <span class="pipe"><em>|</em></span>
+                            TEL : 070-4047-4117
+                        </p>
                     </div>
                 </div>
             </div><!-- // footer -->
@@ -117,8 +660,41 @@ window.base = (typeof window.base !== 'undefined') ? window.base : {};
         </div><!-- // inner -->
     </div><!-- // wrapper -->
 
-    <div id="stickyNav"><!-- stickyNav -->
-        stickyNav
+    <div id="stickyPromo" class="sticky-promo"><!-- sticky Banner -->
+        <h2 class="sr-only">Sticky Promotion 영역</h2>
+        <div class="holder">
+            <div class="module">
+                <div class="grid">
+                    <a href="javascript:;"><img src="../../images/gisafirst/temp/ban.png" alt=""></a>
+                </div>
+                <div class="grid its-time">
+                    <p class="subject">
+                        D-45
+                    </p>
+                    <p class="desc">
+                        제3회<br />
+                        정보처리기사/<br />
+                        산업기사
+                    </p>
+                    <p class="date">
+                        2018.09.01
+                    </p>
+                </div>
+                <div class="grid its-time">
+                    <p class="subject">
+                        D-75
+                    </p>
+                    <p class="desc">
+                        제3회<br />
+                        정보처리기사/<br />
+                        산업기사
+                    </p>
+                    <p class="date">
+                        2018.09.01
+                    </p>
+                </div>
+            </div>
+        </div>
     </div><!-- // stickyNav -->
 
 </div><!-- // container -->

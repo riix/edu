@@ -57,7 +57,7 @@
                     _el.setAttribute('class', _el.getAttribute('class') + ' ' + _class);
                 }
             },
-            removeCl = removeClass || function(_el, _class) {
+            removeClass = removeClass || function(_el, _class) {
                 if (_el.classList) {
                     _el.classList.remove(_class);
                 } else if (hasClass(_el, _class)) {
