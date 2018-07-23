@@ -1,411 +1,669 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<title>기사퍼스트</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <style type="text/css">
-      html{width:100%;min-height:100%;padding: 0px;margin: 0px;}
-      body{color: #363636;min-height:100%;font-size:12px;font-family:"돋움",arial,Dotum,AppleGothic,sans-serif;line-height:1.2;padding:0;margin:0;-webkit-text-size-adjust:none;background:#f5f5f5;word-wrap: break-word; word-break: keep-all;letter-spacing:0.5;}
+  <title>기사퍼스트</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <style type="text/css">
+    html {
+      width: 100%;
+      min-height: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
 
-      div, p, ol, ul, li, img, a, h1, h2, h3, h4, h5, h6 form, span, iframe, dl, dt, dd, button, span{margin:0px;padding:0px;border:0;}
-      ul, ol, li{list-style:none;}
-      button, span, label{display:inline-block;background:none;border:0;}
-      table, th, td{border-collapse:collapse;margin:0;padding:0;}
-      table caption{display:none;}
-      select, input, textarea{font-family:dotum,AppleGothic,sans-serif;color:#363636;padding:0;margin:0;}
-      textarea, iframe{font-size:12px;font-family:dotum,AppleGothic,sans-serif;color:#363636;outline-style:none;}
-      input, select{outline-style:none;outline:none;background:#fff;color:#363636;}
-      fieldset{border:0;margin:0;padding:0;}
-      legend{display:none;}
-      a:link, a:visited, a:active{color:#6c6c6c;text-decoration:none;padding:0;/*outline-style:none;*/}
-      a:hover{color:#6c6c6c;text-decoration:underline;}
-      img{border:0;margin:0;}
+    body {
+      color: #363636;
+      min-height: 100%;
+      font-size: 12px;
+      font-family: "돋움", arial, Dotum, AppleGothic, sans-serif;
+      line-height: 1.2;
+      padding: 0;
+      margin: 0;
+      -webkit-text-size-adjust: none;
+      background: #f5f5f5;
+      word-wrap: break-word;
+      word-break: keep-all;
+      letter-spacing: 0.5;
+    }
 
-      .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;margin:0;padding:0;}
-      .clearfix{display:inline-block;}
+    div,
+    p,
+    ol,
+    ul,
+    li,
+    img,
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 form,
+    span,
+    iframe,
+    dl,
+    dt,
+    dd,
+    button,
+    span {
+      margin: 0px;
+      padding: 0px;
+      border: 0;
+    }
 
-      /* Hides from IE-mac \*/
-      * html .clearfix{height:1%;}
-      .clearfix{display: block;}
-      /* End hide from IE-mac */
+    ul,
+    ol,
+    li {
+      list-style: none;
+    }
 
-      body{background:#fff;}
-      #wrap{width:98%;margin:10px auto;padding-bottom:50px;}
-      .tit{width:100%;padding:20px 0 10px;overflow:hidden;}
-      .tit h1{font-size:22px;padding:0;float:left;}
-      .tit p{padding:10px 10px 0 0;float:right;}
-      .tit p .date{font-size:14px;font-weight:bold;color:red;}
+    button,
+    span,
+    label {
+      display: inline-block;
+      background: none;
+      border: 0;
+    }
 
-      table.list{width:100%;}
-      table.list th{background:#000;color:#fff;}
-      table.list th, table.list td{border:1px solid #ccc;padding:4px 7px;}
-      table.list td{color:#555;}
-      table.list tbody .hover td{background:#FFFFC0;}
-      table.list td a {color:blue;text-decoration:underline;}
-      table.list td:first-child{text-align:right;}/* number */
-      table.list td:nth-child(2){font-weight:bold;}/* 1depth */
-      table.list tr:nth-child(even){background:#f1f1f1;}
-      table.list tr.cut td{border-top:2px solid #999;}
-      table.list tr.del td,
-      table.list tr.del td *{color:#999 !important;}
-      table.list tr.del td{text-decoration:line-through;}
-      table.list tr.del td:first-child{text-decoration:none;font-size:11px;}
-      table.list tr.del td.bigo{text-decoration:none;}
-      table.list tr.disabled td,
-      table.list tr.disabled td * { color: #999 !important; }
+    table,
+    th,
+    td {
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+    }
 
-      .type{text-align:center;}
-      .html{color:#666 !important;}
-      .bbs{color:#00cc00 !important;}
-      .pgm{color:#cc0000 !important;}
-      .link{color:#0000cc !important;}
+    table caption {
+      display: none;
+    }
 
-      .date{text-align:center;}
-      .last{background:#F63 !important;color:#fff !important;}
-      .nowork{background:#666 !important;color:#fff !important;}
-      .rate{text-align:right;}
-      .bigo{font-size:11px;}
-      .red{color:red;}
+    select,
+    input,
+    textarea {
+      font-family: dotum, AppleGothic, sans-serif;
+      color: #363636;
+      padding: 0;
+      margin: 0;
+    }
 
-      .menu{width:99%;background:#000;position:fixed;bottom:0;left:0;}
-      .menu li{float:right;}
-      .menu li a{display:inline-block;padding:5px 10px;color:#fff;}
-    </style>
-    <script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous"></script>
+    textarea,
+    iframe {
+      font-size: 12px;
+      font-family: dotum, AppleGothic, sans-serif;
+      color: #363636;
+      outline-style: none;
+    }
+
+    input,
+    select {
+      outline-style: none;
+      outline: none;
+      background: #fff;
+      color: #363636;
+    }
+
+    fieldset {
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    legend {
+      display: none;
+    }
+
+    a:link,
+    a:visited,
+    a:active {
+      color: #6c6c6c;
+      text-decoration: none;
+      padding: 0;
+      /*outline-style:none;*/
+    }
+
+    a:hover {
+      color: #6c6c6c;
+      text-decoration: underline;
+    }
+
+    img {
+      border: 0;
+      margin: 0;
+    }
+
+    .clearfix:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .clearfix {
+      display: inline-block;
+    }
+
+    /* Hides from IE-mac \*/
+
+    * html .clearfix {
+      height: 1%;
+    }
+
+    .clearfix {
+      display: block;
+    }
+
+    /* End hide from IE-mac */
+
+    body {
+      background: #fff;
+    }
+
+    #wrap {
+      width: 98%;
+      margin: 10px auto;
+      padding-bottom: 50px;
+    }
+
+    .tit {
+      width: 100%;
+      padding: 20px 0 10px;
+      overflow: hidden;
+    }
+
+    .tit h1 {
+      font-size: 22px;
+      padding: 0;
+      float: left;
+    }
+
+    .tit p {
+      padding: 10px 10px 0 0;
+      float: right;
+    }
+
+    .tit p .date {
+      font-size: 14px;
+      font-weight: bold;
+      color: red;
+    }
+
+    table.list {
+      width: 100%;
+    }
+
+    table.list th {
+      background: #000;
+      color: #fff;
+    }
+
+    table.list th,
+    table.list td {
+      border: 1px solid #ccc;
+      padding: 4px 7px;
+    }
+
+    table.list td {
+      color: #555;
+    }
+
+    table.list tbody .hover td {
+      background: #FFFFC0;
+    }
+
+    table.list td a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    table.list td:first-child {
+      text-align: right;
+    }
+
+    /* number */
+
+    table.list td:nth-child(2) {
+      font-weight: bold;
+    }
+
+    /* 1depth */
+
+    table.list tr:nth-child(even) {
+      background: #f1f1f1;
+    }
+
+    table.list tr.cut td {
+      border-top: 2px solid #999;
+    }
+
+    table.list tr.del td,
+    table.list tr.del td * {
+      color: #999 !important;
+    }
+
+    table.list tr.del td {
+      text-decoration: line-through;
+    }
+
+    table.list tr.del td:first-child {
+      text-decoration: none;
+      font-size: 11px;
+    }
+
+    table.list tr.del td.bigo {
+      text-decoration: none;
+    }
+
+    table.list tr.disabled td,
+    table.list tr.disabled td * {
+      color: #999 !important;
+    }
+
+    .type {
+      text-align: center;
+    }
+
+    .html {
+      color: #666 !important;
+    }
+
+    .bbs {
+      color: #00cc00 !important;
+    }
+
+    .pgm {
+      color: #cc0000 !important;
+    }
+
+    .link {
+      color: #0000cc !important;
+    }
+
+    .date {
+      text-align: center;
+    }
+
+    .last {
+      background: #F63 !important;
+      color: #fff !important;
+    }
+
+    .nowork {
+      background: #666 !important;
+      color: #fff !important;
+    }
+
+    .rate {
+      text-align: right;
+    }
+
+    .bigo {
+      font-size: 11px;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .menu {
+      width: 99%;
+      background: #000;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    .menu li {
+      float: right;
+    }
+
+    .menu li a {
+      display: inline-block;
+      padding: 5px 10px;
+      color: #fff;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 </head>
+
 <body>
-	<div id="wrap">
-		<ul class="menu">
-			<li style="padding-left:30px;"><a href="#"><strong>Top</strong></a></li>
-			<li><a href="#layout">레이아웃</a></li>
-			<li><a href="#main">메인</a></li>
-			<li><a href="#login">로그인</a></li>
-		</ul>
+  <div id="wrap">
+    <ul class="menu">
+      <li style="padding-left:30px;"><a href="#"><strong>Top</strong></a></li>
+      <li><a href="#layout">레이아웃</a></li>
+      <li><a href="#main">메인</a></li>
+      <li><a href="#login">로그인</a></li>
+    </ul>
 
-		<div class="tit">
-			<h1>2018 기사퍼스트 목록</h1>
-			<p>
-				<span class="date">2018-07-21</span>
-				<span id="rate"></span><br />
-				<!-- <span>※ 변경내용은 각 페이지 소스 상단의 주석 확인</span> -->
-			</p>
-		</div>
+    <div class="tit">
+      <h1>2018 기사퍼스트 목록</h1>
+      <p>
+        <span class="date">2018-07-21</span>
+        <span id="rate"></span><br />
+        <!-- <span>※ 변경내용은 각 페이지 소스 상단의 주석 확인</span> -->
+      </p>
+    </div>
 
-		<table class="list">
-			<colgroup>
-				<col width="20px" />
-				<col width="150px" />
-				<col width="" />
-				<col width="" />
-				<col width="" />
-				<col width="" />
-				<col width="" />
-				<col width="" />
-				<col width="100px" />
-				<col width="35px" />
-				<col width="" />
-			</colgroup>
-			<thead>
-				<tr>
-					<th>No</th>
-					<th>1depth</th>
-					<th>2depth</th>
-					<th>3depth</th>
-					<th>TAB</th>
-					<th>etc</th>
-					<th>directory</th>
-					<th>html</th>
-					<th>date</th>
-					<th>%</th>
-					<th>비고</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr id="main" class="cut">
-					<td></td>
-					<td>메인</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/index.html" target="_blank">index</a></td>
-					<td class="date">2018.07.21</td>
-					<td class="rate">100</td>
-					<td class="bigo">
-						완료
-					</td>
-				</tr>
-                <tr id="" class="cut">
-                    <td></td>
-                    <td>수강신청</td>
-                    <td>강의상세</td>
-                    <td>단과</td>
-                    <td></td>
-                    <td></td>
-                    <td>html</td>
-                    <td><a href="./html/gisafirst/lecture_item.html" target="_blank">lecture_item</a></td>
-                    <td class="date">2018.07</td>
-                    <td class="rate">0</td>
-                    <td class="bigo">
-                    </td>
-                </tr>
-                <tr id="">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>패키지</td>
-                    <td></td>
-                    <td></td>
-                    <td>html</td>
-                    <td><a href="./html/gisafirst/lecture_package.html" target="_blank">lecture_package</a></td>
-                    <td class="date">2018.07</td>
-                    <td class="rate">0</td>
-                    <td class="bigo">
-                    </td>
-                </tr>
-                <tr id="" class="cut">
-                    <td></td>
-                    <td>선생님</td>
-                    <td>강사소개</td>
-                    <td>권우석</td>
-                    <td></td>
-                    <td></td>
-                    <td>html</td>
-                    <td><a href="./html/gisafirst/" target="_blank">teacher_list</a></td>
-                    <td class="date">2018.07</td>
-                    <td class="rate">0</td>
-                    <td class="bigo">
-                    </td>
-                </tr>
-                <tr id="" class="cut">
-                    <td></td>
-                    <td>시험정보</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>html</td>
-                    <td><a href="./html/gisafirst/test_list.html" target="_blank">test_list</a></td>
-                    <td class="date">2018.07</td>
-                    <td class="rate">0</td>
-                    <td class="bigo">
-                    </td>
-                </tr>
-                <tr id="" class="cut">
-					<td></td>
-					<td>커뮤니티</td>
-					<td>공지사항(일반게시판)</td>
-					<td>목록</td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/community_notice_list.html" target="_blank">community_notice_list</a></td>
-					<td class="date">2018.07.23</td>
-					<td class="rate">100</td>
-					<td class="bigo">
-						&nbsp;
-					</td>
-				</tr>
-                <tr id="">
-                    <td></td>
-					<td></td>
-					<td></td>
-					<td>쓰기</td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/community_notice_write.html" target="_blank">community_notice_write</a></td>
-					<td class="date">2018.07.23</td>
-					<td class="rate">0</td>
-					<td class="bigo">
-						&nbsp;
-					</td>
-                </tr>
-                <tr id="">
-                    <td></td>
-					<td></td>
-					<td></td>
-					<td>보기</td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/community_notice_view.html" target="_blank">community_notice_view</a></td>
-					<td class="date">2018.07.23</td>
-					<td class="rate">0</td>
-					<td class="bigo">
-						&nbsp;
-					</td>
-                </tr>
-                <tr id="" class="cut">
-					<td></td>
-					<td>수강후기</td>
-					<td>수강후기</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/review_list.html" target="_blank">review_list</a></td>
-					<td class="date">2018.07.23</td>
-					<td class="rate">100</td>
-					<td class="bigo">
-						&nbsp;
-					</td>
-				</tr>
-                <tr id="" class="cut">
-					<td></td>
-					<td>학습자료실</td>
-					<td>공개자료실</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/pds_public_list.html" target="_blank">pds_public_list</a></td>
-					<td class="date">2018.07.23</td>
-					<td class="rate">100</td>
-					<td class="bigo">
-						&nbsp;
-					</td>
-				</tr>
-                <tr id="" class="cut">
-					<td></td>
-					<td>내강의실</td>
-					<td>내강의실 홈</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/classroom.html" target="_blank">classroom</a></td>
-					<td class="date">2018.07.20</td>
-					<td class="rate">100</td>
-					<td class="bigo">
-						&nbsp;
-					</td>
-				</tr>
-                <tr id="">
-					<td></td>
-					<td></td>
-					<td>강의목차</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/classroom_list.html" target="_blank">classroom_list</a></td>
-					<td class="date">2018.07.20</td>
-					<td class="rate">100</td>
-					<td class="bigo">
-						&nbsp;
-					</td>
-				</tr>
-                <tr id="">
-					<td></td>
-					<td></td>
-					<td>학습공지사항</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/classroom_notice_list.html" target="_blank">classroom_notice_list</a></td>
-					<td class="date">2018.07.23</td>
-					<td class="rate">100</td>
-					<td class="bigo">
-						&nbsp;
-					</td>
-				</tr>
-                <tr id="">
-					<td></td>
-					<td></td>
-					<td>학습질문답변</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>html</td>
-					<td><a href="./html/gisafirst/classroom_qna_list.html" target="_blank">classroom_qna_list</a></td>
-					<td class="date">2018.07.23</td>
-					<td class="rate">100</td>
-					<td class="bigo">
-						&nbsp;
-					</td>
-				</tr>
-                <tr id="" class="cut">
-                    <td></td>
-                    <td>결제</td>
-                    <td>주문결제</td>
-                    <td>주문결제</td>
-                    <td></td>
-                    <td></td>
-                    <td>html</td>
-                    <td><a href="./html/gisafirst/order.html" target="_blank">order</a></td>
-                    <td class="date">2018.07.21</td>
-                    <td class="rate">90</td>
-                    <td class="bigo">
-                        개인정보~ 주의사항 작업 예정<br />
-                        체크박스/라디오버튼은<br />
-                        css 적용 예정
-                    </td>
-                </tr>
-                <tr id="">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>결제완료</td>
-                    <td></td>
-                    <td></td>
-                    <td>html</td>
-                    <td><a href="./html/gisafirst/order_ok.html" target="_blank">order_ok</a></td>
-                    <td class="date">2018.07.22</td>
-                    <td class="rate">100</td>
-                    <td class="bigo">
-                        완료
-                    </td>
-                </tr>
-			</tbody>
-		</table>
-</div>
+    <table class="list">
+      <colgroup>
+        <col width="20px" />
+        <col width="150px" />
+        <col width="" />
+        <col width="" />
+        <col width="" />
+        <col width="" />
+        <col width="" />
+        <col width="" />
+        <col width="100px" />
+        <col width="35px" />
+        <col width="" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>1depth</th>
+          <th>2depth</th>
+          <th>3depth</th>
+          <th>TAB</th>
+          <th>etc</th>
+          <th>directory</th>
+          <th>html</th>
+          <th>date</th>
+          <th>%</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="main" class="cut">
+          <td></td>
+          <td>메인</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>main</td>
+          <td><a href="./html/gisafirst/main/index.html" target="_blank">index</a></td>
+          <td class="date">2018.07.21</td>
+          <td class="rate">100</td>
+          <td class="bigo">
+            완료
+          </td>
+        </tr>
+        <tr id="" class="cut">
+          <td></td>
+          <td>수강신청</td>
+          <td>강의상세</td>
+          <td>단과</td>
+          <td></td>
+          <td></td>
+          <td>lecture</td>
+          <td><a href="./html/gisafirst/lecture/lecture_item.html" target="_blank">lecture_item</a></td>
+          <td class="date">2018.07</td>
+          <td class="rate">0</td>
+          <td class="bigo">
+          </td>
+        </tr>
+        <tr id="">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>패키지</td>
+          <td></td>
+          <td></td>
+          <td>html</td>
+          <td><a href="./html/gisafirst/lecture/lecture_package.html" target="_blank">lecture_package</a></td>
+          <td class="date">2018.07</td>
+          <td class="rate">0</td>
+          <td class="bigo">
+          </td>
+        </tr>
+        <tr id="" class="cut">
+          <td></td>
+          <td>선생님</td>
+          <td>강사소개</td>
+          <td>권우석</td>
+          <td></td>
+          <td></td>
+          <td>teacher</td>
+          <td><a href="./html/gisafirst/teacher/teacher_list.html" target="_blank">teacher_list</a></td>
+          <td class="date">2018.07</td>
+          <td class="rate">0</td>
+          <td class="bigo">
+          </td>
+        </tr>
+        <tr id="" class="cut">
+          <td></td>
+          <td>시험정보</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>test</td>
+          <td><a href="./html/gisafirst/test/test_schedule.html" target="_blank">test_list</a></td>
+          <td class="date">2018.07</td>
+          <td class="rate">0</td>
+          <td class="bigo">
+          </td>
+        </tr>
+        <tr id="" class="cut">
+          <td></td>
+          <td>커뮤니티</td>
+          <td>공지사항(일반게시판)</td>
+          <td>목록</td>
+          <td></td>
+          <td></td>
+          <td>community</td>
+          <td><a href="./html/gisafirst/community/community_notice_list.html" target="_blank">community_notice_list</a></td>
+          <td class="date">2018.07.23</td>
+          <td class="rate">100</td>
+          <td class="bigo">
+            &nbsp;
+          </td>
+        </tr>
+        <tr id="">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>쓰기</td>
+          <td></td>
+          <td></td>
+          <td>community</td>
+          <td><a href="./html/gisafirst/community/community_notice_write.html" target="_blank">community_notice_write</a></td>
+          <td class="date">2018.07.23</td>
+          <td class="rate">0</td>
+          <td class="bigo">
+            &nbsp;
+          </td>
+        </tr>
+        <tr id="">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>보기</td>
+          <td></td>
+          <td></td>
+          <td>community</td>
+          <td><a href="./html/gisafirst/community/community_notice_view.html" target="_blank">community_notice_view</a></td>
+          <td class="date">2018.07.23</td>
+          <td class="rate">0</td>
+          <td class="bigo">
+            &nbsp;
+          </td>
+        </tr>
+        <tr id="" class="cut">
+          <td></td>
+          <td>수강후기</td>
+          <td>수강후기</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>review</td>
+          <td><a href="./html/gisafirst/review/review_list.html" target="_blank">review_list</a></td>
+          <td class="date">2018.07.23</td>
+          <td class="rate">100</td>
+          <td class="bigo">
+            &nbsp;
+          </td>
+        </tr>
+        <tr id="" class="cut">
+          <td></td>
+          <td>학습자료실</td>
+          <td>공개자료실</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>pds</td>
+          <td><a href="./html/gisafirst/pds/pds_public_list.html" target="_blank">pds_public_list</a></td>
+          <td class="date">2018.07.23</td>
+          <td class="rate">100</td>
+          <td class="bigo">
+            &nbsp;
+          </td>
+        </tr>
+        <tr id="" class="cut">
+          <td></td>
+          <td>내강의실</td>
+          <td>내강의실 홈</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>classroom</td>
+          <td><a href="./html/gisafirst/classroom/classroom.html" target="_blank">classroom</a></td>
+          <td class="date">2018.07.20</td>
+          <td class="rate">100</td>
+          <td class="bigo">
+            &nbsp;
+          </td>
+        </tr>
+        <tr id="">
+          <td></td>
+          <td></td>
+          <td>강의목차</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>classroom</td>
+          <td><a href="./html/gisafirst/classroom/classroom_list.html" target="_blank">classroom_list</a></td>
+          <td class="date">2018.07.20</td>
+          <td class="rate">100</td>
+          <td class="bigo">
+            &nbsp;
+          </td>
+        </tr>
+        <tr id="">
+          <td></td>
+          <td></td>
+          <td>학습공지사항</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>classroom</td>
+          <td><a href="./html/gisafirst/classroom/classroom_notice_list.html" target="_blank">classroom_notice_list</a></td>
+          <td class="date">2018.07.23</td>
+          <td class="rate">100</td>
+          <td class="bigo">
+            &nbsp;
+          </td>
+        </tr>
+        <tr id="">
+          <td></td>
+          <td></td>
+          <td>학습질문답변</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>classroom</td>
+          <td><a href="./html/gisafirst/classroom/classroom_qna_list.html" target="_blank">classroom_qna_list</a></td>
+          <td class="date">2018.07.23</td>
+          <td class="rate">100</td>
+          <td class="bigo">
+            &nbsp;
+          </td>
+        </tr>
+        <tr id="" class="cut">
+          <td></td>
+          <td>결제</td>
+          <td>주문결제</td>
+          <td>주문결제</td>
+          <td></td>
+          <td></td>
+          <td>order</td>
+          <td><a href="./html/gisafirst/order/order.html" target="_blank">order</a></td>
+          <td class="date">2018.07.21</td>
+          <td class="rate">90</td>
+          <td class="bigo">
+            개인정보~ 주의사항 작업 예정<br /> 체크박스/라디오버튼은
+            <br /> css 적용 예정
+          </td>
+        </tr>
+        <tr id="">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>결제완료</td>
+          <td></td>
+          <td></td>
+          <td>order</td>
+          <td><a href="./html/gisafirst/order/order_ok.html" target="_blank">order_ok</a></td>
+          <td class="date">2018.07.22</td>
+          <td class="rate">100</td>
+          <td class="bigo">
+            완료
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<p>
-    gnb 새창 아이콘 추가 예정<br />
-    aside 새창 아이콘 추가 예정
-</p>
-<script type="text/javascript">
-//<![CDATA[
+  <p>
+    gnb 새창 아이콘 추가 예정<br /> aside 새창 아이콘 추가 예정
+  </p>
+  <script type="text/javascript">
+    //<![CDATA[
     //테이블 tr over효과
     $(document).ready(function() {
-        $("tbody tr").hover(
-            function() { $(this).addClass("hover"); },
-            function() { $(this).removeClass("hover"); }
-        );
+      $("tbody tr").hover(
+        function() {
+          $(this).addClass("hover");
+        },
+        function() {
+          $(this).removeClass("hover");
+        }
+      );
 
-        var tot = 0, remain = 0, rate = 0;
-        $("tbody tr:not(.del)").each(function(index){
-            $("td:first-child", this).text(index+1);
+      var tot = 0,
+        remain = 0,
+        rate = 0;
+      $("tbody tr:not(.del)").each(function(index) {
+        $("td:first-child", this).text(index + 1);
 
-            tot++;
-            if(!$.isNumeric($("td.rate", this).text()) || parseInt($("td.rate", this).text()) == 0){
-                remain++;
-                $(this).css("color","red");
-            }else{
-                rate += parseInt($("td.rate", this).text());
-            }
-        });
-        $("tbody tr.del td:first-child").text("삭제");
-        $tr = $("tbody tr:not(.del)");
-        $("#rate").html("( 총:"+tot+"p / 잔여:"+remain+"p / 진행:"+parseInt(rate*100/tot)/100+"% )");
+        tot++;
+        if (!$.isNumeric($("td.rate", this).text()) || parseInt($("td.rate", this).text()) == 0) {
+          remain++;
+          $(this).css("color", "red");
+        } else {
+          rate += parseInt($("td.rate", this).text());
+        }
+      });
+      $("tbody tr.del td:first-child").text("삭제");
+      $tr = $("tbody tr:not(.del)");
+      $("#rate").html("( 총:" + tot + "p / 잔여:" + remain + "p / 진행:" + parseInt(rate * 100 / tot) / 100 + "% )");
 
 
-        $('td.rate').each(function(){
-            var _rate = $(this).text() * 1;
-            if (_rate < 1) {
-                $(this).closest('tr').addClass('disabled').find('a').removeAttr('href');
-            }
-        })
+      $('td.rate').each(function() {
+        var _rate = $(this).text() * 1;
+        if (_rate < 1) {
+          $(this).closest('tr').addClass('disabled').find('a').removeAttr('href');
+        }
+      })
     });
     //'table tr:gt(0) 0보다 큰것만 마우스 오버 효과가 나타남
-//]]>
-</script>
+    //]]>
+  </script>
 </body>
+
 </html>
