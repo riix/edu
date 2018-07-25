@@ -45,7 +45,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
 <script src="../../../js/gisafirst/app-dist.js?ver=1"></script>
 </head>
 
-<body class="page-order"><!-- 페이지별 클래스 -->
+<body class="page-community"><!-- 페이지별 클래스 -->
 
 <div id="skipToContent">
     <a href="#content">
@@ -218,107 +218,120 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                     </div>
                 </div><!-- // breadcrumbs -->
 
-                <div id="innerContent" class="container"><!-- inner content -->
+                <div id="innerContainer" class="container"><!-- innerContainer -->
                     <div class="wrap">
 
-                        <h3 class="subtitle is-underline">
-                            <span>주문/결제</span>
-                        </h3>
+                        <div id="aside" class="col"><!-- aside -->
+                            <h3 class="title is-underline">
+                                <span>커뮤니티</span>
+                            </h3>
+                            <ul id="lnb" class="d1">
+                                <li class="d1 in">
+                                    <a href="javascript:;" class="d1"><span>공지사항&amp;이벤트</span></a>
+                                </li>
+                                <li class="d1">
+                                    <a href="javascript:;" class="d1"><span>자유게시판</span></a>
+                                </li>
+                                <li class="d1">
+                                    <a href="javascript:;" class="d1"><span>합격수기</span></a>
+                                </li>
+                            </ul>
+                        </div><!-- // aside -->
 
-                        <div class="js-sticky-start grid section-order-ok" data-sticky-margin="-2"><!-- section-order-list, js-sticky-start 는 sticky 시작점 설정 -->
+                        <div id="innerContent" class="col"><!-- innerContent -->
 
-                            <div class="inner-wrap"><!-- inner wrap -->
+                            <h4 class="title is-underline">
+                                <span>공지사항&amp;이벤트</span>
+                            </h4>
 
-                                <div class="messages primary">
-                                    <div class="holder">
-                                        <p class="subject">
-                                            축하합니다!
-                                        </p>
-                                        <p class="description">
-                                            신청하신 과정이 성공적으로 등록되었습니다.
-                                        </p>
-                                    </div>
-                                </div>
+                            <div class="js-sticky-start section-community" data-sticky-margin="-2"><!-- classroom -->
 
-                                <div class="action text-center mt-20">
-                                    <a href="javascript:;" class="button xlarge"><span>강좌로 이동</span></a>
-                                </div>
+                                <div class="community-notice"><!-- classroom notice -->
 
-                                <h4 class="subtitle">
-                                    <span>신청내역 확인</span>
-                                </h4>
+                                    <div class="bbs-write"><!-- bbs-write -->
+                                        <div class="grid field-wrap">
+                                            <div class="col subjects">
+                                                <strong>제목</strong>
+                                            </div>
+                                            <div class="col fields">
+                                                <div class="item">
+                                                    <input type="text" class="text" placeholder="제목을 입력해주세요" value="제목입니다." maxlength="30" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid field-wrap">
+                                            <div class="col subjects">
+                                                <strong>첨부</strong>
+                                            </div>
+                                            <div class="col fields">
+                                                <div class="item">
+                                                    <input type="file" class="file" />
+                                                </div>
+                                                <div class="item">
+                                                    <input type="file" class="file" />
+                                                </div>
+                                                <div class="item deletes">
+                                                    <a href="#!" class="button"><span>모두삭제</span></a>
+                                                </div>
+                                                <div class="item selects"><!-- selects -->
+                                                    <div class="inner">
+                                                        <div class="grid options">
+                                                            <a href="#!" class="remove"><i class="icon delete"><em>삭제</em></i></a>
+                                                            <span class="file"><img src="../../../images/gisafirst/common/file_ppt.png" alt="ppt" /></span>
+                                                            <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
+                                                            <span class="size">2.05MB</span>
+                                                        </div>
+                                                        <div class="grid options">
+                                                            <a href="#!" class="remove"><i class="icon delete"><em>삭제</em></i></a>
+                                                            <span class="file"><img src="../../../images/gisafirst/common/file_doc.png" alt="doc" /></span>
+                                                            <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
+                                                            <span class="size">2.05MB</span>
+                                                        </div>
+                                                        <div class="grid options">
+                                                            <a href="#!" class="remove"><i class="icon delete"><em>삭제</em></i></a>
+                                                            <span class="file"><img src="../../../images/gisafirst/common/file_xls.png" alt="xls" /></span>
+                                                            <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
+                                                            <span class="size">2.05MB</span>
+                                                        </div>
+                                                        <div class="grid options">
+                                                            <a href="#!" class="remove"><i class="icon delete"><em>삭제</em></i></a>
+                                                            <span class="file"><img src="../../../images/gisafirst/common/file_ppt.png" alt="ppt" /></span>
+                                                            <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
+                                                            <span class="size">2.05MB</span>
+                                                        </div>
+                                                        <div class="grid options">
+                                                            <a href="#!" class="remove"><i class="icon delete"><em>삭제</em></i></a>
+                                                            <span class="file"><img src="../../../images/gisafirst/common/file_ppt.png" alt="ppt" /></span>
+                                                            <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
+                                                            <span class="size">2.05MB</span>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- // selects -->
+                                            </div>
+                                        </div>
+                                        <div class="grid editor-wrap">
+                                            <textarea class="textarea" style="height: 210px;"></textarea>
+                                        </div>
+                                    </div><!-- // bbs-write -->
 
-                                <table cellspacing="0" class="is-row">
-                                    <colgroup>
-                                        <col style="width: 125px;" />
-                                        <col style="width: auto;" />
-                                    </colgroup>
-                                    <tbody>
-                                        <tr>
-                                            <th><span>강의</span></th>
-                                            <td class="dark">
-                                                <p class="reset">
-                                                    유상통 컴퓨터일반 정규이론
-                                                </p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><span>교재</span></th>
-                                            <td class="dark">
-                                                <p class="reset">
-                                                    유상통 컴퓨터일반
-                                                </p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><span>교재 수령인</span></th>
-                                            <td>
-                                                <p class="reset">
-                                                    심은하
-                                                </p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><span>교재 배송지</span></th>
-                                            <td>
-                                                <p class="reset">
-                                                    (100-195) 서울 중구 을지로5가 273-4 수도BD 1405호
-                                                </p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><span>연락처</span></th>
-                                            <td>
-                                                <p class="reset">
-                                                    휴대전화 : 010-5499-2063
-                                                    자택 : 02-647-1102
-                                                </p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><span>배송 메시지</span></th>
-                                            <td>
-                                                <p class="reset mt-5 mb-5">
-                                                    회원탈퇴시 또는 위탁계약 종료시까지<br />
-                                                    회원탈퇴시 또는 위탁계약 종료시까지<br />
-                                                    회원탈퇴시 또는 위탁계약 종료시까지<br />
-                                                    회원탈퇴시 또는 위탁계약 종료시까지
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    <div class="bbs-module grid"><!-- bbs-module -->
+                                        <div class="col action">
+                                            <a href="community_notice_write.html" class="button write large"><span>취소</span></a>
+                                            <a href="community_notice_write.html" class="button write large primary"><span>작성완료</span></a>
+                                        </div>
+                                    </div><!-- // bbs-module -->
 
-                            </div><!-- // inner wrap -->
+                                </div><!-- // notice -->
 
-                        </div><!-- // section-order-ok -->
+                            </div><!-- // classroom notice -->
 
-                        <div class="bottom-spacer" aria-hidden="true"></div><!-- 하단 여백 -->
+                            <div class="bottom-spacer" aria-hidden="true"></div><!-- 하단 여백 -->
 
-
+                        </div><!-- // innerContent -->
 
                     </div>
-                </div><!-- // inner content -->
+                </div><!-- // innerContainer -->
+
 
             </div><!-- // content -->
 

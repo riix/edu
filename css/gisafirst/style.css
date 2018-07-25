@@ -2179,6 +2179,12 @@ a:hover .icon.has-hover {
   height: 22px;
   background-size: 18px 22px;
 }
+.icon.download {
+  background-image: url('../../images/gisafirst/common/icon_download.png');
+  width: 13px;
+  height: 18px;
+  background-size: 13px 18px;
+}
 .rates {
   height: 18px;
   line-height: 18px;
@@ -2497,6 +2503,411 @@ ul.tab > li {
   padding: 0;
   font-size: 12px;
 }
+.bbs-write {
+  margin-top: 25px;
+}
+.bbs-write .field-wrap {
+  margin-top: 9px;
+}
+.bbs-write .field-wrap:first-of-type {
+  margin-top: 0;
+}
+.bbs-write .field-wrap .subjects {
+  width: 68px;
+  height: 40px;
+}
+.bbs-write .field-wrap .subjects strong {
+  display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #383838;
+  text-indent: 13px;
+}
+.bbs-write .field-wrap .fields {
+  width: 810px;
+}
+.bbs-write .field-wrap .fields .item {
+  margin-top: 9px;
+  min-height: 40px;
+  border-bottom: solid 1px #dee2e6;
+}
+.bbs-write .field-wrap .fields .item:first-of-type {
+  margin-top: 0;
+}
+.bbs-write .field-wrap .fields input.text,
+.bbs-write .field-wrap .fields input.file {
+  width: 810px;
+  border: 0;
+  vertical-align: bottom;
+}
+.bbs-write .field-wrap .fields input.text {
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  color: #383838;
+}
+.bbs-write .field-wrap .fields input.file {
+  border: 0;
+}
+.bbs-write .field-wrap .fields .deletes {
+  border: 0;
+  margin-bottom: -15px;
+}
+.bbs-write .field-wrap .selects {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 10px 0;
+  border: solid 1px #dee2e6;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 78px;
+}
+.bbs-write .field-wrap .selects .inner {
+  padding: 0 10px;
+}
+.bbs-write .field-wrap .selects .options {
+  height: 26px;
+  line-height: 26px;
+}
+.bbs-write .field-wrap .selects .options a.remove,
+.bbs-write .field-wrap .selects .options span {
+  display: inline-block;
+  float: left;
+  padding-right: 5px;
+}
+.bbs-write .field-wrap .selects .options .file {
+  padding-right: 7px;
+}
+.bbs-write .field-wrap .selects .options .size {
+  float: right;
+  padding-right: 0;
+}
+.bbs-write .field-wrap .selects .icon.delete {
+  background-image: url('../../images/gisafirst/common/icon_delete.png');
+  width: 13px;
+  height: 18px;
+  background-size: 13px 18px;
+}
+.bbs-write .editor-wrap {
+  margin-top: 40px;
+}
+.bbs-write .editor-wrap textarea {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+.bbs-view-head .subject {
+  padding: 10px 8px;
+  font-size: 18px;
+  line-height: 1.4;
+  border-bottom: solid 1px #dee2e6;
+}
+.bbs-view-head .status {
+  border-bottom: solid 1px #dee2e6;
+}
+.bbs-view-head .status .cell {
+  height: 49px;
+  line-height: 49px;
+  text-align: left;
+}
+.bbs-view-head .status strong.cell {
+  width: 52px;
+  text-align: center;
+}
+.bbs-view-head .status span.cell {
+  text-indent: 5px;
+}
+.bbs-view-head .status span.date {
+  width: 100px;
+}
+.bbs-view-head .status span.view {
+  width: 100px;
+}
+.bbs-view-body {
+  line-height: 1.6;
+}
+.bbs-view-body .inner {
+  margin: 22px 0;
+}
+.bbs-view-body .bbs-attach {
+  margin: 27px 0;
+  text-align: center;
+}
+.bbs-view-body .bbs-attach img {
+  margin: 0 auto;
+  max-width: 100%;
+}
+.bbs-media .bbs-media-inner {
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+  font-size: 0;
+  height: 0;
+}
+.bbs-media .bbs-media-inner iframe,
+.bbs-media .bbs-media-inner embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.bbs-media .bbs-media-action {
+  margin: 20px auto;
+  text-align: center;
+}
+.bbs-media .bbs-media-action a.button-media {
+  margin: 0 2px;
+}
+.bbs-media .bbs-media-action a.button-media span {
+  font-family: 'Gilroy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 0 20px 0 40px;
+  height: 28px;
+  line-height: 28px;
+  border: solid 1px #6d7379;
+  border-radius: 28px;
+  font-size: 11px;
+  opacity: .4;
+}
+.bbs-media .bbs-media-action a.button-media span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 14px;
+  background-image: url('../../images/gisafirst/common/icon_player_youtube_on.png');
+  width: 20px;
+  height: 28px;
+  background-size: 20px 28px;
+}
+.bbs-media .bbs-media-action a.button-media.in span {
+  opacity: 1;
+}
+.bbs-media .bbs-media-action a.button-media.youtube.in span::before {
+  background-image: url('../../images/gisafirst/common/icon_player_youtube_on.png');
+}
+.bbs-media .bbs-media-action a.button-media.jw-player span::before {
+  background-image: url('../../images/gisafirst/common/icon_player_jw_off.png');
+}
+.bbs-media .bbs-media-action a.button-media.jw-player.in span::before {
+  background-image: url('../../images/gisafirst/common/icon_player_jw_on.png');
+}
+.bbs-media .bbs-media-action a.button-media.kollus span::before {
+  background-image: url('../../images/gisafirst/common/icon_player_kollus_off.png');
+}
+.bbs-media .bbs-media-action a.button-media.kollus.in span::before {
+  background-image: url('../../images/gisafirst/common/icon_player_kollus_on.png');
+}
+.bbs-view {
+  margin-bottom: 30px;
+}
+.bbs-view .files {
+  margin-top: 100px;
+  line-height: 1;
+}
+.bbs-view .files .grid {
+  padding: 5px 0;
+}
+.bbs-view .files .grid > a,
+.bbs-view .files .grid > span {
+  font-weight: 300;
+  font-size: 12px;
+}
+.bbs-view .files .grid .name {
+  padding-left: 5px;
+}
+.bbs-view .files .grid .name a:hover {
+  text-decoration: underline;
+}
+.bbs-view .files .grid a.download {
+  padding-left: 5px;
+}
+.bbs-article {
+  padding: 30px 0 15px;
+}
+.bbs-article .pic {
+  float: left;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding-left: 10px;
+  width: 60px;
+}
+.bbs-article .pic .thumb,
+.bbs-article .pic img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+}
+.bbs-article .pic .thumb {
+  border-radius: 42px;
+}
+.bbs-article .article {
+  clear: right;
+  float: none;
+  padding-bottom: 15px;
+  margin-left: 70px;
+}
+.bbs-article .article .name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #7a7a7a;
+}
+.bbs-article .article .date {
+  display: inline-block;
+  padding-left: 8px;
+  font-family: 'Gilroy', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: #a2a2a2;
+}
+.bbs-article .article .comment {
+  padding: 5px 20px 5px 0;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b6b6b;
+}
+.bbs-article .article .comment .textarea {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+}
+.bbs-article .buttons {
+  padding-top: 5px;
+}
+.bbs-article .buttons .small {
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 24px;
+  line-height: 21px;
+  min-width: 40px;
+  font-size: 12px;
+}
+.bbs-article .action {
+  clear: both;
+  *zoom: 1;
+  height: 34px;
+  line-height: 34px;
+  border-top: solid 1px #e9ecef;
+  text-align: right;
+  font-size: 0;
+}
+.bbs-article .action::before,
+.bbs-article .action::after {
+  content: " ";
+  display: table;
+}
+.bbs-article .action::after {
+  clear: both;
+}
+.bbs-article .action a {
+  display: inline-block;
+  padding: 0 20px;
+  font-size: 13px;
+  height: 34px;
+  line-height: 34px;
+  border-left: solid 1px #e9ecef;
+  color: #495057;
+}
+.bbs-reply {
+  margin: 30px 0 20px 0;
+  border-top: solid 1px #495057;
+  border-bottom: solid 2px #495057;
+  background-color: #f3f3f3;
+}
+.bbs-reply .bbs-article {
+  padding-left: 20px;
+}
+.bbs-reply .bbs-article .bbs-media {
+  margin: 20px 0;
+}
+.bbs-comment {
+  margin-top: 90px;
+}
+.bbs-comment .title {
+  height: 48px;
+  line-height: 48px;
+}
+.bbs-comment .title span {
+  font-size: 20px;
+  color: #4d5256;
+  font-weight: 700;
+}
+.bbs-comment .title small {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4c80f1;
+}
+.bbs-comment .list {
+  margin-bottom: 40px;
+  padding: 0 20px;
+  border: solid 1px #e1e4e6;
+}
+.bbs-comment .list > .bbs-article {
+  border-top: solid 1px #e1e4e6;
+}
+.bbs-comment .list > .bbs-article:first-child {
+  border-top: 0;
+}
+.bbs-comment .list .bbs-article {
+  position: relative;
+}
+.bbs-comment .list .bbs-article.reply-1,
+.bbs-comment .list .bbs-article.reply-2 {
+  background-color: #f8f9fa;
+}
+.bbs-comment .list .bbs-article.reply-1::before,
+.bbs-comment .list .bbs-article.reply-2::before {
+  background-image: url('../../images/gisafirst/common/icon_replay.png');
+  width: 11px;
+  height: 11px;
+  background-size: 11px 11px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -8px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+.bbs-comment .list .bbs-article.reply-1 {
+  padding-left: 30px;
+}
+.bbs-comment .list .bbs-article.reply-2 {
+  padding-left: 60px;
+}
+.bbs-comment .list .bbs-article.reply-2::before {
+  margin-left: 60px;
+}
+.bbs-comment .bbs-comment-write {
+  margin-bottom: 30px;
+}
+.bbs-comment .bbs-comment-write .bbs-article {
+  padding-left: 20px;
+  padding-bottom: 0;
+  border: solid 1px #868e96;
+}
+.bbs-comment .bbs-comment-modify {
+  padding: 30px;
+  background: #f8f9fa;
+}
+.bbs-comment .bbs-comment-modify .bbs-article {
+  background: #fff;
+  padding-left: 15px;
+  padding-bottom: 0;
+  border: solid 1px #868e96;
+}
 .bbs-util {
   position: relative;
 }
@@ -2522,6 +2933,7 @@ ul.tab > li {
 }
 .bbs-module {
   margin-top: 20px;
+  margin-bottom: 37px;
 }
 .bbs-module .button,
 .bbs-module .text,
@@ -2554,7 +2966,14 @@ ul.tab > li {
   font-size: 0;
 }
 .bbs-module .action .button {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 15px;
+  margin-left: 8px;
+  width: 150px;
+}
+.bbs-module .col.action:first-child {
+  width: 100%;
 }
 .bbs-pagination {
   margin-top: 47px;
@@ -2648,6 +3067,12 @@ a:hover .bbs-pagination a.nav.has-hover {
   width: 18px;
   height: 22px;
   background-size: 18px 22px;
+}
+.bbs-pagination a.nav.download {
+  background-image: url('../../images/gisafirst/common/icon_download.png');
+  width: 13px;
+  height: 18px;
+  background-size: 13px 18px;
 }
 .bbs-pagination a.prev {
   margin-right: 15px;
@@ -3856,6 +4281,12 @@ a:hover .page-classroom .classroom-list .collapse-body td.status .ok.has-hover {
   width: 18px;
   height: 22px;
   background-size: 18px 22px;
+}
+.page-classroom .classroom-list .collapse-body td.status .ok.download {
+  background-image: url('../../images/gisafirst/common/icon_download.png');
+  width: 13px;
+  height: 18px;
+  background-size: 13px 18px;
 }
 .page-classroom .classroom-list .collapse-body td.status .ok em {
   -webkit-box-sizing: content-box;

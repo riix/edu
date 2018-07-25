@@ -118,6 +118,12 @@ $(function() {
         $this.toggleClass('in');
     });
 
+    $document.on('click', '.js-active-this', function(e){ // bbs media
+        var $this = $(e.target);
+        $this = returnAnchor($this);
+        $this.addClass('in').siblings('.js-active-this').removeClass('in');
+    });
+
     $document.on('click', '.js-collapse', function(e){ // collapse
         var $this = $(e.target);
         $this = returnAnchor($this);
