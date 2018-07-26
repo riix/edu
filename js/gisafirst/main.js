@@ -237,4 +237,38 @@ $(function(){
         marginTop: 0
     });
 
+    $('.js-tab-lecture').each(function(){
+        var $wrap = $(this);
+        var $items = $wrap.find('li');
+        var _offsetTop = $wrap.offset().top;
+        var $sections = $('.section-sticky');
+        var _length = $sections.length;
+        var _tops = [];
+        $sections.each(function(){
+            var _top = parseInt($(this).offset().top, 10) - 40;
+            _tops.push(_top);
+        });
+        $(window).on('load scroll', function(){
+            var _scrollTop = $window.scrollTop();
+            var _bool =  _scrollTop > _offsetTop;
+            $html.toggleClass('is-tab-fixed', _bool);
+            var _active = 0;
+            for (var i = 0; i < _tops.length; i++) {
+                if (_tops[i] < _scrollTop) {
+                    _active = i;
+                }
+            }
+            $items.eq(_active).addClass('in').siblings().removeClass('in');
+        });
+        $items.children().on('click', function(e){
+            e.preventDefault();
+            var $this = $(e.target);
+            $this = ($this.is('a')) ? $this : $this.closest('a');
+            var _target = $($this.attr('href')).offset().top;
+            $('html, body').animate({
+                'scrollTop': _target
+            }, 60);
+        });
+    });
+
 });

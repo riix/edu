@@ -224,7 +224,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                         <h3 class="subtitle">
                             <span>주문/결제</span>
                         </h3>
-                        <div class="js-sticky-start grid section-order-list" data-sticky-margin="-2"><!-- section-order-list, js-sticky-start 는 sticky 시작점 설정 -->
+                        <div class="js-sticky-start grid order-list" data-sticky-margin="-2"><!-- order-list, js-sticky-start 는 sticky 시작점 설정 -->
                             <table cellspacing="0" class="is-row-large">
                                 <colgroup>
                                     <col style="width: auto;" />
@@ -236,24 +236,24 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <td>
+                                        <td class="checks">
                                             <a href="javascript:;" class="button primary"><span>강좌</span></a>
                                         </td>
-                                        <td class="text-left">
+                                        <td class="subject text-left">
                                             <a href="javascript:;"><strong>정보처리기사/산업기사 필기</strong></a>
                                         </td>
-                                        <td>
+                                        <td class="price-before">
                                             <span class="won canceled">&#8361;<em>원</em></span>
                                             <span class="canceled">50,000</span>
                                         </td>
-                                        <td>
+                                        <td class="price-after">
                                             <span>50,000</span>
                                             <span>원</span>
                                         </td>
-                                        <td>
+                                        <td class="status">
                                             <i class="icon open-sale"><em>오픈기념할인</em></i></span></a>
                                         </td>
-                                        <td class="text-right">
+                                        <td class="price text-right">
                                             <strong class="xlarge">50,000</strong>
                                             <strong class="xlarge">원</strong>
                                         </td>
@@ -261,55 +261,55 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
+                                        <td class="checks">
                                             <input id="checkbox0" type="checkbox" class="css-checkbox" /><!-- 스타일, 접근성을 위해 id를 맞춰주어야합니다 -->
                                             <label for="checkbox0" class="css-checkbox">교재</label>
                                         </td>
-                                        <td class="text-left">
+                                        <td class="subject text-left">
                                             <a href="javascript:;"><strong>정보처리기사/산업기사 필기</strong></a>
                                         </td>
-                                        <td>
+                                        <td class="price-before">
                                             &nbsp;
                                         </td>
-                                        <td>
+                                        <td class="price-after">
                                             <span>18,000</span>
                                             <span>원</span>
                                         </td>
-                                        <td>
+                                        <td class="piece">
                                             <div class="js-ranges ranges"><!-- ranges -->
                                                 <a href="javascript:;" class="minus"><i class="icon"><em>-</em></i></a>
                                                 <input type="text" class="text" maxlength="2" value="1" data-min="0" data-max="10" />
                                                 <a href="javascript:;" class="plus"><i class="icon"><em>+</em></i></a>
                                             </div><!-- // ranges -->
                                         </td>
-                                        <td class="text-right">
+                                        <td class="price text-right">
                                             <strong class="xlarge">50,000</strong>
                                             <strong class="xlarge">원</strong>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <input id="checkbox1" type="checkbox" class="css-checkbox" /><!-- 스타일, 접근성을 위해 id를 맞춰주어야합니다 -->
-                                            <label for="checkbox1" class="css-checkbox">교재</label>
+                                        <td class="checks">
+                                            <input id="checkbox0" type="checkbox" class="css-checkbox" /><!-- 스타일, 접근성을 위해 id를 맞춰주어야합니다 -->
+                                            <label for="checkbox0" class="css-checkbox">교재</label>
                                         </td>
-                                        <td class="text-left">
+                                        <td class="subject text-left">
                                             <a href="javascript:;"><strong>정보처리기사/산업기사 필기</strong></a>
                                         </td>
-                                        <td>
+                                        <td class="price-before">
                                             &nbsp;
                                         </td>
-                                        <td>
+                                        <td class="price-after">
                                             <span>18,000</span>
                                             <span>원</span>
                                         </td>
-                                        <td>
+                                        <td class="piece">
                                             <div class="js-ranges ranges"><!-- ranges -->
                                                 <a href="javascript:;" class="minus"><i class="icon"><em>-</em></i></a>
                                                 <input type="text" class="text" maxlength="2" value="1" data-min="0" data-max="10" />
                                                 <a href="javascript:;" class="plus"><i class="icon"><em>+</em></i></a>
                                             </div><!-- // ranges -->
                                         </td>
-                                        <td class="text-right">
+                                        <td class="price text-right">
                                             <strong class="xlarge">50,000</strong>
                                             <strong class="xlarge">원</strong>
                                         </td>
@@ -327,7 +327,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                     </tr>
                                 </tfoot>
                             </table>
-                        </div><!-- // section-order-list -->
+                        </div><!-- // order-list -->
 
                         <div class="grid method-wrap"><!-- method-wrap -->
                             <div class="col col-a">
@@ -426,6 +426,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                 <h4 class="subtitle">
                                     <span>할인쿠폰</span>
                                 </h4>
+                                
                                 <div class="grid section-coupon">
 
                                     <div class="coupons">
