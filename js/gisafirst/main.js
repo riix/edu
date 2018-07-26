@@ -244,8 +244,11 @@ $(function(){
         var $sections = $('.section-sticky');
         var _length = $sections.length;
         var _tops = [];
-        $sections.each(function(){
-            var _top = parseInt($(this).offset().top, 10) - 40;
+        $sections.each(function(i){
+            var _top = parseInt($(this).offset().top, 10) - 54;
+            // if (i == 0) {
+            //     _top = _top - 54;
+            // }
             _tops.push(_top);
         });
         $(window).on('load scroll', function(){
@@ -264,7 +267,16 @@ $(function(){
             e.preventDefault();
             var $this = $(e.target);
             $this = ($this.is('a')) ? $this : $this.closest('a');
-            var _target = $($this.attr('href')).offset().top;
+            var _href = $this.attr('href');
+            var $target = $(_href);
+            var _target = $target.offset().top - 52;
+            if (_href == '#lectures') {
+                if ($target.find('.pic').length) {
+                    _target = $target.find('.pic').offset().top - 62;
+                } else {
+                    _target = _target + 34;
+                }
+            }
             $('html, body').animate({
                 'scrollTop': _target
             }, 60);

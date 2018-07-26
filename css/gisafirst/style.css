@@ -4816,6 +4816,74 @@ a:hover .page-classroom .classroom-list .collapse-body td.status .ok.has-hover {
   color: #6b6b6b;
   border-radius: 2px;
 }
+.page-lecture .section-curriculum-list img {
+  width: 207px;
+  height: 117px;
+}
+.page-lecture .section-curriculum-list .item {
+  margin-top: 15px;
+  border: solid 1px #dee2e6;
+}
+.page-lecture .section-curriculum-list .item:first-child {
+  margin-top: 0;
+}
+.page-lecture .section-curriculum-list .module {
+  margin: 15px;
+}
+.page-lecture .section-curriculum-list .pic {
+  width: 230px;
+}
+.page-lecture .section-curriculum-list .pic a {
+  display: inline-block;
+  border: solid 1px #eaeaea;
+}
+.page-lecture .section-curriculum-list .description {
+  float: right;
+  width: 577px;
+}
+.page-lecture .section-curriculum-list .description p {
+  margin: 10px 0;
+  padding: 0;
+  font-size: 15px;
+  color: #9d9d9d;
+  line-height: 1.6;
+}
+.page-lecture .section-curriculum-list .description p.subject {
+  margin-top: 0;
+  line-height: 1.2;
+  font-size: 22px;
+  color: #2f2d2d;
+}
+.page-lecture .section-curriculum-list .description .subinfo .col {
+  padding-left: 15px;
+  font-size: 13px;
+  color: #5b5b5b;
+}
+.page-lecture .section-curriculum-list .description .subinfo .col.who {
+  padding-left: 0;
+}
+.page-lecture .section-curriculum-list .description .subinfo .col.status {
+  color: #9d9d9d;
+  padding-left: 30px;
+}
+.page-lecture .section-curriculum-list .description .subinfo .col.status span {
+  position: relative;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+.page-lecture .section-curriculum-list .description .subinfo .col.status span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  overflow: hidden;
+  background: #000;
+  border-radius: 4px;
+}
 .page-lecture .section-materials {
   border: solid 1px #e1e4e6;
 }
@@ -4842,7 +4910,7 @@ a:hover .page-classroom .classroom-list .collapse-body td.status .ok.has-hover {
 }
 .page-lecture .section-materials .col.description {
   float: right;
-  width: 550px;
+  width: 522px;
 }
 .page-lecture .section-materials .col.description .subject {
   margin: 0 0 10px;

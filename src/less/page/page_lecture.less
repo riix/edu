@@ -125,6 +125,78 @@
             }
         }
     }
+    .section-curriculum-list {
+        img {
+            width: 207px;
+            height: 117px;
+        }
+        .item {
+            margin-top: 15px;
+            &:first-child {
+                margin-top: 0;
+            }
+            border: solid 1px #dee2e6;
+        }
+        .module {
+            margin: 15px;
+        }
+        .pic {
+            width: 230px;
+            a {
+                display: inline-block;
+                border: solid 1px #eaeaea;
+            }
+        }
+        .description {
+            float: right;
+            width: @content-inner-width - 275px;
+            p {
+                margin: 10px 0;
+                padding: 0;
+                font-size: 15px;
+                color: #9d9d9d;
+                line-height: 1.6;
+                &.subject {
+                    margin-top: 0;
+                    line-height: 1.2;
+                    font-size: 22px;
+                    color: #2f2d2d;
+                }
+            }
+            .subinfo {
+                .col {
+                    padding-left: 15px;
+                    font-size: 13px;
+                    color: #5b5b5b;
+                    &.who {
+                        padding-left: 0;
+                    }
+                    &.status {
+                        color: #9d9d9d;
+                        padding-left: 30px;
+                        span {
+                            position: relative;
+                            display: inline-block;
+                            padding-left: 10px;
+                            padding-right: 20px;
+                            &::before {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                width: 4px;
+                                height: 4px;
+                                overflow: hidden;
+                                background: #000;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .section-materials {
         border: solid 1px #e1e4e6;
         .holder {
@@ -149,7 +221,7 @@
         }
         .col.description {
             float: right;
-            width: 550px;
+            width: @content-inner-width - 330;
             .subject {
                 margin: 0 0 10px;
                 padding: 0;
