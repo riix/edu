@@ -112,6 +112,41 @@ $(function() {
         $num.val(_num);
     });
 
+    $document.on('click', '.js-toggle-html', function(e){ // favorites
+        var $this = $(e.target);
+        $this = returnAnchor($this);
+        var _class = $this.attr('data-class');
+        $html.toggleClass(_class);
+        var _bool = $html.hasClass(_class);
+        if (_class === 'is-login') {
+            if (_bool === true) {
+
+            } else {
+
+            }
+        }
+    });
+
+    $document.on('click', '.js-modal-login', function(e){ // favorites
+        var $this = $(e.target);
+        var _class = 'is-modal'
+        $this = returnAnchor($this);
+        $html.toggleClass(_class);
+        var _bool = $html.hasClass(_class);
+        $html.toggleClass('is-login', _bool);
+        $html.toggleClass('is-overlay', _bool);
+        if (_bool === true) {
+
+        } else {
+
+        }
+    });
+
+    $document.on('click', '.js-modal-close', function(e){ // favorites
+        var $this = $(e.target);
+        $html.toggleClass('is-overlay is-modal is-login', false);
+    });
+
     $document.on('click', '.js-toggle-this', function(e){ // favorites
         var $this = $(e.target);
         $this = returnAnchor($this);

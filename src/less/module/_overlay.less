@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, .65);
+    background-color: rgba(255, 255, 255, .7);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
@@ -31,14 +31,6 @@
         .transition(~"transform @{overlay-ms-min} ease-in-out 0s, opacity @{overlay-ms-min} ease 0s, visibility 0s ease 0s, z-index 0s ease 0s");
     }
 
-    .is-video.is-overlay & {
-        z-index: 5000;
-    }
-
-    .no-rgba.is-overlay & {
-        background-color: #000;
-        opacity: 0.5;
-    }
 }
 
 .csstransitions {

@@ -69,7 +69,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                     </div>
                     <div id="utility" class="col col-1-2 utils">
                         <ul class="tab">
-                            <li><a href="javascript:;"><span>로그인</span></a></li>
+                            <li><a href="javascript:;" class="js-modal-login"><span>로그인</span></a></li>
                             <li><a href="javascript:;"></span>회원가입</span></a></li>
                         </ul>
                     </div>
@@ -698,6 +698,47 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
     </div><!-- // stickyNav -->
 
 </div><!-- // container -->
+
+<div class="md-overlay"></div>
+<div class="md-modal is-modal-login">
+    <div class="holder">
+        <div class="container">
+            <div class="wrap">
+                <div class="modal-tab-wrap">
+                    <ul class="reset">
+                        <li class="in"><a href="#!"><strong>로그인</strong></a></li>
+                        <li><a href="#!"><strong>회원가입</strong></a></li>
+                    </ul>
+                </div>
+                <h3 class="subject">
+                    eduon
+                    계정에 로그인해주세요!
+                </h3>
+                <div class="form">
+                    <div class="grid email">
+                        <input type="text" class="text full" placeholder="" />
+                    </div>
+                    <div class="grid password">
+                        <input type="text" class="text full" placeholder="" />
+                    </div>
+                    <div class="grid action">
+                        <a href="#!" class="button large primary full"><span>로그인</span></a>
+                    </div>
+                </div>
+                <div class="grid utility">
+                    <div class="col find">
+                        <a href="#!"><span>이메일 또는 비밀번호 찾기</span></a>
+                    </div>
+                    <div class="col save">
+                        <input id="saveId" type="checkbox" class="css-checkbox" /><!-- 스타일, 접근성을 위해 id를 맞춰주어야합니다 -->
+                        <label for="saveId" class="css-checkbox">아이디 저장</label>
+                    </div>
+                </div>
+            </div>
+            <a href="#!" class="js-modal-close modal-close"><i class="icon"><em>닫기</em></i></a>
+        </div>
+    </div>
+</div>
 
 <script src="../../../js/gisafirst/plugin-dist.js?ver=1"></script>
 <script src="../../../js/gisafirst/main.js?ver=1"></script>

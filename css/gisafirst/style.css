@@ -3714,7 +3714,7 @@ h4.title.is-underline {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(255, 255, 255, 0.7);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   opacity: 0;
@@ -3736,13 +3736,6 @@ h4.title.is-underline {
   -o-transition: transform 0.4s ease-in-out 0s, opacity 0.4s ease 0s, visibility 0s ease 0s, z-index 0s ease 0s;
   transition: transform 0.4s ease-in-out 0s, opacity 0.4s ease 0s, visibility 0s ease 0s, z-index 0s ease 0s;
   transition: transform 0.4s ease-in-out 0s, opacity 0.4s ease 0s, visibility 0s ease 0s, z-index 0s ease 0s, -webkit-transform 0.4s ease-in-out 0s;
-}
-.is-video.is-overlay .md-overlay {
-  z-index: 5000;
-}
-.no-rgba.is-overlay .md-overlay {
-  background-color: #000;
-  opacity: 0.5;
 }
 .csstransitions .md-overlay {
   opacity: 0;
@@ -3854,6 +3847,144 @@ h4.title.is-underline {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+.md-modal {
+  position: fixed;
+  display: table;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.md-modal .holder {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+.md-modal .container {
+  position: relative;
+  margin: 0 auto;
+  display: inline-block;
+  border: solid 1px #adb5bd;
+  border-radius: 18px;
+  background: #fff;
+}
+.md-modal .wrap {
+  margin: 70px;
+  width: auto;
+  min-width: 340px;
+}
+.md-modal .modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 30px;
+  margin-right: 30px;
+}
+.md-modal .modal-close .icon {
+  background-image: url('../../images/gisafirst/common/modal_close.png');
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+}
+.md-modal {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -o-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+.is-modal .md-modal {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1000;
+  -webkit-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -o-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+.modal-tab-wrap {
+  display: table;
+  width: 100%;
+}
+.modal-tab-wrap ul {
+  display: table-row;
+  width: 100%;
+}
+.modal-tab-wrap a {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 0 10px;
+  height: 53px;
+  line-height: 53px;
+  border-bottom: solid 2px #e1e4e6;
+  background: #fff;
+  font-size: 15px;
+}
+.modal-tab-wrap a strong {
+  color: #4d5256;
+  font-weight: 700;
+}
+.modal-tab-wrap a em {
+  font-size: 12px;
+  font-weight: 300;
+}
+.modal-tab-wrap a .badge {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 5px;
+  height: 18px;
+  line-height: 16px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f1f3f5;
+  font-size: 11px;
+  color: #868e96;
+  font-weight: 300;
+}
+.modal-tab-wrap a .badge small {
+  font-size: 11px;
+}
+.modal-tab-wrap a::before {
+  background-image: url('../../images/gisafirst/common/tab_arrow.png');
+  width: 7px;
+  height: 4px;
+  background-size: 7px 4px;
+  content: '';
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-bottom: -6px;
+}
+.modal-tab-wrap li {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.modal-tab-wrap li.in a {
+  border-color: #4c80f1;
+}
+.modal-tab-wrap li.in a::before {
+  display: block;
+}
+.modal-tab-wrap li.in a strong,
+.modal-tab-wrap li.in a em {
+  color: #4c80f1;
 }
 .grid.is-not-gutter .col {
   margin-top: 20px;
