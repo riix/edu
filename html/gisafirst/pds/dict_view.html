@@ -45,7 +45,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
 <script src="../../../js/gisafirst/app-dist.js?ver=1"></script>
 </head>
 
-<body class="page-community"><!-- 페이지별 클래스 -->
+<body class="page-pds"><!-- 페이지별 클래스 -->
 
 <div id="skipToContent">
     <a href="#content">
@@ -89,16 +89,16 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                     </div>
                     <div id="navigation" class="col nav">
                         <ul class="tab d1">
-                            <li class="d1 in">
+                            <li class="d1">
                                 <a href="javascript:;" class="d1"><span>수강신청</span></a>
                                 <div class="sub-d2">
                                     <ul class="d2">
                                         <li class="d2"><a href="javascript:;" class="d2"><span>강좌안내</span></a></li>
-                                        <li class="d2 in">
+                                        <li class="d2">
                                             <a href="javascript:;" class="d2"><span>정보처리기사/산업기사</span></a>
                                             <div class="sub-d3">
                                                 <ul class="d3">
-                                                    <li class="d3 in"><a href="javascript:;" class="d3"><span>필기</span></a></li>
+                                                    <li class="d3"><a href="javascript:;" class="d3"><span>필기</span></a></li>
                                                     <li class="d3"><a href="javascript:;" class="d3"><span>실기</span></a></li>
                                                     <li class="d3"><a href="javascript:;" class="d3"><span>패키지</span></a></li>
                                                 </ul>
@@ -174,11 +174,11 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                     </ul>
                                 </div>
                             </li>
-                            <li class="d1">
+                            <li class="d1 in">
                                 <a href="../pds/pds_public_list.html" class="d1"><span>학습자료실</span></a>
                                 <div class="sub-d2">
                                     <ul class="d2">
-                                        <li class="d2"><a href="javascript:;" class="d2"><span>공개자료실</span></a></li>
+                                        <li class="d2 in"><a href="javascript:;" class="d2"><span>공개자료실</span></a></li>
                                         <li class="d2"><a href="javascript:;" class="d2"><span>컴활 함수사전</span></a></li>
                                         <li class="d2"><a href="javascript:;" class="d2"><span>컴활상세유형족보집</span></a></li>
                                         <li class="d2"><a href="javascript:;" class="d2"><span>컴활상세복원자료실</span></a></li>
@@ -223,17 +223,20 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
 
                         <div id="aside" class="col"><!-- aside -->
                             <h3 class="title is-underline">
-                                <span>커뮤니티</span>
+                                <span>학습자료실</span>
                             </h3>
                             <ul id="lnb" class="d1">
+                                <li class="d1">
+                                    <a href="javascript:;" class="d1"><span>공개자료실</span></a>
+                                </li>
                                 <li class="d1 in">
-                                    <a href="javascript:;" class="d1"><span>공지사항&amp;이벤트</span></a>
+                                    <a href="javascript:;" class="d1"><span>컴활 함수사전</span></a>
                                 </li>
                                 <li class="d1">
-                                    <a href="javascript:;" class="d1"><span>자유게시판</span></a>
+                                    <a href="javascript:;" class="d1"><span>컴활상시유형족보집</span></a>
                                 </li>
                                 <li class="d1">
-                                    <a href="javascript:;" class="d1"><span>합격수기</span></a>
+                                    <a href="javascript:;" class="d1"><span>컴활상시복원자료실</span></a>
                                 </li>
                             </ul>
                         </div><!-- // aside -->
@@ -241,12 +244,12 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                         <div id="innerContent" class="col"><!-- innerContent -->
 
                             <h4 class="title is-underline">
-                                <span>공지사항&amp;이벤트</span>
+                                <span>컴활 함수사전</span>
                             </h4>
 
-                            <div class="js-sticky-start section-community" data-sticky-margin="-2"><!-- classroom -->
+                            <div class="js-sticky-start section-pds" data-sticky-margin="-2"><!-- classroom -->
 
-                                <div class="community-notice"><!-- classroom notice -->
+                                <div class="pds-dict"><!-- pds-dict -->
 
                                     <div class="bbs-view"><!-- bbs-view -->
 
@@ -274,10 +277,6 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                                     이번 주 부터 6월30일(토)부터 2018년 2회 정보/사무 실기 시험이 시작됩니다.따라서 저희 기사퍼스트에서는 시험당일 가답안을 공지해드릴 예정입니다.아래 링크로 이동하시면 해당게시판의 공지글에서 가답안 및 문제복원을 확인하실 수 있습니다.안녕하세요.!회원님들의 합격도우미 기사퍼스트(www.gisafirst.com) 입니다 :-D이번 주 부터 6월30일(토)부터 2018년 2회 정보/사무 실기 시험이 시작됩니다.따라서 저희 기사퍼스트에서는 시험당일 가답안을 공지해드릴 예정입니다.<br />
                                                     아래 링크로 이동하시면 해당게시판의 공지글에서 가답안 및 문제복원을 확인하실 수 있습니다.
                                                 </p>
-
-                                                <div class="bbs-attach"><!-- 첨부이미지 -->
-                                                    <img src="../../../images/gisafirst/temp/pic_15.png" alt="" />
-                                                </div><!-- // 첨부이미지 -->
 
                                                 <div class="bbs-media"><!-- media -->
                                                     <div class="bbs-media-inner">
@@ -323,40 +322,6 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                         </div><!-- // files -->
 
                                     </div><!-- // bbs-view -->
-
-                                    <div class="bbs-reply"><!-- bbs reply -->
-
-                                        <div class="bbs-article grid"><!-- bbs article -->
-                                            <div class="pic">
-                                                <span class="thumb"><img src="../../../images/gisafirst/common/noimage_42x42.png" alt="no image"></span>
-                                            </div>
-                                            <div class="article">
-                                                <strong class="name">기사퍼스트</strong>
-                                                <strong class="date">May 03.2018</strong>
-                                                <div class="comment">
-
-                                                    이재성님, 안녕하세요! 이재성님, 안녕하세요! 이재성님, 안녕하세요! 이재성님, 안녕하세요! 이재성님, 안녕하세요!
-                                                    이재성님, 안녕하세요! 이재성님, 안녕하세요! 이재성님, 안녕하세요!이재성님, 안녕하세요!
-
-                                                    <div class="bbs-media"><!-- media -->
-                                                        <div class="bbs-media-inner">
-                                                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jbf6nD5HjJc?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                                        </div>
-                                                        <div class="bbs-media-action">
-                                                            <a href="javascript:;" class="js-active-this button-media youtube in"><span>YOUTUBE</span></a>
-                                                            <a href="javascript:;" class="js-active-this button-media jw-player"><span>JW PLAYER</span></a>
-                                                            <a href="javascript:;" class="js-active-this button-media kollus"><span>KOLLUS PLAYER</span></a>
-                                                        </div>
-                                                    </div><!-- // media -->
-
-                                                    이재성님, 안녕하세요! 이재성님, 안녕하세요! 이재성님, 안녕하세요! 이재성님, 안녕하세요! 이재성님, 안녕하세요!
-                                                    이재성님, 안녕하세요! 이재성님, 안녕하세요! 이재성님, 안녕하세요!이재성님, 안녕하세요!
-
-                                                </div>
-                                            </div>
-                                        </div><!-- // bbs article -->
-
-                                    </div><!-- // bbs reply -->
 
                                     <div class="bbs-module grid"><!-- bbs-module -->
                                         <div class="col action">
@@ -546,7 +511,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
 
                                 </div><!-- // notice -->
 
-                            </div><!-- // classroom notice -->
+                            </div><!-- // pds-dict -->
 
                             <div class="bottom-spacer" aria-hidden="true"></div><!-- 하단 여백 -->
 

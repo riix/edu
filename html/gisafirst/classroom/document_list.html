@@ -226,7 +226,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                 <span>내강의실</span>
                             </h3>
                             <ul id="lnb" class="d1">
-                                <li class="d1 has-child">
+                                <li class="d1 has-child in">
                                     <a href="javascript:;" class="d1"><span>내강의실 홈</span></a>
                                     <div class="sub-d2">
                                         <ul class="d2">
@@ -242,7 +242,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                         <ul class="d2">
                                             <li class="d2"><a href="javascript:;" class="d2"><span>수강강좌정보</span></a></li>
                                             <li class="d2"><a href="javascript:;" class="d2"><span>결제내역,교재배송확인</span></a></li>
-                                            <li class="d2"><a href="javascript:;" class="d2"><span>증빙서류발급신청</span></a></li>
+                                            <li class="d2 in"><a href="javascript:;" class="d2"><span>증빙서류발급신청</span></a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -255,207 +255,279 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                         <div id="innerContent" class="col"><!-- innerContent -->
 
                             <h4 class="title is-underline">
-                                <span>내 강의실 홈</span>
+                                <span>수강관리</span>
                             </h4>
 
-                            <div class="js-sticky-start section-classroom" data-sticky-margin="-2"><!-- classroom -->
+                            <div class="js-sticky-start section-classroom-document" data-sticky-margin="-2"><!-- classroom -->
 
-                                <div class="classroom-main"><!-- classroom-main -->
-                                    <ul class="reset list">
-                                        <li class="item nth-child-1"><!-- nth-child-n index 증가 -->
-                                            <div class="module">
-                                                <p class="subject">
-                                                    <a href="../classroom/classroom_list.html"><span>정보처리 기사/산업기사 실기</span></a>
-                                                </p>
-                                                <div class="grid upper">
-                                                    <div class="col pic">
-                                                        <a href="../classroom/classroom_list.html"><img src="../../../images/gisafirst/temp/classroom_01.png" alt="" ></a>
-                                                    </div>
-                                                    <div class="col desc">
-                                                        <p class="who">
-                                                            <span>정선선아샘</span>
-                                                        </p>
-                                                        <p class="date-term">
-                                                            <span>수강기간:</span>
-                                                            <span>2018-07-13 ~ 2018-07-23</span>
-                                                        </p>
-                                                        <p class="date-remain">
-                                                            <span>남은수강일:</span>
-                                                            <span>15일</span>
-                                                        </p>
-                                                        <p class="date-recent">
-                                                            <span>최근수강일:</span>
-                                                            <span>2018-07-13</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="grid downer">
-                                                    <div class="col steps">
-                                                        <strong>10강</strong>/<span>100강</span>
-                                                    </div>
-                                                    <div class="js-graph col graphs" data-graph="50%">
-                                                        <div class="graph"><span></span></div>
-                                                        <span class="num">50%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <div class="sticky-tab-wrap"><!-- sticky tab -->
+                                    <div class="js-sticky-tab"><!-- tab -->
+                                        <ul class="reset">
+                                            <li>
+                                                <a href="#!">
+                                                    <strong>수강강좌 정보</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!">
+                                                    <strong>결제내역/교재배송확인</strong>
+                                                </a>
+                                            </li>
+                                            <li class="in">
+                                                <a href="../classroom/document_list.html">
+                                                    <strong>증빙서류발급신청</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div><!-- // tab -->
+                                </div><!-- // sticky tab -->
+
+                                <div class="section-guide"><!-- section-guide -->
+                                    <ul class="reset">
+                                        <li>
+                                            수료증의 경우 전체 과정의 80% 이상 수강하셨을 경우에만 발급이 가능합니다.
                                         </li>
-                                        <li class="item nth-child-1"><!-- nth-child-n index 증가 -->
-                                            <div class="module">
-                                                <p class="subject">
-                                                    <a href="../classroom/classroom_list.html"><span>정보처리 기사/산업기사 실기</span></a>
-                                                </p>
-                                                <div class="grid upper">
-                                                    <div class="col pic">
-                                                        <a href="../classroom/classroom_list.html"><img src="../../../images/gisafirst/temp/classroom_01.png" alt="" ></a>
-                                                    </div>
-                                                    <div class="col desc">
-                                                        <p class="who">
-                                                            <span>정선선아샘</span>
-                                                        </p>
-                                                        <p class="date-term">
-                                                            <span>수강기간:</span>
-                                                            <span>2018-07-13 ~ 2018-07-23</span>
-                                                        </p>
-                                                        <p class="date-remain">
-                                                            <span>남은수강일:</span>
-                                                            <span>15일</span>
-                                                        </p>
-                                                        <p class="date-recent">
-                                                            <span>최근수강일:</span>
-                                                            <span>2018-07-13</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="grid downer">
-                                                    <div class="col steps">
-                                                        <strong>10강</strong>/<span>100강</span>
-                                                    </div>
-                                                    <div class="js-graph col graphs" data-graph="30%">
-                                                        <div class="graph"><span></span></div>
-                                                        <span class="num">30%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <li>
+                                            수강확인증 및 수료증에 추가로 기재될 사항은 자세히 기재해 주시길 바랍니다. (ex. 수강률, 이수시간 등)
                                         </li>
-                                        <li class="item nth-child-1"><!-- nth-child-n index 증가 -->
-                                            <div class="module">
-                                                <p class="subject">
-                                                    <a href="../classroom/classroom_list.html"><span>정보처리 기사/산업기사 실기</span></a>
-                                                </p>
-                                                <div class="grid upper">
-                                                    <div class="col pic">
-                                                        <a href="../classroom/classroom_list.html"><img src="../../../images/gisafirst/temp/classroom_01.png" alt="" ></a>
-                                                    </div>
-                                                    <div class="col desc">
-                                                        <p class="who">
-                                                            <span>정선선아샘</span>
-                                                        </p>
-                                                        <p class="date-term">
-                                                            <span>수강기간:</span>
-                                                            <span>2018-07-13 ~ 2018-07-23</span>
-                                                        </p>
-                                                        <p class="date-remain">
-                                                            <span>남은수강일:</span>
-                                                            <span>15일</span>
-                                                        </p>
-                                                        <p class="date-recent">
-                                                            <span>최근수강일:</span>
-                                                            <span>2018-07-13</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="grid downer">
-                                                    <div class="col steps">
-                                                        <strong>10강</strong>/<span>100강</span>
-                                                    </div>
-                                                    <div class="js-graph col graphs" data-graph="20%">
-                                                        <div class="graph"><span></span></div>
-                                                        <span class="num">20%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="item nth-child-1"><!-- nth-child-n index 증가 -->
-                                            <div class="module">
-                                                <p class="subject">
-                                                    <a href="../classroom/classroom_list.html"><span>정보처리 기사/산업기사 실기</span></a>
-                                                </p>
-                                                <div class="grid upper">
-                                                    <div class="col pic">
-                                                        <a href="../classroom/classroom_list.html"><img src="../../../images/gisafirst/temp/classroom_01.png" alt="" ></a>
-                                                    </div>
-                                                    <div class="col desc">
-                                                        <p class="who">
-                                                            <span>정선선아샘</span>
-                                                        </p>
-                                                        <p class="date-term">
-                                                            <span>수강기간:</span>
-                                                            <span>2018-07-13 ~ 2018-07-23</span>
-                                                        </p>
-                                                        <p class="date-remain">
-                                                            <span>남은수강일:</span>
-                                                            <span>15일</span>
-                                                        </p>
-                                                        <p class="date-recent">
-                                                            <span>최근수강일:</span>
-                                                            <span>2018-07-13</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="grid downer">
-                                                    <div class="col steps">
-                                                        <strong>10강</strong>/<span>100강</span>
-                                                    </div>
-                                                    <div class="js-graph col graphs" data-graph="100%">
-                                                        <div class="graph"><span></span></div>
-                                                        <span class="num">100%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="item nth-child-1"><!-- nth-child-n index 증가 -->
-                                            <div class="module">
-                                                <p class="subject">
-                                                    <a href="../classroom/classroom_list.html"><span>정보처리 기사/산업기사 실기</span></a>
-                                                </p>
-                                                <div class="grid upper">
-                                                    <div class="col pic">
-                                                        <a href="../classroom/classroom_list.html"><img src="../../../images/gisafirst/temp/classroom_01.png" alt="" ></a>
-                                                    </div>
-                                                    <div class="col desc">
-                                                        <p class="who">
-                                                            <span>정선선아샘</span>
-                                                        </p>
-                                                        <p class="date-term">
-                                                            <span>수강기간:</span>
-                                                            <span>2018-07-13 ~ 2018-07-23</span>
-                                                        </p>
-                                                        <p class="date-remain">
-                                                            <span>남은수강일:</span>
-                                                            <span>15일</span>
-                                                        </p>
-                                                        <p class="date-recent">
-                                                            <span>최근수강일:</span>
-                                                            <span>2018-07-13</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="grid downer">
-                                                    <div class="col steps">
-                                                        <strong>10강</strong>/<span>100강</span>
-                                                    </div>
-                                                    <div class="js-graph col graphs" data-graph="50%">
-                                                        <div class="graph"><span></span></div>
-                                                        <span class="num">50%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <li>
+                                            기타 양식이 필요하실 경우 자세한 내역을 알려주시면 발급하여 드리겠습니다.
                                         </li>
                                     </ul>
-                                </div><!-- // classroom-main -->
+                                </div><!-- // section-guide -->
 
-                            </div><!-- //classroom -->
+                                <table class="bbs-list" cellspacing="0" summary=""><!-- bbs-list -->
+                                    <colgroup>
+                                        <col style="width: 80px;" />
+                                        <col style="width: auto;" />
+                                        <col style="width: 200px;" />
+                                        <col style="width: 100px;" />
+                                        <col style="width: 100px;" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="num">번호</th>
+                                            <th scope="col" class="subject">과정명</th>
+                                            <th scope="col" class="document">요청서류</th>
+                                            <th scope="col" class="date">작성일</th>
+                                            <th scope="col" class="action">처리상태</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>2016 정보처리 기능사 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>수강확인증</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span class="secondary">발급완료</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>2016 정보처리 기능사 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>카드전표(신용카드 결제)</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span>처리중</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>하이패스 정보처리 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>영수증(무통장 입금)</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span>처리중</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>2016 정보처리 기능사 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>수강확인증</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span class="secondary">발급완료</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>2016 정보처리 기능사 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>카드전표(신용카드 결제)</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span>처리중</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>하이패스 정보처리 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>영수증(무통장 입금)</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span>처리중</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>2016 정보처리 기능사 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>수강확인증</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span class="secondary">발급완료</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>2016 정보처리 기능사 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>카드전표(신용카드 결제)</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span>처리중</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>하이패스 정보처리 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>영수증(무통장 입금)</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span>처리중</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="num">
+                                                <span>10</span>
+                                            </td>
+                                            <td class="subject">
+                                                <a href="javascript:;"><span>하이패스 정보처리 실기</span></a>
+                                            </td>
+                                            <td class="document">
+                                                <span>영수증(무통장 입금)</span>
+                                            </td>
+                                            <td class="date">
+                                                <span>2018-07-21</span>
+                                            </td>
+                                            <td class="status">
+                                                <span>처리중</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table><!-- // bbs-list -->
+
+                                <div class="bbs-module grid"><!-- bbs-module -->
+                                    <div class="col searchs">
+
+                                        <span class="form-wrap">
+                                            <select id="" class="select">
+                                                <option>전체</option>
+                                                <option>제목</option>
+                                                <option>본문</option>
+                                            </select>
+                                        </span>
+                                        <span class="form-wrap">
+                                            <input type="text" class="text search" placeholder="검색어를 입력하세요" />
+                                        </span>
+
+                                    </div>
+                                    <div class="col action">
+                                        <a href="javascript:;" class="button write large primary"><span>증빙서류신청</span></a>
+                                    </div>
+                                </div><!-- // bbs-module -->
+
+                                <div class="bbs-pagination grid"><!-- bbs-pagination -->
+                                    <div class="wrap">
+                                        <a href="javascript:;" class="nav first"><span><em>처음</em></span></a>
+                                        <a href="javascript:;" class="nav prev"><span><em>이전</em></span></a>
+                                        <a href="javascript:;" class="num in"><span><em>1</em></span></a>
+                                        <a href="javascript:;" class="num"><span><em>2</em></span></a>
+                                        <a href="javascript:;" class="num"><span><em>3</em></span></a>
+                                        <a href="javascript:;" class="num"><span><em>4</em></span></a>
+                                        <a href="javascript:;" class="num"><span><em>5</em></span></a>
+                                        <a href="javascript:;" class="more"><span><em>...</em></span></a>
+                                        <a href="javascript:;" class="num"><span><em>200</em></span></a>
+                                        <a href="javascript:;" class="nav next"><span><em>다음</em></span></a>
+                                        <a href="javascript:;" class="nav last"><span><em>끝</em></span></a>
+                                    </div>
+                                </div><!-- bbs-pagination -->
+
+
+
+
+
+                            </div><!-- // section-classroom -->
 
                             <div class="bottom-spacer" aria-hidden="true"></div><!-- 하단 여백 -->
 

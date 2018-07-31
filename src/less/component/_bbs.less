@@ -66,6 +66,10 @@
                     }
                 }
             }
+            &.document {
+                text-align: left;
+                color: #495057;
+            }
             &.status {
                 p {
                     margin: 0 auto;
@@ -77,8 +81,14 @@
     }
 }
 
+@bbs-write-wrap: 784px; // 게시판 쓰기 너비
+
 .bbs-write {
     margin-top: 25px;
+    &.is-topline {
+        margin-top: 0;
+        border-top: solid 2px #495057;
+    }
     .field-wrap {
         margin-top: 9px;
         &:first-of-type {
@@ -98,7 +108,7 @@
             }
         }
         .fields {
-            width: 810px;
+            width: @bbs-write-wrap;
             .item {
                 margin-top: 9px;
                 min-height: 40px;
@@ -109,7 +119,7 @@
             }
             input.text,
             input.file {
-                width: 810px;
+                width: @bbs-write-wrap;
                 border: 0;
                 vertical-align: bottom;
             }
@@ -120,7 +130,11 @@
                 color: #383838;
             }
             input.file {
+                box-sizing: border-box;
+                margin-top: 3px;
                 border: 0;
+                height: 20px;
+                line-height: 20px;
             }
             .deletes {
                 border: 0;
@@ -175,16 +189,38 @@
         font-size: 18px;
         line-height: 1.4;
         border-bottom: solid 1px #dee2e6;
+        strong {
+            font-weight: normal;
+            color: #383838;
+        }
+        span.tag {
+            display: inline-block;
+            overflow: hidden;
+            height: 24px;
+            padding: 0 15px;
+            line-height: 22px;
+            vertical-align: middle;
+            margin-right: 5px;
+            background-color: #dee2e6;
+            color: #868e96;
+            border-radius: 24px;
+            font-size: 13px;
+        }
     }
     .status {
+        border-bottom: solid 1px #dee2e6;
         .cell {
             height: 49px;
             line-height: 49px;
+            font-weight: normal;
             text-align: left;
+            font-size: 12px;
+            color: #adb5bd;
         }
         strong.cell {
-            width: 52px;
             text-align: center;
+            width: 52px;
+            color: #383838;
         }
         span.cell {
             text-indent: 5px;
@@ -195,7 +231,9 @@
         span.view {
             width: 100px;
         }
-        border-bottom: solid 1px #dee2e6;
+        span.step {
+            width: 200px;
+        }
     }
 }
 .bbs-view-body {
@@ -523,6 +561,8 @@
         font-size: 0;
         .button {
             box-sizing: border-box;
+            padding-left: 0;
+            padding-right: 0;
             font-size: 15px;
             margin-left: 8px;
             width: 150px;

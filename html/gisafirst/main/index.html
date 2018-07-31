@@ -70,7 +70,7 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                     <div id="utility" class="col col-1-2 utils">
                         <ul class="tab">
                             <li><a href="javascript:;" class="js-modal-login"><span>로그인</span></a></li>
-                            <li><a href="javascript:;"></span>회원가입</span></a></li>
+                            <li><a href="javascript:;" class="js-modal-join"></span>회원가입</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -699,46 +699,218 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
 
 </div><!-- // container -->
 
-<div class="md-overlay"></div>
-<div class="md-modal is-modal-login">
+<div class="md-overlay"></div><!-- overlay -->
+
+<div class="md-modal is-login"><!-- modal -->
     <div class="holder">
         <div class="container">
             <div class="wrap">
-                <div class="modal-tab-wrap">
+                <div class="js-toggle-tab modal-tab-wrap">
                     <ul class="reset">
-                        <li class="in"><a href="#!"><strong>로그인</strong></a></li>
-                        <li><a href="#!"><strong>회원가입</strong></a></li>
+                        <li class="in"><a href="javascript:;"><strong>로그인</strong></a></li>
+                        <li><a href="javascript:;"><strong>회원가입</strong></a></li>
                     </ul>
                 </div>
-                <h3 class="subject">
-                    eduon
-                    계정에 로그인해주세요!
-                </h3>
-                <div class="form">
-                    <div class="grid email">
-                        <input type="text" class="text full" placeholder="" />
-                    </div>
-                    <div class="grid password">
-                        <input type="text" class="text full" placeholder="" />
-                    </div>
-                    <div class="grid action">
-                        <a href="#!" class="button large primary full"><span>로그인</span></a>
+                <div class="toggle-wrap">
+                    <div class="toggle section-member in"><!-- 로그인 -->
+                        <h3 class="subject">
+                            <span>edu</span><span class="secondary">on</span>
+                            계정에 로그인해주세요!
+                        </h3>
+                        <div class="form">
+                            <div class="grid email">
+                                <input type="text" class="text full" placeholder="이메일" />
+                            </div>
+                            <div class="grid password">
+                                <input type="password" class="text full" placeholder="비밀번호" />
+                            </div>
+                            <div class="grid action">
+                                <a href="javascript:;" class="button large primary full"><span>로그인</span></a>
+                            </div>
+                        </div>
+                        <div class="grid utility">
+                            <div class="col find">
+                                <a href="javascript:;" class="js-modal-find-id"><span>이메일 또는 비밀번호 찾기</span></a>
+                            </div>
+                            <div class="col save">
+                                <input id="saveId" type="checkbox" class="css-checkbox" /><!-- 스타일, 접근성을 위해 id를 맞춰주어야합니다 -->
+                                <label for="saveId" class="css-checkbox">아이디 저장</label>
+                            </div>
+                        </div>
+                    </div><!-- // 로그인 -->
+                    <div class="toggle section-member is-join">
+                        <h3 class="subject">
+                            <span>edu</span><span class="secondary">on</span>
+                            회원가입을 환영합니다.
+                        </h3>
+                        <div class="form">
+                            <div class="grid name">
+                                <input type="text" class="text full" placeholder="이름" />
+                            </div>
+                            <div class="grid email">
+                                <input type="text" class="text full" placeholder="이메일" />
+                            </div>
+                            <div class="grid nick">
+                                <input type="text" class="text full" placeholder="닉네임" />
+                            </div>
+                            <div class="grid password">
+                                <input type="text" class="text password full" placeholder="비밀번호" />
+                            </div>
+                            <div class="grid repassword">
+                                <input type="text" class="text password full" placeholder="비밀번호 확인" />
+                            </div>
+                            <div class="grid tel">
+                                <!-- <input type="text" class="text full" placeholder="010-0000-0000" /> -->
+                                <div class="grid">
+                                    <div class="col">
+                                        <select name="" id="" class="select">
+                                            <option value="">010</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="text" maxlength="4" placeholder="0000" />
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="text" maxlength="4" placeholder="0000" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid utility">
+                                <div class="col">
+                                    <input id="receiveNews" type="checkbox" class="css-checkbox" /><!-- 스타일, 접근성을 위해 id를 맞춰주어야합니다 -->
+                                    <label for="receiveNews" class="css-checkbox">새 강좌 및 할인정보 받기</label>
+                                </div>
+                                <div class="col">
+                                    <input id="receiveSms" type="checkbox" class="css-checkbox" /><!-- 스타일, 접근성을 위해 id를 맞춰주어야합니다 -->
+                                    <label for="receiveSms" class="css-checkbox">SMS 정보수신 동의</label>
+                                </div>
+                            </div>
+                            <div class="grid action">
+                                <a href="javascript:;" onclick="joinOk();" class="button large primary full"><span>회원가입</span></a>
+                            </div>
+                        </div>
+                        <div class="grid utility">
+                            <p>
+                                가입하면
+                                <a href="javascript:;" class="secondary"><span>이용 약관</span></a>
+                                및<br />
+                                <a href="javascript:;" class="secondary"><span>개인 정보 보호정책</span></a>
+                                에 동의하는 것으로 간주됩니다.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="grid utility">
-                    <div class="col find">
-                        <a href="#!"><span>이메일 또는 비밀번호 찾기</span></a>
-                    </div>
-                    <div class="col save">
-                        <input id="saveId" type="checkbox" class="css-checkbox" /><!-- 스타일, 접근성을 위해 id를 맞춰주어야합니다 -->
-                        <label for="saveId" class="css-checkbox">아이디 저장</label>
-                    </div>
-                </div>
+
             </div>
-            <a href="#!" class="js-modal-close modal-close"><i class="icon"><em>닫기</em></i></a>
+            <a href="javascript:;" class="js-modal-close modal-close"><i class="icon"><em>닫기</em></i></a>
         </div>
     </div>
-</div>
+</div><!-- // modal -->
+
+<div class="md-modal is-find-id"><!-- modal -->
+    <div class="holder">
+        <div class="container">
+            <div class="wrap">
+                <div class="js-toggle-tab modal-tab-wrap">
+                    <ul class="reset">
+                        <li class="in"><a href="javascript:;"><strong>이메일주소/비밀번호 재설정</strong></a></li>
+                    </ul>
+                </div>
+                <div class="toggle-wrap">
+                    <div class="toggle section-member is-find-id in"><!-- 로그인 -->
+                        <h3 class="subject">
+                            가입된 이메일주소 찾기
+                        </h3>
+                        <div class="form">
+                            <!-- <div class="grid tel">
+                                <input type="text" class="text full" placeholder="010-0000-0000" />
+                            </div> -->
+                            <div class="grid tel">
+                                <div class="grid">
+                                    <div class="col">
+                                        <select name="" id="" class="select">
+                                            <option value="">010</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="text" maxlength="4" placeholder="0000" />
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="text" maxlength="4" placeholder="0000" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid message">
+                                <p>
+                                    입력하신 휴대전화로 회원가입에 사용된 메일주소가 발송됩니다.
+                                </p>
+                            </div>
+                            <div class="grid action">
+                                <a href="javascript:;" class="button large primary full"><span>메일주소 발송</span></a>
+                            </div>
+                        </div>
+                        <h3 class="subject">
+                            임시 비밀번호 발급하기
+                        </h3>
+                        <div class="form">
+                            <div class="grid email">
+                                <input type="text" class="text full" placeholder="이메일" />
+                            </div>
+                            <div class="grid message">
+                                <p>
+                                    입력하신 주소의 메일로 임시 비밀번호가 발급됩니다.
+                                </p>
+                            </div>
+                            <div class="grid action">
+                                <a href="javascript:;" class="button large primary full"><span>임시비밀번호 메일발송</span></a>
+                            </div>
+                        </div>
+                    </div><!-- // 로그인 -->
+                </div>
+
+            </div>
+            <a href="javascript:;" class="js-modal-close modal-close"><i class="icon"><em>닫기</em></i></a>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<div class="md-modal is-join-ok"><!-- modal -->
+    <div class="holder">
+        <div class="container">
+            <div class="wrap">
+                <div class="toggle-wrap">
+                    <div class="toggle section-member is-find-id in"><!-- 로그인 -->
+                        <h3 class="subject">
+                            <span>edu</span><span class="secondary">on</span>
+                            첫 로그인을 환영합니다.
+                        </h3>
+                        <div class="coupon-wrap">
+                            <div class="coupon in"><!-- 조회 후 -->
+                                <p class="coupon-subject">
+                                    강의할인 쿠폰
+                                </p>
+                                <p class="coupon-price">
+                                    <strong>10</strong>
+                                    <span>%</span>
+                                </p>
+                            </div><!-- // 조회 후 -->
+                        </div>
+                        <div class="message">
+                            <p class="subject">
+                                가입축하 할인쿠폰이 발급되었습니다!
+                            </p>
+                            <p>
+                                할인쿠폰은 강의 결제 시 선택하여 사용하실 수 있습니다
+                            </p>
+                        </div>
+                    </div><!-- // 로그인 -->
+                </div>
+
+            </div>
+            <a href="javascript:;" class="js-modal-close modal-close"><i class="icon"><em>닫기</em></i></a>
+        </div>
+    </div>
+</div><!-- // modal -->
 
 <script src="../../../js/gisafirst/plugin-dist.js?ver=1"></script>
 <script src="../../../js/gisafirst/main.js?ver=1"></script>
@@ -747,6 +919,15 @@ $(function() {
     var $window = $window || $(window),
         $document = $document || $(document),
         $html = $html || $('html');
+
+    // 회원가입 완료시 축하 팝업입니다.
+    window.joinOk = function(){
+        $.openModal('is-join-ok');
+    };
+
+    // 회원가입 열기
+    // $.openModal('is-join-ok');
+
 });
 </script>
 </body>

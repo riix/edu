@@ -75,6 +75,39 @@ hr {
     }
 }
 
+// coupon
+.coupon {
+    width: 222px;
+    height: 112px;
+    line-height: 1;
+    .img('common/coupon_off');
+    background-size: 222px 112px;
+    text-align: center;
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        &.coupon-subject {
+            padding-top: 42px;
+            color: #8d8d8d;
+        }
+        &.coupon-price {
+            margin-top: 7px;
+            color: @secondary;
+            strong {
+                font-size: 30px;
+            }
+            span {
+                font-size: 17px;
+            }
+        }
+    }
+    &.in {
+        .img('common/coupon_on');
+    }
+}
+
+// 주문결제
 .order-list {
     table.is-row-large {
         tbody {
@@ -113,5 +146,131 @@ hr {
         color: #495057;
         text-decoration: line-through;
         opacity: .5;
+    }
+}
+
+
+// 로그인
+.section-member {
+    .subject {
+        margin: 30px 0 10px;
+        padding: 0;
+        height: 35px;
+        line-height: 35px;
+        font-size: 18px;
+        color: #495057;
+        text-align: center;
+    }
+    .form {
+        select.select,
+        input.text,
+        .button {
+            box-sizing: border-box;
+            border-radius: 5px;
+            height: 53px;
+            line-height: 53px;
+            font-size: 15px;
+        }
+        input.text {
+            border-radius: 4px;
+        }
+        .grid {
+            margin: 10px 0;
+            p {
+                margin: 0;
+                padding: 10px 0;
+                text-align: center;
+                color: #8d8d8d;
+            }
+            &.tel {
+                .grid {
+                    margin: 0;
+                    .col {
+                        position: relative;
+                        padding-left: 15px;
+                        &::before {
+                            display: inline-block;
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            content: '-';
+                            margin: -9px 0 0 5px;
+                            color: #999;
+                        }
+                        &:first-child {
+                            padding-left: 0;
+                            &::before {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .utility {
+            padding: 10px 0;
+        }
+    }
+    .utility {
+        .col {
+            text-align: left;
+            padding-left: 20px;
+            &.find {
+                a {
+                    span {
+                        display: inline-block;
+                        padding-left: 15px;
+                        .img('common/ding_anchor');
+                        background-position: left center;
+                    }
+                }
+            }
+        }
+        p {
+            margin: 0;
+            padding: 10px 0 0;
+            text-align: center;
+            color: #2f2d2d;
+            a.secondary {
+                color: @secondary;
+            }
+        }
+    }
+    .coupon-wrap {
+        padding: 10px 0;
+        text-align: center;
+        .coupon {
+            margin: 0 auto;
+        }
+    }
+    .message {
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.section-guide {
+    margin: 0;
+    padding: 22px 0 12px;
+    line-height: 1.4;
+    ul {
+        li {
+            position: relative;
+            margin: 5px 0;
+            padding-left: 6px;
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 2px;
+                height: 1px;
+                top: 50%;
+                left: 0;
+                overflow: hidden;
+                background-color: #495057;
+            }
+        }
     }
 }

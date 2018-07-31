@@ -112,75 +112,103 @@ $(function() {
         $num.val(_num);
     });
 
-    $document.on('click', '.js-toggle-html', function(e){ // favorites
-        var $this = $(e.target);
-        $this = returnAnchor($this);
-        var _class = $this.attr('data-class');
-        $html.toggleClass(_class);
-        var _bool = $html.hasClass(_class);
-        if (_class === 'is-login') {
-            if (_bool === true) {
-
-            } else {
-
-            }
-        }
-    });
-
-    $document.on('click', '.js-modal-login', function(e){ // favorites
-        var $this = $(e.target);
-        var _class = 'is-modal'
-        $this = returnAnchor($this);
-        $html.toggleClass(_class);
-        var _bool = $html.hasClass(_class);
-        $html.toggleClass('is-login', _bool);
-        $html.toggleClass('is-overlay', _bool);
-        if (_bool === true) {
-
-        } else {
-
-        }
-    });
-
-    $document.on('click', '.js-modal-close', function(e){ // favorites
-        var $this = $(e.target);
-        $html.toggleClass('is-overlay is-modal is-login', false);
-    });
-
-    $document.on('click', '.js-toggle-this', function(e){ // favorites
-        var $this = $(e.target);
-        $this = returnAnchor($this);
-        $this.toggleClass('in');
-    });
-
-    $document.on('click', '.js-active-this', function(e){ // bbs media
-        var $this = $(e.target);
-        $this = returnAnchor($this);
-        $this.addClass('in').siblings('.js-active-this').removeClass('in');
-    });
-
-    $document.on('click', '.js-collapse', function(e){ // collapse
-        var $this = $(e.target);
-        $this = returnAnchor($this);
-        var _mode = $this.attr('data-mode');
-        var $li = $(e.target).closest('.collapse');
-        $li.toggleClass('in');
-        if (_mode == 'alone') {
-            $li.siblings('.collapse').removeClass('in');
-        }
-    });
-
     $window.on('load scroll', function(){
         windowScrollTop = $window.scrollTop();
     });
 
-    $document.on('click', '.js-toggle-tab a', function(e){
-        var $li = $(e.target).closest('li');
-        var $target = $li.closest('.js-toggle-tab').next('.toggle-wrap');
-        var _idx = $li.index();
-        $li.addClass('in').siblings().removeClass('in');
-        $target.find('.toggle').eq(_idx).addClass('in').siblings().removeClass('in');
-    });
+    var handlers = function(){
+
+        $document.on('click', '.js-toggle-html', function(e){ // favorites
+            var $this = $(e.target);
+            $this = returnAnchor($this);
+            var _class = $this.attr('data-clasㅡ먀ㅜs');
+            $html.toggleClass(_class);
+            var _bool = $html.hasClass(_class);
+            if (_class === 'is-login') {
+                if (_bool === true) {
+
+                } else {
+
+                }
+            }
+        });
+
+        $document.on('click', '.js-toggle-this', function(e){ // favorites
+            var $this = $(e.target);
+            $this = returnAnchor($this);
+            $this.toggleClass('in');
+        });
+
+        $document.on('click', '.js-active-this', function(e){ // bbs media
+            var $this = $(e.target);
+            $this = returnAnchor($this);
+            $this.addClass('in').siblings('.js-active-this').removeClass('in');
+        });
+
+        $document.on('click', '.js-collapse', function(e){ // collapse
+            var $this = $(e.target);
+            $this = returnAnchor($this);
+            var _mode = $this.attr('data-mode'),
+                $li = $(e.target).closest('.collapse');
+            $li.toggleClass('in');
+            if (_mode == 'alone') {
+                $li.siblings('.collapse').removeClass('in');
+            }
+        });
+
+        $document.on('click', '.js-toggle-tab a', function(e){
+            var $li = $(e.target).closest('li'),
+                $target = $li.closest('.js-toggle-tab').next('.toggle-wrap'),
+                _idx = $li.index();
+            var $active = $target.find('.toggle').eq(_idx);
+            $li.addClass('in').siblings().removeClass('in');
+            $active.addClass('in').siblings().removeClass('in');
+
+            // 로그인 모달일때
+            if ($li.parents('.is-modal-login').length) {
+                console.log('login');
+                $active.find('input').val('').focus();
+                setTimeout(function(){
+                    $active.find('input').eq(0).focus();
+                }, 400)
+            }
+        });
+    };
+
+    var modals = function(){
+
+        var closeModal = function(){
+            $html.toggleClass('is-overlay is-modal is-login is-find-id is-join-ok', false);
+        };
+
+        $.openModal = function(_class, _idx){ // toggle modal
+            closeModal();
+            $html.addClass('is-overlay is-modal ' + _class);
+            var $modal = $('.md-modal');
+            $modal.attr('tab-index', 0);
+            if (_idx !== undefined) {
+                $modal.find('.js-toggle-tab a').eq(_idx).trigger('click'); // trigger
+            }
+        };
+
+        $document.on('click', '.js-modal-login', function(e){ // modal login
+            $.openModal('is-login', 0); // login
+        });
+
+        $document.on('click', '.js-modal-join', function(e){ // modal login
+            $.openModal('is-login', 1); // join
+        });
+
+        $document.on('click', '.js-modal-find-id', function(e){ // modal login
+            $.openModal('is-find-id', 0); // login
+        });
+
+        $document.on('click', '.js-modal-close', function(e){ // favorites
+            var $this = $(e.target);
+            closeModal();
+        });
+
+    };
 
     var defers = function(){ // defer excute
         $('a[href="#!"]').each(function(){
@@ -192,6 +220,8 @@ $(function() {
         });
     };
 
+    handlers();
+    modals();
     defers();
 
 });

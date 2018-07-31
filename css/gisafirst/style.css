@@ -1408,6 +1408,36 @@ hr .wrap::after {
   background-color: #4c80f1;
   color: #fff;
 }
+.coupon {
+  width: 222px;
+  height: 112px;
+  line-height: 1;
+  background-image: url('../../images/gisafirst/common/coupon_off.png');
+  background-size: 222px 112px;
+  text-align: center;
+}
+.coupon p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.coupon p.coupon-subject {
+  padding-top: 42px;
+  color: #8d8d8d;
+}
+.coupon p.coupon-price {
+  margin-top: 7px;
+  color: #ff8540;
+}
+.coupon p.coupon-price strong {
+  font-size: 30px;
+}
+.coupon p.coupon-price span {
+  font-size: 17px;
+}
+.coupon.in {
+  background-image: url('../../images/gisafirst/common/coupon_on.png');
+}
 .order-list table.is-row-large tbody tr:first-child td {
   border-color: #000;
 }
@@ -1439,6 +1469,113 @@ hr .wrap::after {
   color: #495057;
   text-decoration: line-through;
   opacity: .5;
+}
+.section-member .subject {
+  margin: 30px 0 10px;
+  padding: 0;
+  height: 35px;
+  line-height: 35px;
+  font-size: 18px;
+  color: #495057;
+  text-align: center;
+}
+.section-member .form select.select,
+.section-member .form input.text,
+.section-member .form .button {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 53px;
+  line-height: 53px;
+  font-size: 15px;
+}
+.section-member .form input.text {
+  border-radius: 4px;
+}
+.section-member .form .grid {
+  margin: 10px 0;
+}
+.section-member .form .grid p {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  color: #8d8d8d;
+}
+.section-member .form .grid.tel .grid {
+  margin: 0;
+}
+.section-member .form .grid.tel .grid .col {
+  position: relative;
+  padding-left: 15px;
+}
+.section-member .form .grid.tel .grid .col::before {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: '-';
+  margin: -9px 0 0 5px;
+  color: #999;
+}
+.section-member .form .grid.tel .grid .col:first-child {
+  padding-left: 0;
+}
+.section-member .form .grid.tel .grid .col:first-child::before {
+  display: none;
+}
+.section-member .form .utility {
+  padding: 10px 0;
+}
+.section-member .utility .col {
+  text-align: left;
+  padding-left: 20px;
+}
+.section-member .utility .col.find a span {
+  display: inline-block;
+  padding-left: 15px;
+  background-image: url('../../images/gisafirst/common/ding_anchor.png');
+  background-position: left center;
+}
+.section-member .utility p {
+  margin: 0;
+  padding: 10px 0 0;
+  text-align: center;
+  color: #2f2d2d;
+}
+.section-member .utility p a.secondary {
+  color: #ff8540;
+}
+.section-member .coupon-wrap {
+  padding: 10px 0;
+  text-align: center;
+}
+.section-member .coupon-wrap .coupon {
+  margin: 0 auto;
+}
+.section-member .message p {
+  margin: 0;
+  padding: 0;
+}
+.section-guide {
+  margin: 0;
+  padding: 22px 0 12px;
+  line-height: 1.4;
+}
+.section-guide ul li {
+  position: relative;
+  margin: 5px 0;
+  padding-left: 6px;
+}
+.section-guide ul li::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 1px;
+  top: 50%;
+  left: 0;
+  overflow: hidden;
+  background-color: #495057;
 }
 /* text ================================================================== */
 .stroke,
@@ -2537,9 +2674,6 @@ ul.tab > li {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
-.js-sticky-tab li:first-child {
-  width: 15%;
-}
 .js-sticky-tab li.in a {
   border-color: #4c80f1;
 }
@@ -2631,6 +2765,10 @@ ul.tab > li {
 .bbs-list tbody td.subject.is-summary p.block {
   display: block;
 }
+.bbs-list tbody td.document {
+  text-align: left;
+  color: #495057;
+}
 .bbs-list tbody td.status p {
   margin: 0 auto;
   padding: 0;
@@ -2638,6 +2776,10 @@ ul.tab > li {
 }
 .bbs-write {
   margin-top: 25px;
+}
+.bbs-write.is-topline {
+  margin-top: 0;
+  border-top: solid 2px #495057;
 }
 .bbs-write .field-wrap {
   margin-top: 9px;
@@ -2659,7 +2801,7 @@ ul.tab > li {
   text-indent: 13px;
 }
 .bbs-write .field-wrap .fields {
-  width: 810px;
+  width: 784px;
 }
 .bbs-write .field-wrap .fields .item {
   margin-top: 9px;
@@ -2671,7 +2813,7 @@ ul.tab > li {
 }
 .bbs-write .field-wrap .fields input.text,
 .bbs-write .field-wrap .fields input.file {
-  width: 810px;
+  width: 784px;
   border: 0;
   vertical-align: bottom;
 }
@@ -2682,7 +2824,12 @@ ul.tab > li {
   color: #383838;
 }
 .bbs-write .field-wrap .fields input.file {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 3px;
   border: 0;
+  height: 20px;
+  line-height: 20px;
 }
 .bbs-write .field-wrap .fields .deletes {
   border: 0;
@@ -2737,17 +2884,38 @@ ul.tab > li {
   line-height: 1.4;
   border-bottom: solid 1px #dee2e6;
 }
+.bbs-view-head .subject strong {
+  font-weight: normal;
+  color: #383838;
+}
+.bbs-view-head .subject span.tag {
+  display: inline-block;
+  overflow: hidden;
+  height: 24px;
+  padding: 0 15px;
+  line-height: 22px;
+  vertical-align: middle;
+  margin-right: 5px;
+  background-color: #dee2e6;
+  color: #868e96;
+  border-radius: 24px;
+  font-size: 13px;
+}
 .bbs-view-head .status {
   border-bottom: solid 1px #dee2e6;
 }
 .bbs-view-head .status .cell {
   height: 49px;
   line-height: 49px;
+  font-weight: normal;
   text-align: left;
+  font-size: 12px;
+  color: #adb5bd;
 }
 .bbs-view-head .status strong.cell {
-  width: 52px;
   text-align: center;
+  width: 52px;
+  color: #383838;
 }
 .bbs-view-head .status span.cell {
   text-indent: 5px;
@@ -2757,6 +2925,9 @@ ul.tab > li {
 }
 .bbs-view-head .status span.view {
   width: 100px;
+}
+.bbs-view-head .status span.step {
+  width: 200px;
 }
 .bbs-view-body {
   line-height: 1.6;
@@ -3102,6 +3273,8 @@ ul.tab > li {
 .bbs-module .action .button {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
   font-size: 15px;
   margin-left: 8px;
   width: 150px;
@@ -3849,7 +4022,7 @@ h4.title.is-underline {
   }
 }
 .md-modal {
-  position: fixed;
+  position: absolute;
   display: table;
   z-index: 1000;
   width: 100%;
@@ -3869,7 +4042,7 @@ h4.title.is-underline {
 }
 .md-modal .container {
   position: relative;
-  margin: 0 auto;
+  margin: 40px auto;
   display: inline-block;
   border: solid 1px #adb5bd;
   border-radius: 18px;
@@ -3903,7 +4076,9 @@ h4.title.is-underline {
   transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
   transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, visibility 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, z-index 0s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
-.is-modal .md-modal {
+.is-modal.is-login .md-modal.is-login,
+.is-modal.is-find-id .md-modal.is-find-id,
+.is-modal.is-join-ok .md-modal.is-join-ok {
   visibility: visible;
   opacity: 1;
   z-index: 1000;
@@ -3985,6 +4160,14 @@ h4.title.is-underline {
 .modal-tab-wrap li.in a strong,
 .modal-tab-wrap li.in a em {
   color: #4c80f1;
+}
+.container .section-member {
+  text-align: center;
+}
+.container .section-member .module {
+  margin: 60px auto 0;
+  max-width: 340px;
+  text-align: left;
 }
 .grid.is-not-gutter .col {
   margin-top: 20px;
@@ -4591,6 +4774,15 @@ a:hover .page-classroom .classroom-list .collapse-body td.status .ok.has-hover {
 .page-classroom .classroom-notice .bbs-list {
   margin-top: 34px;
 }
+.page-classroom .section-classroom-document .bbs-view {
+  padding-bottom: 15px;
+  border-top: solid 2px #495057;
+  border-bottom: solid 2px #495057;
+}
+.page-classroom .section-classroom-document .bbs-view-head .subject {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
 .breadcrumbs .wrap {
   text-align: right;
   height: 38px;
@@ -4732,34 +4924,6 @@ a:hover .page-classroom .classroom-list .collapse-body td.status .ok.has-hover {
   top: 0;
   left: 0;
   margin: 28px;
-  width: 222px;
-  height: 112px;
-  line-height: 1;
-  background-image: url('../../images/gisafirst/common/coupon_off.png');
-  background-size: 222px 112px;
-  text-align: center;
-}
-.page-order .section-coupon .coupon p {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-}
-.page-order .section-coupon .coupon p.subject {
-  padding-top: 42px;
-  color: #8d8d8d;
-}
-.page-order .section-coupon .coupon p.price {
-  margin-top: 7px;
-  color: #ff8540;
-}
-.page-order .section-coupon .coupon p.price strong {
-  font-size: 30px;
-}
-.page-order .section-coupon .coupon p.price span {
-  font-size: 17px;
-}
-.page-order .section-coupon .coupon.in {
-  background-image: url('../../images/gisafirst/common/coupon_on.png');
 }
 .page-order .section-coupon .codes {
   -webkit-box-sizing: content-box;
