@@ -30,6 +30,11 @@ table {
     padding: 0;
     display: table;
     width: 100%;
+    .empty {
+        padding: 0 !important;
+        text-align: center;
+        height: 100px;
+    }
     .xlarge {
         font-size: 18px;
     }
@@ -139,5 +144,97 @@ table {
                 border-top: 0;
             }
         }
+    }
+}
+
+.table-col-a,
+.table-row-a {
+    .button {
+        padding: 0 10px;
+        height: 30px;
+        line-height: 28px;
+    }
+    th {
+        font-weight: normal;
+        font-size: 14px;
+        background-color: #f1f3f5;
+        color: #4d5256;
+        text-align: center;
+    }
+    td {
+        line-height: 1.2;
+        font-size: 14px;
+        &, a {
+            color: #6b6b6b;
+        }
+        a:hover,
+        a:active {
+            color: @primary;
+        }
+        &.subject {
+            text-align: left;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    &.is-form {
+        td {
+            padding: 5px;
+            > div {
+                padding-top: 5px;
+                &:first-of-type {
+                    padding-top: 0;
+                }
+            }
+            input.text {
+                margin-top: -1px;
+                margin-right: 3px;
+            }
+            textarea.textarea {
+                width: 100%;
+                height: 120px;
+            }
+        }
+    }
+}
+
+.table-col-a {
+    thead {
+    }
+    th {
+        padding: 13px 0;
+        border-top: solid 1px #787878;
+        border-bottom: solid 1px #787878;
+    }
+    tbody {
+    }
+    td {
+        padding: 10px 0;
+        border-left: solid 1px #e2e2e2;
+        border-bottom: solid 1px #e2e2e2;
+        text-align: center;
+        &:first-child {
+            border-left: 0;
+        }
+    }
+    tr.subtitle {
+        td {
+            padding: 10px 0 10px 20px;
+            text-align: left;
+            color: #6b6b6b;
+            font-weight: bold;
+        }
+    }
+}
+
+.table-row-a {
+    border-top: solid 1px #787878;
+    th, td {
+        padding: 10px 0;
+        border-bottom: solid 1px #e1e4e6;
+    }
+    td {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }

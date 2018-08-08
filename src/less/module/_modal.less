@@ -9,6 +9,9 @@
     left: 0;
     right: 0;
     text-align: center;
+    label.css-checkbox {
+        line-height: 1.2;
+    }
     .holder {
         display: table-cell;
         width: 100%;
@@ -39,6 +42,10 @@
             .set-icon(30px, 30px, 'common/modal_close');
         }
     }
+    &.is-coupon,
+    &.is-login {
+        position: fixed;
+    }
 }
 
 .md-modal {
@@ -52,6 +59,7 @@
         visibility 0s @base-easing .4s,
         z-index 0s @base-easing .4s;
 }
+.is-modal.is-coupon .md-modal.is-coupon,
 .is-modal.is-login .md-modal.is-login,
 .is-modal.is-find-id .md-modal.is-find-id,
 .is-modal.is-join-ok .md-modal.is-join-ok {
@@ -143,5 +151,93 @@
         margin: 60px auto 0;
         max-width: 340px;
         text-align: left;
+    }
+}
+
+.md-modal.is-coupon {
+    .wrap {
+        min-width: 544px;
+    }
+    .modal-tab-wrap a {
+        font-size: 18px;
+    }
+    .checks {
+        margin: 60px auto 30px;
+        text-align: center;
+        label {
+            margin-right: 20px;
+            font-size: 16px;
+            color: #495057;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+    .grid {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        margin-left: -70px;
+        margin-right: -70px;
+        border-top: solid 1px #e3e3e3;
+        border-bottom: solid 1px #e3e3e3;
+    }
+    .col {
+        position: relative;
+        background-color: #fafafa;
+        border-left: solid 1px #e3e3e3;
+        &::before {
+            .set-icon(30px, 30px, 'common/pop_minus');
+            content: '';
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border: solid 1px #e3e3e3;
+            border-radius: 30px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: -17px;
+            margin-top: -16px;
+        }
+        &.nth-child-1 {
+            border-left: 0;
+            &::before {
+                display: none;
+            }
+        }
+        &.nth-child-3 {
+            &::before {
+                .img('common/pop_equal');
+            }
+        }
+        &.nth-child-3 {
+            p.price {
+                font-weight: bold;
+            }
+        }
+    }
+    .module {
+        padding: 20px 0;
+        p {
+            margin: 5px 0;
+            padding: 0;
+            text-align: center;
+            &.name {
+                color: #8d8d8d;
+                font-size: 16px;
+            }
+            &.price {
+                span {
+                    font-size: 30px;
+                }
+                small {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .action {
+        text-align: center;
     }
 }

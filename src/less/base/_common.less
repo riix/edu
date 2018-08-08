@@ -274,3 +274,36 @@ hr {
         }
     }
 }
+
+.frame {
+    margin: 30px 0;
+    border: solid 1px #e2e2e2;
+    background-position: left center;
+    background-repeat: no-repeat;
+    .inner {
+        padding: 20px 0 20px 150px;
+        line-height: 1.6;
+        font-size: 14px;
+        color: #4d5256;
+    }
+    em {
+        color: #868e96;
+    }
+    &.is-dict {
+        .img('custom/frame_dict');
+    }
+    &.is-manual {
+        .img('custom/frame_manual');
+    }
+    &.is-restore {
+        .img('custom/frame_restore');
+    }
+}
+
+.message-warning {
+    margin: 20px 0;
+    padding: 0 15px;
+    line-height: 1.8;
+    font-size: 14px;
+    font-weight: light;
+}

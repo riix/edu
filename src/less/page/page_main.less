@@ -114,6 +114,9 @@
     }
     .section-news {
         margin-top: 45px;
+        a:hover {
+            color: #4c80f1;
+        }
         .promos {
             position: relative;
             width: 670px;
@@ -228,13 +231,24 @@
             border: solid 1px #ced4da;
             border-left: 0;
             height: 165px;
-            background: url('../../images/gisafirst/custom/main_link_01.png') right bottom no-repeat;
             a {
                 display: block;
+                position: relative;
+                z-index: 1;
                 height: 165px;
+                background-image: url('../../images/gisafirst/custom/main_link_01.png');
+                background-color: transparent;
+                background-position: right bottom;
+                background-repeat: no-repeat;
+                transition: background .2s;
+                &:hover {
+                    background-color: #f4f6f7;
+                }
             }
             span {
                 display: block;
+                position: relative;
+                z-index: 2;
                 padding-left: 25px;
                 &.subject {
                     padding-top: 20px;
@@ -251,22 +265,22 @@
             }
         }
         .col.nth-child-1 {
-            .module {
+            a {
                 border-left: solid 1px #ced4da;
             }
         }
         .col.nth-child-2 {
-            .module {
+            a {
                 background-image: url('../../images/gisafirst/custom/main_link_02.png');
             }
         }
         .col.nth-child-3 {
-            .module {
+            a {
                 background-image: url('../../images/gisafirst/custom/main_link_03.png');
             }
         }
         .col.nth-child-4 {
-            .module {
+            a {
                 background-image: url('../../images/gisafirst/custom/main_link_04.png');
             }
         }
@@ -279,6 +293,11 @@
             box-sizing: content-box;
             height: 271px;
             border: solid 1px #ced4da;
+            transition: all .2s @base-easing 0s;
+            &:hover {
+                border-color: #747474;
+                box-shadow: 0px 2px 3px rgba(0, 0, 0, .2);
+            }
         }
         .pic {
             span {
@@ -319,7 +338,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            margin: 7px;
+            margin: 9px 6px 0 0;
         }
     }
 }

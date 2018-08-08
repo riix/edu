@@ -7,6 +7,7 @@
     margin-bottom: 1px;
     padding: 0 10px;
     min-width: 60px;
+    font-size: 12px;
     height: 24px;
     line-height: 21px;
     text-align: center;
@@ -15,8 +16,18 @@
     border: solid 1px #e1e4e6;
     color: #6b6b6b;
     transition: opacity .2s ease-out 0s;
-    &:hover {
-        opacity: 0.9;
+    &:hover,
+    &:active {
+        background-color: #eaeeef;
+    }
+
+    &.small {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 24px;
+        line-height: 20px;
+        font-size: 12px;
+        color: #6b6b6b;
     }
 
     // size
@@ -36,7 +47,7 @@
         padding-left: 45px;
         padding-right: 45px;
         height: 54px;
-        line-height: 54px;
+        line-height: 52px;
         font-size: 15px;
         font-weight: bold;
         -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -45,23 +56,37 @@
     }
 
     &.primary {
-        background-color: @primary;
-        border-color: @primary;
+        background-color: #4c80f1;
+        border-color: #4c80f1;
         color: #fff;
-        font-size: 12px;
+        &:hover,
+        &:active {
+            background-color: #2c5ae9;
+            border-color: #2c5ae9;
+            color: #fff;
+        }
         &.light {
-            color: @primary;
-            background: #fff;
+            &, &:hover, &:active {
+                color: #4c80f1;
+                background-color: #fff;
+            }
         }
     }
     &.secondary {
-        background-color: @secondary;
-        border-color: @secondary;
+        background-color: #fc8e50;
+        border-color: #fc8e50;
         color: #fff;
-        font-size: 12px;
+        &:hover,
+        &:active {
+            background-color: #f76707;
+            border-color: #f76707;
+            color: #fff;
+        }
         &.light {
-            color: @secondary;
-            background: #fff;
+            &, &:hover, &:active {
+                color: #fc8e50;
+                background-color: #fff;
+            }
         }
     }
     &.go {
@@ -97,5 +122,28 @@
         border-radius: 26px;
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    &.my-post {
+        padding: 0 30px 0 10px;
+        height: 30px;
+        line-height: 28px;
+        border: solid 1px #dee2e6;
+        vertical-align: middle;
+        color: #495057;
+        font-size: 12px;
+        font-weight: light;
+        margin-top: -2px;
+        .img('common/btn_my_post');
+        background-position: right center;
+        background-repeat: no-repeat;
+        &:hover,
+        &:active {
+            .img('common/btn_my_post_on');
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-color: #fff;
+            border-color: #4c80f1;
+        }
     }
 }

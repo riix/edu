@@ -14,6 +14,9 @@ https://imagesloaded.desandro.com/
 
 @prepros-prepend './plugin/swiper-4.2.0.custom.js'
 http://www.idangero.us/swiper/
+
+@prepros-prepend './plugin/jquery.selectric.js'
+http://selectric.js.org/
 */
 
 $(function(){

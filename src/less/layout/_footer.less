@@ -50,12 +50,16 @@
         a {
             font-weight: 600;
             color: #868e96;
-            &:hover {
+            &:hover,
+            &:active {
                 color: #4d5256;
             }
-            &:active {
-                color: #4c80f1;
-            }
+        }
+        li:nth-child(3) a {
+            color: #4d5256;
+        }
+        li.privacy a {
+            color: #4d5256;
         }
         ul.tab {
             display: inline-block;

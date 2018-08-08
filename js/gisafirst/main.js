@@ -224,6 +224,20 @@ $(function() {
     modals();
     defers();
 
+    $('select.select').selectric();
+
+    $('.file-fake .attach').on('click', function(e){
+        var $this = $(e.target);
+        $this = $this.is('a') ? $this : $this.closest('a');
+        $this.prev().trigger('click');
+    });
+
+    $('.file-fake .file').on('change', function(e){
+        var $this = $(this);
+        var _val = $this.val();
+        $this.prev().val(_val);
+    });
+
 });
 
 $(function(){
@@ -268,11 +282,6 @@ $(function(){
                 });
             }
 
-            $this.css({
-                'margin-top': opts.marginTop,
-                'opacity': 1
-            });
-
             // init sticky
             var stickyOnScroll = function(){
                 var _bool = (stickyStart + opts.marginTop <= windowScrollTop);
@@ -287,10 +296,22 @@ $(function(){
                 _prev = _bool;
             };
 
-            $window.on('load scroll', function(){
+            var core = function(){
                 windowScrollTop = $window.scrollTop();
                 stickyOnScroll();
+            };
+
+            $window.on('load scroll', function(){
+                core();
             });
+
+            setTimeout(function(){
+                core();
+                $this.css({
+                    'margin-top': opts.marginTop,
+                    'opacity': 1
+                });
+            }, 200);
 
         });
     };
