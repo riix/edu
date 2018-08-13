@@ -216,6 +216,34 @@ input.css-checkbox:checked + label.css-checkbox {
     }
 }
 
+input.css-radio {
+    .sr-only();
+}
+label.css-radio {
+    position: relative;
+    display: inline-block;
+    padding-left: 28px;
+    min-height: 24px;
+    cursor: pointer;
+    user-select: none;
+    &::before {
+        .img('common/radio_off');
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        margin-top: -12px;
+    }
+}
+input.css-radio:checked + label.css-radio {
+    &::before {
+        .img('common/radio_on');
+    }
+}
+
 .bbs-write .field-wrap .fields .file-fake {
     position: relative;
     input.text {
@@ -225,24 +253,24 @@ input.css-checkbox:checked + label.css-checkbox {
     input.file {
         .sr-only();
     }
-    .button {
+    .buttons {
         position: absolute;
         z-index: 3;
         top: 50%;
         margin-top: -19px;
         right: 0;
-        box-sizing: border-box;
-        height: 28px;
-        line-height: 26px;
-        &.delete {
-            margin-left: 96px;
+        .button {
+            box-sizing: border-box;
+            height: 28px;
+            line-height: 26px;
+            margin-left: 2px;
         }
     }
     &.is-multi {
         input.text {
             visibility: hidden;
         }
-        .button {
+        .buttons {
             right: auto;
             left: 0;
         }

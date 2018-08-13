@@ -229,7 +229,13 @@ $(function() {
     $('.file-fake .attach').on('click', function(e){
         var $this = $(e.target);
         $this = $this.is('a') ? $this : $this.closest('a');
-        $this.prev().trigger('click');
+        $this.closest('.file-fake').find('.file').trigger('click');
+    });
+
+    $('.file-fake .delete').on('click', function(e){
+        var $this = $(e.target);
+        $this = $this.is('a') ? $this : $this.closest('a');
+        $this.closest('.file-fake').find('.file').val('').prev().val('');
     });
 
     $('.file-fake .file').on('change', function(e){

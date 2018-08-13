@@ -2,7 +2,7 @@
 /* ==================================================================
  * gisafirst stylesheet
  * =============================================================== */
-@import url('http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css');
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 html,
 body {
   line-height: 1.4;
@@ -590,7 +590,7 @@ ul.reset li,
   src: local('Spoqa Han Sans Regular'), url('../../font/gisafirst/SpoqaHanSansRegular.woff2') format('woff2'), url('../../font/gisafirst/SpoqaHanSansRegular.woff') format('woff'), url('../../font/gisafirst/SpoqaHanSansRegular.ttf') format('truetype');
 }
 html {
-  font-family: 'Spoqa Han Sans', 'Apple SD Gothic Neo', sans-serif, 'Nanum Barun Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', 'nanumgothic', '나눔고딕';
+  font-family: 'Noto Sans CJK KR', 'Apple SD Gothic Neo', sans-serif, 'Nanum Barun Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', 'nanumgothic', '나눔고딕';
 }
 h1,
 h2,
@@ -604,7 +604,7 @@ h3 small,
 h4 small,
 h5 small,
 h6 small {
-  font-family: 'Spoqa Han Sans', 'Apple SD Gothic Neo', sans-serif, 'Nanum Barun Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', 'nanumgothic', '나눔고딕';
+  font-family: 'Noto Sans CJK KR', 'Apple SD Gothic Neo', sans-serif, 'Nanum Barun Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', 'nanumgothic', '나눔고딕';
 }
 .eng {
   font-family: 'Gilroy', sans-serif;
@@ -2146,6 +2146,51 @@ label.css-checkbox::before {
 input.css-checkbox:checked + label.css-checkbox::before {
   background-image: url('../../images/gisafirst/common/checkbox_on.png');
 }
+input.css-radio {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  position: absolute;
+  text-indent: -9999px;
+  z-index: -1;
+  display: inline-block;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  word-break: keep-all;
+  white-space: nowrap;
+  border: 0;
+  color: transparent;
+  font: 0/0 a;
+  *height: 0;
+}
+label.css-radio {
+  position: relative;
+  display: inline-block;
+  padding-left: 28px;
+  min-height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+label.css-radio::before {
+  background-image: url('../../images/gisafirst/common/radio_off.png');
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+}
+input.css-radio:checked + label.css-radio::before {
+  background-image: url('../../images/gisafirst/common/radio_on.png');
+}
 .bbs-write .field-wrap .fields .file-fake {
   position: relative;
 }
@@ -2173,24 +2218,24 @@ input.css-checkbox:checked + label.css-checkbox::before {
   font: 0/0 a;
   *height: 0;
 }
-.bbs-write .field-wrap .fields .file-fake .button {
+.bbs-write .field-wrap .fields .file-fake .buttons {
   position: absolute;
   z-index: 3;
   top: 50%;
   margin-top: -19px;
   right: 0;
+}
+.bbs-write .field-wrap .fields .file-fake .buttons .button {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 28px;
   line-height: 26px;
-}
-.bbs-write .field-wrap .fields .file-fake .button.delete {
-  margin-left: 96px;
+  margin-left: 2px;
 }
 .bbs-write .field-wrap .fields .file-fake.is-multi input.text {
   visibility: hidden;
 }
-.bbs-write .field-wrap .fields .file-fake.is-multi .button {
+.bbs-write .field-wrap .fields .file-fake.is-multi .buttons {
   right: auto;
   left: 0;
 }
@@ -3053,7 +3098,7 @@ ul.tab > li {
   font-size: 12px;
 }
 .bbs-write {
-  margin-top: 25px;
+  padding-top: 25px;
 }
 .bbs-write.is-topline {
   margin-top: 0;
@@ -3236,6 +3281,7 @@ pre {
   font-size: 0;
   height: 0;
 }
+.bbs-media .bbs-media-inner .jwplayer,
 .bbs-media .bbs-media-inner img,
 .bbs-media .bbs-media-inner iframe,
 .bbs-media .bbs-media-inner embed {
@@ -5601,6 +5647,12 @@ a:hover .page-classroom .classroom-list .collapse-body td.status .ok.has-hover {
   color: #6b6b6b;
   border-radius: 2px;
 }
+.page-lecture .section-curriculum-list {
+  margin-top: 15px;
+}
+.page-lecture .section-curriculum-list:first-of-type {
+  margin-top: 0;
+}
 .page-lecture .section-curriculum-list img {
   width: 207px;
   height: 117px;
@@ -5674,6 +5726,10 @@ a:hover .page-classroom .classroom-list .collapse-body td.status .ok.has-hover {
 }
 .page-lecture .section-materials .holder {
   padding: 30px;
+}
+.page-lecture .section-materials pre {
+  display: inline-block;
+  width: 540px;
 }
 .page-lecture .section-materials .col.pics {
   width: 237px;
