@@ -1608,6 +1608,9 @@ hr .wrap::after {
   font-size: 14px;
   font-weight: light;
 }
+.message-warning span.padder {
+  padding-left: 16px;
+}
 /* text ================================================================== */
 .stroke,
 .strike {
@@ -1729,11 +1732,9 @@ a[href*="tel:"]:hover {
 }
 a.primary {
   color: #4c80f1;
-  border-bottom: dotted 1px #4c80f1;
 }
 a.primary:hover {
   text-decoration: none;
-  border-bottom: solid 1px #4c80f1;
 }
 a.has-outline:focus,
 input.has-outline:focus,
@@ -4916,7 +4917,7 @@ h4.title.is-underline {
   position: relative;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-  height: 271px;
+  height: 291px;
   border: solid 1px #ced4da;
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -4938,6 +4939,8 @@ h4.title.is-underline {
 }
 .page-main .section-main-list .desc {
   padding-top: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: center;
 }
 .page-main .section-main-list .desc p {
@@ -4948,10 +4951,20 @@ h4.title.is-underline {
   font-size: 13px;
 }
 .page-main .section-main-list .desc p.subject {
+  display: block;
+  display: -webkit-box;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  height: 40px;
   font-size: 17px;
   color: #343a40;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .page-main .section-main-list .desc p.time {
+  margin-top: 5px;
   color: #adb5bd;
 }
 .page-main .section-main-list .desc p.who {
@@ -4967,6 +4980,14 @@ h4.title.is-underline {
   top: 0;
   right: 0;
   margin: 9px 6px 0 0;
+}
+.page-classroom .button.primary,
+.page-classroom .button.primary:focus {
+  outline: none;
+}
+.page-classroom .button.primary span,
+.page-classroom .button.primary:focus span {
+  outline: 0;
 }
 .page-classroom h5.title {
   margin: 35px 0 0 0;
@@ -5804,6 +5825,89 @@ a:hover .page-classroom .classroom-list .collapse-body td.status .ok.has-hover {
 .page-lecture .section-slider-relative .slider-item img {
   width: 248px;
   height: 135px;
+}
+.list-a {
+  margin: 15px 0;
+  padding: 0;
+  list-style: none;
+}
+.list-a li {
+  position: relative;
+  margin: 5px 0;
+  padding: 0 0 0 10px;
+  line-height: 1.6;
+}
+.list-a li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 5px;
+  height: 1px;
+  overflow: hidden;
+  background-color: #4d5256;
+}
+.section-info .list-a {
+  margin-left: 15px;
+}
+.section-info h5.subject {
+  position: relative;
+  margin: 47px 0 0 0;
+  padding: 0 0 0 14px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 16px;
+  color: #4d5256;
+  border-bottom: solid 2px #f1f2f3;
+}
+.section-info h5.subject:first-of-type {
+  margin-top: 37px;
+}
+.section-info h5.subject::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 8px;
+  background-color: #4c80f1;
+  overflow: hidden;
+}
+.section-info .article {
+  line-height: 1.6;
+}
+.section-info .article p {
+  line-height: 1.8;
+  margin: 15px 0;
+  padding: 0 15px;
+}
+.table-info {
+  margin: 20px 0;
+  border-right: solid 1px #b7c0d8;
+  border-bottom: solid 1px #b7c0d8;
+}
+.table-info.is-fixed {
+  table-layout: fixed;
+}
+.table-info th {
+  background-color: #e9f0f8;
+  font-weight: normal;
+}
+.table-info td {
+  background-color: #fff;
+}
+.table-info th,
+.table-info td {
+  padding: 10px 15px;
+  text-align: center;
+  border-top: solid 1px #b7c0d8;
+  border-left: solid 1px #b7c0d8;
+  font-size: 14px;
+  color: #4d5256;
 }
 .js-hover-spin a {
   display: inline-block;
