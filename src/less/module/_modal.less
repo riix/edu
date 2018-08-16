@@ -1,3 +1,28 @@
+.js-spinner {
+    position: relative;
+    display: inline-block;
+    a {
+        position: absolute;
+        display: block;
+        right: 0;
+        width: 30px;
+        box-sizing: border-box;
+        border: solid 1px #ccc;
+        background-color: #f5f5f5;
+        &.js-spinner-up {
+            top: 0;
+            bottom: 50%;
+            margin-bottom: -1px;
+            .img('common/spinner_up');
+        }
+        &.js-spinner-down {
+            top: 50%;
+            bottom: 0;
+            .img('common/spinner_down');
+        }
+    }
+}
+
 .md-modal {
     position: absolute;
     display: table;
@@ -42,6 +67,8 @@
             .set-icon(30px, 30px, 'common/modal_close');
         }
     }
+    &.is-cancel-class,
+    &.is-extend-class,
     &.is-coupon,
     &.is-login {
         position: fixed;
@@ -59,6 +86,8 @@
         visibility 0s @base-easing .4s,
         z-index 0s @base-easing .4s;
 }
+.is-modal.is-extend-class .md-modal.is-extend-class,
+.is-modal.is-cancel-class .md-modal.is-cancel-class,
 .is-modal.is-coupon .md-modal.is-coupon,
 .is-modal.is-login .md-modal.is-login,
 .is-modal.is-find-id .md-modal.is-find-id,
@@ -239,5 +268,173 @@
     }
     .action {
         text-align: center;
+    }
+}
+
+.md-modal.is-cancel-class {
+    .wrap {
+        min-width: 544px;
+    }
+    p {
+        margin: 5px 0;
+        padding: 0;
+        line-height: 1.4;
+        &.subtitle {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #4d5256;
+        }
+        &.title {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4c80f1;
+        }
+        &.end-date {
+            margin: 10px auto;
+            font-size: 20px;
+            font-weight: bold;
+            color: #4c80f1;
+            text-align: center;
+        }
+        &.guide {
+            margin: 20px auto 20px;
+            text-align: center;
+            color: #4d5256;
+            line-height: 1.4;
+        }
+        &.agree {
+            margin: 30px auto 20px;
+            text-align: center;
+            font-weight: bold;
+            label {
+                color: #121212;
+                font-size: 16px;
+            }
+        }
+    }
+    ul.list-a {
+        li {
+            font-size: 15px;
+            line-height: 1.4;
+        }
+    }
+
+    .tab-wrap {
+        border-top: solid 2px #e1e4e6;
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 25px;
+        .tab {
+            margin: 0 auto;
+            display: inline-block;
+            li {
+                width: auto;
+                &:nth-child(2) {
+                    padding: 0 20px;
+                }
+            }
+            label {
+                color: #121212;
+                font-size: 16px;
+                font-weight: bold;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .action {
+        text-align: center;
+        .button {
+            min-width: 200px;
+        }
+    }
+
+}
+
+.md-modal.is-extend-class {
+    .wrap {
+        min-width: 544px;
+    }
+    p {
+        margin: 5px 0;
+        padding: 0;
+        line-height: 1.4;
+        &.subtitle {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #4d5256;
+        }
+        &.title {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4c80f1;
+        }
+    }
+    .forms {
+        border-top: solid 2px #e1e4e6;
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 25px;
+        text-align: left;
+    }
+    .points {
+        width: 160px;
+        p {
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+            &.subject {
+                padding-left: 5px;
+                color: #a0a0a0;
+                font-size: 18px;
+            }
+            &.point {
+                font-size: 18px;
+                color: #383838;
+                strong {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    .detail {
+        width: 447px;
+        .grid {
+            &.nth-child-1 {
+                font-size: 15px;
+                color: #686868;
+                p {
+                    margin: 5px 0;
+                    padding: 0;
+                    small {
+                        font-size: 14px;
+                    }
+                }
+            }
+            &.nth-child-2 {
+                margin-top: 5px;
+                padding-top: 10px;
+                padding-bottom: 20px;
+                border-top: solid 1px #505050;
+                p {
+                    margin: 5px 0;
+                    padding: 0;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #4d5256;
+                }
+            }
+        }
+        .action {
+            .button {
+                span {
+                    min-width: 200px;
+                }
+            }
+        }
     }
 }

@@ -718,6 +718,126 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
 
 </div><!-- // container -->
 
+
+<div class="md-overlay"></div><!-- overlay -->
+
+<div class="md-modal is-extend-class"><!-- modal -->
+    <div class="holder">
+        <div class="container">
+            <div class="wrap">
+                <div class="grid">
+                    <p class="subtitle">
+                        연장신청 강의명
+                    </p>
+                    <p class="title">
+                        컴퓨터활용능력 1급 필기
+                    </p>
+                    <ul class="list-a">
+                        <li>회원님이 보유하신 포인트로 수강기간 연장이 가능합니다.</li>
+                        <li>포인트는 최대 XXX포인트(XX일 연장)까지 사용이 가능하며 X포인트당 1일을 연장할 수 있습니다.</li>
+                        <li>포인트로 수강기간연장 서비스는 3회만 사용이 가능하므로 신중하게 결정하시기 바랍니다.</li>
+                    </ul>
+                    <div class="grid forms">
+                        <div class="col points">
+                            <p class="subject">
+                                보유포인트
+                            </p>
+                            <p class="point">
+                                <strong class="secondary">1,684</strong>
+                                P
+                            </p>
+                        </div>
+                        <div class="col detail">
+                            <div class="grid nth-child-1">
+                                <span class="js-spinner">
+                                    <input type="text" class="text" value="13" data-min="0" data-max="30">
+                                    <a href="javascript:;" class="js-spinner-up"><i class="icon up"><em>증가</em></i></a>
+                                    <a href="javascript:;" class="js-spinner-down"><i class="icon down"><em>감소</em></i></a>
+                                </span>
+                                일 연장
+                                (-500포인트)
+                                <p>
+                                    <small class="secondary">
+                                        ※ 수강료 최대 XXX 포인트를 사용하여 XX 일 까지 연장이 가능합니다.
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="grid nth-child-2">
+                                <p>
+                                    연장 후 내 포인트 :
+                                    <strong class="primary">1,184 P</strong>
+                                </p>
+                                <p>
+                                    연장 후 수강 종료일 :
+                                    <strong class="primary">2016년 12월 16일</strong>
+                                </p>
+                            </div>
+                            <div class="action">
+                                <a href="#!" class="button secondary xlarge"><span>기간연장신청</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="js-modal-close modal-close"><i class="icon"><em>닫기</em></i></a>
+        </div>
+    </div>
+</div><!-- // modal -->
+
+<div class="md-modal is-cancel-class"><!-- modal -->
+    <div class="holder">
+        <div class="container">
+            <div class="wrap">
+                <div class="grid">
+                    <p class="subtitle">
+                        휴강신청 강의명
+                    </p>
+                    <p class="title">
+                        컴퓨터활용능력 1급 필기
+                    </p>
+                    <ul class="list-a">
+                        <li>휴강은 최대 3회 사용이 가능합니다.</li>
+                        <li>1회 휴강 최대기간은 2개월(60일)이며 휴강동안 해당강의실 내 모든 컨텐츠 사용은 중지됩니다.</li>
+                        <li>휴강 설정기간이 경과되면 휴강은 자동해제되므로 유의하시기 바랍니다.</li>
+                    </ul>
+                    <div class="tab-wrap">
+                        <ul class="tab"><!-- 스타일, 접근성을 위해 id를 맞춰주어야합니다 -->
+                            <li>
+                                <input id="radioA1" name="radioA1" type="radio" class="css-radio" checked>
+                                <label for="radioA1" class="css-radio">60일 휴강</label>
+                            </li>
+                            <li>
+                                <input id="radioA2" name="radioA1" type="radio" class="css-radio">
+                                <label for="radioA2" class="css-radio">120일 휴강(2회 동시사용)</label>
+                            </li>
+                            <li>
+                                <input id="radioA3" name="radioA1" type="radio" class="css-radio">
+                                <label for="radioA3" class="css-radio">180일 휴강(3회 모두사용)</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="end-date">
+                        자동휴강해제일 : 2017년 2월 15일
+                    </p>
+                    <p class="guide">
+                        ※ 휴강기간 도중 언제든 휴강 해제가 가능합니다.<br />
+                        설정한 휴강기간이 경과되면 자동으로 휴강 해제가 되며,<br />
+                        회원님의 이메일과 휴대폰으로 휴강해제와 관련된 안내메일과 문자가 발송처리 됩니다.
+                    </p>
+                    <p class="agree">
+                        <input id="radioB1" name="radioB1" type="radio" class="css-checkbox">
+                        <label for="radioB1" class="css-checkbox">휴강해제 안내메일 및 문자 발송에 동의</label>
+                    </p>
+                </div>
+                <div class="action">
+                    <a href="#!" class="button primary xlarge"><span>휴강신청</span></a>
+                </div>
+            </div>
+            <a href="javascript:;" class="js-modal-close modal-close"><i class="icon"><em>닫기</em></i></a>
+        </div>
+    </div>
+</div><!-- // modal -->
+
 <script src="../../../js/gisafirst/plugin-dist.js?ver=1"></script>
 <script src="../../../js/gisafirst/main.js?ver=1"></script>
 <script>
@@ -725,6 +845,11 @@ $(function() {
     var $window = $window || $(window),
         $document = $document || $(document),
         $html = $html || $('html');
+
+        // 쿠폰 팝업
+        // $.openModal('is-cancel-class', 1); // join
+        $.openModal('is-extend-class', 1); // join
+
 });
 </script>
 </body>

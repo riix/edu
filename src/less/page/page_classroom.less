@@ -118,6 +118,7 @@
     // list
     .classroom-list {
         margin-top: 34px;
+        border-bottom: solid 1px #495057;
         .collapse-head {
             position: relative;
             background-color: #f1f3f5;
@@ -182,9 +183,12 @@
                 &.tags {
                     font-size: 0;
                     text-align: right;
-                    i {
+                    > a {
                         margin-left: 13px;
                         font-size: 12px;
+                        i {
+                            cursor: pointer;
+                        }
                         &:first-child {
                             margin-left: 0;
                         }
