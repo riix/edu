@@ -296,69 +296,106 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                                     </ul>
                                 </div><!-- // section-guide -->
 
+                                <table class="table-send-document" cellspacing="0">
+                                    <colgroup>
+                                        <col style="width: 80px;" />
+                                        <col style="width: auto;" />
+                                        <col style="width: 130px;" />
+                                        <col style="width: 130px;" />
+                                        <col style="width: 100px;" />
+                                        <col style="width: 100px;" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>선택</th>
+                                            <th>과정명</th>
+                                            <th>수강시작일</th>
+                                            <th>수강종료일</th>
+                                            <th>수강료</th>
+                                            <th>수강률</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="check">
+                                                <input id="radioA1" name="radioA1" type="radio" class="css-radio" checked>
+                                                <label for="radioA1" class="css-radio"></label>
+                                            </td>
+                                            <td class="subject">2016 정보처리 기능사 실기</td>
+                                            <td class="date">2018-09-30</td>
+                                            <td class="date">2018-11-11</td>
+                                            <td class="price">130,000원</td>
+                                            <td class="progress">100%</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check">
+                                                <input id="radioA2" name="radioA1" type="radio" class="css-radio" checked>
+                                                <label for="radioA2" class="css-radio"></label>
+                                            </td>
+                                            <td class="subject">2016 정보처리 기능사 실기</td>
+                                            <td class="date">2018-09-30</td>
+                                            <td class="date">2018-11-11</td>
+                                            <td class="price">130,000원</td>
+                                            <td class="progress">100%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-                                <div class="bbs-write is-topline"><!-- bbs-write -->
+                                <div class="bbs-write is-document"><!-- bbs-write -->
                                     <div class="grid field-wrap">
                                         <div class="col subjects">
-                                            <strong>제목</strong>
+                                            <strong>발급서류 종류</strong>
                                         </div>
                                         <div class="col fields">
                                             <div class="item">
-                                                <input type="text" class="text" placeholder="제목을 입력해주세요" value="제목입니다." maxlength="30" />
+                                                <label><input type="checkbox" class="checkbox">수강확인증</label>
+                                                <label><input type="checkbox" class="checkbox">수료증(수강률포함)</label>
+                                                <label><input type="checkbox" class="checkbox">영수증(무통장 입금)</label>
+                                                <label><input type="checkbox" class="checkbox">카드전표(신용카드 결제)</label>
+                                                <label><input type="checkbox" class="checkbox">기타</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="grid field-wrap">
                                         <div class="col subjects">
-                                            <strong>첨부</strong>
+                                            <strong>서류제출 용도</strong>
                                         </div>
                                         <div class="col fields">
                                             <div class="item">
-                                                <input type="file" class="file" />
+                                                <label><input type="checkbox" class="checkbox">보훈처제출용</label>
+                                                <label><input type="checkbox" class="checkbox">기관(학교/회사)제출용</label>
+                                                <label><input type="checkbox" class="checkbox">기타</label>
+                                                <input type="text" class="text etc" />
                                             </div>
-                                            <div class="item">
-                                                <input type="file" class="file" />
-                                            </div>
-                                            <div class="item deletes">
-                                                <a href="javascript:;" class="button"><span>모두삭제</span></a>
-                                            </div>
-                                            <div class="item selects"><!-- selects -->
-                                                <div class="inner">
-                                                    <div class="grid options">
-                                                        <a href="javascript:;" class="remove"><i class="icon delete"><em>삭제</em></i></a>
-                                                        <span class="file"><img src="../../../images/gisafirst/common/file_ppt.png" alt="ppt" /></span>
-                                                        <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
-                                                        <span class="size">2.05MB</span>
-                                                    </div>
-                                                    <div class="grid options">
-                                                        <a href="javascript:;" class="remove"><i class="icon delete"><em>삭제</em></i></a>
-                                                        <span class="file"><img src="../../../images/gisafirst/common/file_doc.png" alt="doc" /></span>
-                                                        <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
-                                                        <span class="size">2.05MB</span>
-                                                    </div>
-                                                    <div class="grid options">
-                                                        <a href="javascript:;" class="remove"><i class="icon delete"><em>삭제</em></i></a>
-                                                        <span class="file"><img src="../../../images/gisafirst/common/file_xls.png" alt="xls" /></span>
-                                                        <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
-                                                        <span class="size">2.05MB</span>
-                                                    </div>
-                                                    <div class="grid options">
-                                                        <a href="javascript:;" class="remove"><i class="icon delete"><em>삭제</em></i></a>
-                                                        <span class="file"><img src="../../../images/gisafirst/common/file_ppt.png" alt="ppt" /></span>
-                                                        <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
-                                                        <span class="size">2.05MB</span>
-                                                    </div>
-                                                    <div class="grid options">
-                                                        <a href="javascript:;" class="remove"><i class="icon delete"><em>삭제</em></i></a>
-                                                        <span class="file"><img src="../../../images/gisafirst/common/file_ppt.png" alt="ppt" /></span>
-                                                        <span class="name">유클래스 탑재 유투브 컨텐츠 리스트.xlsx</span>
-                                                        <span class="size">2.05MB</span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- // selects -->
                                         </div>
                                     </div>
-                                    <div class="grid editor-wrap">
+                                    <div class="grid field-wrap">
+                                        <div class="col subjects">
+                                            <strong>발급매체 선택</strong>
+                                        </div>
+                                        <div class="col fields recieve">
+                                            <div class="item">
+                                                <label><input type="radio" name="radioRecieve" class="radio">첨부파일 (발급완료시 답변의 첨부파일로 증빙서류가 발급됩니다.)</label>
+                                            </div>
+                                            <div class="item email">
+                                                <label><input type="radio" name="radioRecieve" class="radio">이메일로 발송</label>
+                                                <input type="text" class="text" />
+                                            </div>
+                                            <div class="item fax">
+                                                <label><input type="radio" name="radioRecieve" class="radio">FAX로 발송</label>
+                                                <span class="fax-wrap">
+                                                    <select class="select fax">
+                                                        <option>02</option>
+                                                    </select>
+                                                    -
+                                                    <input type="text" class="text fax" />
+                                                    -
+                                                    <input type="text" class="text fax" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid editor-wrap" style="margin-top: 30px;">
                                         <textarea class="textarea" style="height: 210px;"></textarea>
                                     </div>
                                 </div><!-- // bbs-write -->

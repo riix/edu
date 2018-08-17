@@ -39,6 +39,8 @@ $(function() {
             $items = $el.find('.slider-item'),
             $pagers = $el.find('.slider-pager');
 
+        var _duration = $el.data('duration') || opts.duration;
+
         var idx = 0,
             itemLength = $items.length,
             timerSlide = null,
@@ -56,7 +58,7 @@ $(function() {
             if (opts.autoPlay !== true) return false;
             timerAutoPlay = setTimeout(function(){
                 doNext();
-            }, opts.duration);
+            }, _duration);
         };
         var doSlide = function(_idx){
             clearTimeout(timerSlide);
@@ -94,10 +96,10 @@ $(function() {
 
     // page main
     initSlider($('#visualSlider'), {
-        duration: 1500
+        duration: 3000
     });
     initSlider($('#newsSlider'), {
-        duration: 1000
+        duration: 3000
     });
 
     $('.js-graph').each(function(i){
@@ -265,7 +267,9 @@ $(function(){
     $.fn.stickyAside = function(_options){
 
         var _defaults = {
-            marginTop: 0
+            marginTop: 0,
+            onScroll: true,
+            className: 'is-sticky'
         };
 
         var opts = $.extend({}, _defaults, _options);
@@ -274,7 +278,7 @@ $(function(){
 
             var $target = $('.js-sticky-start').eq(0);
             var $this = $(this);
-            var stickyStart = 173; // margin
+            var stickyStart = $('html').hasClass('is-promo') ? 173: 93; // margin
             var _prev = null;
             var windowScrollTop = 0;
 
@@ -297,7 +301,7 @@ $(function(){
                     } else {
                         $this.css('top', '0');
                     }
-                    $html.toggleClass('is-sticky', _bool);
+                    $html.toggleClass(opts.className, _bool);
                 }
                 _prev = _bool;
             };
@@ -307,7 +311,13 @@ $(function(){
                 stickyOnScroll();
             };
 
-            $window.on('load scroll', function(){
+            if (opts.onScroll === true) {
+                $window.on('scroll', function(){
+                    core();
+                });
+            }
+
+            $window.on('load', function(){
                 core();
             });
 
@@ -323,7 +333,9 @@ $(function(){
     };
 
     $('#stickyPromo .holder').stickyAside({
-        marginTop: 40
+        marginTop: 40,
+        onScroll: false,
+        className: 'is-sticky-banner'
     });
     $('.js-sticky-tab').stickyAside({
         marginTop: 0

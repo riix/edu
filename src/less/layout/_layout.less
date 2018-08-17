@@ -45,7 +45,10 @@ body {
 }
 
 #wrapper {
-    padding-top: 213px;
+    padding-top: 133px;
+    .is-promo & {
+        padding-top: 213px;
+    }
 }
 
 #content {
@@ -159,7 +162,7 @@ body {
         margin-left: 560px;
         opacity: 0;
         transition: opacity .2s @base-easing .2s;
-        .is-sticky & {
+        .is-sticky-banner & {
             position: fixed;
         }
     }

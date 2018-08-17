@@ -81,13 +81,87 @@
     }
 }
 
-@bbs-write-wrap: 784px; // 게시판 쓰기 너비
+// @bbs-write-wrap: 804px; // 게시판 쓰기 너비
+@bbs-write-wrap: 811px; // 게시판 쓰기 너비
 
 .bbs-write {
     padding-top: 25px;
     &.is-topline {
         margin-top: 0;
         border-top: solid 2px #495057;
+    }
+    &.is-document {
+        .field-wrap {
+            .fields .item {
+                border-bottom: 0;
+                line-height: 40px;
+            }
+            .subjects {
+                width: 138px;
+            }
+            .fields {
+                width: @bbs-write-wrap - 70;
+                label {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 10px;
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+                    input {
+                        margin-right: 5px;
+                    }
+                }
+                input.text {
+                    border: solid 1px #e1e4e6;
+                    height: 34px;
+                    line-height: 34px;
+                    font-size: 14px;
+                    background-color: #fefefe;
+                    &.etc {
+                        margin-left: 15px;
+                        width: 200px;
+                    }
+                }
+                .fax-wrap {
+                    display: inline-block;
+                    height: 34px;
+                    vertical-align: top;
+                }
+                &.recieve {
+                    .item {
+                        margin-top: 2px;
+                        line-height: 34px;
+                    }
+                }
+                .email,
+                .fax {
+                    label,
+                    label {
+                        width: 120px;
+                    }
+                    input.text,
+                    select.text {
+                        width: 120px;
+                    }
+                }
+                .selectric-wrapper {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 120px;
+                    .selectric {
+                        box-sizing: border-box;
+                        border-radius: 0;
+                        vertical-align: middle;
+                        background-color: #fefefe;
+                    }
+                    .selectric .label {
+                        height: 32px;
+                        line-height: 32px;
+                    }
+                }
+            }
+        }
     }
     .field-wrap {
         margin-top: 9px;
@@ -171,6 +245,31 @@
             .icon {
                 &.delete {
                     .set-icon(13px, 18px, 'common/icon_delete')
+                }
+            }
+        }
+
+        // 강좌 선택
+        &.is-select-class {
+            margin-top: 20px;
+            .subjects {
+                width: 75px;
+                strong {
+                    display: block;
+                    text-align: center;
+                    text-indent: 0;
+                }
+            }
+            .fields {
+                width: 780px;
+                .selectric-wrapper {
+                    margin-top: 5px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 340px;
+                }
+                .item {
+                    border-bottom: 0;
                 }
             }
         }
@@ -393,7 +492,7 @@ pre {
             color: #a2a2a2;
         }
         .comment {
-            padding: 5px 20px 5px 0;
+            padding: 5px 30px 5px 0;
             .light();
             font-size: 14px;
             line-height: 1.6;
@@ -445,6 +544,12 @@ pre {
         padding-left: 20px;
         .bbs-media {
             margin: 20px 0;
+        }
+        .bbs-attach {
+            margin: 20px 0;
+            img {
+                max-width: 100%;
+            }
         }
     }
 }
@@ -648,6 +753,43 @@ pre {
         }
         &.last {
             .img('common/pager_last');
+        }
+    }
+}
+
+.table-write-module {
+    margin-top: 15px;
+    width: 100%;
+    input.text,
+    select.select {
+        width: 100%;
+        background-color: #fbfbfd;
+    }
+    th {
+        padding: 10px 5px;
+        text-align: center;
+    }
+    td {
+        padding: 5px;
+        &.number {
+            text-align: center;
+        }
+    }
+}
+
+.select-box,
+.table-write-module {
+    .selectric-wrapper {
+        vertical-align: middle;
+        .selectric {
+            box-sizing: border-box;
+            border-radius: 0;
+            vertical-align: middle;
+            background-color: #fbfbfd;
+        }
+        .selectric .label {
+            height: 32px;
+            line-height: 32px;
         }
     }
 }

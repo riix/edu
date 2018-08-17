@@ -223,17 +223,47 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
 
                         <div id="aside" class="col"><!-- aside -->
                             <h3 class="title is-underline">
-                                <span>커뮤니티</span>
+                                <span>시험정보</span>
                             </h3>
                             <ul id="lnb" class="d1">
-                                <li class="d1 in">
-                                    <a href="javascript:;" class="d1"><span>공지사항&amp;이벤트</span></a>
+                                <li class="d1">
+                                    <a href="javascript:;" class="d1"><span>시험일정</span></a>
+                                    <div class="sub-d2">
+                                        <ul class="d2">
+                                            <li class="d2"><a href="#!" class="d2"><span>2018년 시험일정</span></a></li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li class="d1">
-                                    <a href="javascript:;" class="d1"><span>자유게시판</span></a>
+                                    <a href="javascript:;" class="d1"><span>자격증 정보</span></a>
+                                    <div class="sub-d2">
+                                        <ul class="d2">
+                                            <li class="d2"><a href="#!" class="d2"><span>컴퓨터활용능력</span></a></li>
+                                            <li class="d2"><a href="#!" class="d2"><span>정보처리기사</span></a></li>
+                                            <li class="d2"><a href="#!" class="d2"><span>정보처리산업기사</span></a></li>
+                                            <li class="d2"><a href="#!" class="d2"><span>사무자동화산업기사</span></a></li>
+                                            <li class="d2"><a href="#!" class="d2"><span>워드프로세서</span></a></li>
+                                            <li class="d2"><a href="#!" class="d2"><span>ITQ</span></a></li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li class="d1">
-                                    <a href="javascript:;" class="d1"><span>합격수기</span></a>
+                                    <a href="javascript:;" class="d1"><span>컴퓨터자격증 기초정보</span></a>
+                                    <div class="sub-d2">
+                                        <ul class="d2">
+                                            <li class="d2"><a href="#!" class="d2"><span>컴퓨터자격증 가이드</span></a></li>
+                                            <li class="d2"><a href="#!" class="d2"><span>난이도별 학습가이드</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="d1">
+                                    <a href="javascript:;" class="d1"><span>공무원 가산점 정보</span></a>
+                                    <div class="sub-d2">
+                                        <ul class="d2">
+                                            <li class="d2"><a href="#!" class="d2"><span>가산점 범위</span></a></li>
+                                            <li class="d2"><a href="#!" class="d2"><span>가산점 FAQ</span></a></li>
+                                        </ul>
+                                    </div>
                                 </li>
                             </ul>
                         </div><!-- // aside -->
@@ -241,140 +271,193 @@ window.params.nav = [0, 0, 0]; // 네비게이션 활성화, null 이면 -1
                         <div id="innerContent" class="col"><!-- innerContent -->
 
                             <h4 class="title is-underline">
-                                <span>공지사항&amp;이벤트</span>
+                                <span>컴퓨터활용능력</span>
                             </h4>
 
-                            <div class="js-sticky-start section-community" data-sticky-margin="-2"><!-- classroom -->
+                            <div class="js-sticky-start section-info" data-sticky-margin="-2"><!-- classroom -->
 
-                                <div class="community-notice"><!-- classroom notice -->
+                                <div class="sticky-tab-wrap"><!-- sticky tab -->
+                                    <div class="js-sticky-tab"><!-- tab -->
+                                        <ul class="reset">
+                                            <li>
+                                                <a href="rule.html">
+                                                    <strong>사이트 이용약관</strong>
+                                                </a>
+                                            </li>
+                                            <li class="in">
+                                                <a href="privacy.html">
+                                                    <strong>개인정보 취급방침</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="nospam.html">
+                                                    <strong>이메일 무단수집거부</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div><!-- // tab -->
+                                </div><!-- // sticky tab -->
 
-                                    <div class="bbs-write"><!-- bbs-write -->
-                                        <div class="grid field-wrap">
-                                            <div class="col subjects">
-                                                <strong>제목</strong>
-                                            </div>
-                                            <div class="col fields">
-                                                <div class="item">
-                                                    <input type="text" class="text" placeholder="제목을 입력해주세요" value="제목입니다." maxlength="30" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="grid field-wrap">
-                                            <div class="col subjects">
-                                                <strong>첨부</strong>
-                                            </div>
-                                            <div class="col fields">
-                                                <div class="item file-fake">
-                                                    <input type="text" class="text" readonly />
-                                                    <input type="file" class="file" />
-                                                    <div class="buttons">
-                                                        <a href="#!" class="button small attach"><span>파일 첨부하기</span></a>
-                                                        <a href="#!" class="button small delete"><span>삭제하기</span></a>
-                                                    </div>
-                                                </div>
-                                                <div class="item file-fake">
-                                                    <input type="text" class="text" readonly />
-                                                    <input type="file" class="file" />
-                                                    <div class="buttons">
-                                                        <a href="#!" class="button small attach"><span>파일 첨부하기</span></a>
-                                                        <a href="#!" class="button small delete"><span>삭제하기</span></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="section-footer-content">
 
-                                        <div class="grid field-wrap is-select-class">
-                                            <div class="col subjects">
-                                                <strong>관련강좌</strong>
-                                            </div>
-                                            <div class="col fields">
-                                                <div class="item select-box">
-                                                    <select class="select">
-                                                        <option>::: 과목 선택 :::</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <table class="table-write-module" cellspacing="0">
-                                        <colgroup>
-                                            <col style="width: 70px;" />
-                                            <col style="width: auto;" />
-                                            <col style="width: 170px;" />
-                                            <col style="width: 340px;" />
-                                        </colgroup>
-                                        <thead>
-                                            <th class="number">번호</th>
-                                            <th>아이디</th>
-                                            <th>회원명</th>
-                                            <th>신청과목</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="number">1</td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td>
-                                                    <select class="select">
-                                                        <option>::: 과목 선택 :::</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="number">2</td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td>
-                                                    <select class="select">
-                                                        <option>::: 과목 선택 :::</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="number">3</td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td>
-                                                    <select class="select">
-                                                        <option>::: 과목 선택 :::</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="number">4</td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td>
-                                                    <select class="select">
-                                                        <option>::: 과목 선택 :::</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="number">5</td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td><input type="text" class="text" /></td>
-                                                <td>
-                                                    <select class="select">
-                                                        <option>::: 과목 선택 :::</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        </table>
-                                        <div class="grid editor-wrap">
-                                            <textarea class="textarea" style="height: 210px;"></textarea>
-                                        </div>
-                                    </div><!-- // bbs-write -->
+<h3>제 1장 총칙</h3>
 
-                                    <div class="bbs-module grid"><!-- bbs-module -->
-                                        <div class="col action">
-                                            <a href="community_notice_write.html" class="button write large"><span>취소</span></a>
-                                            <a href="community_notice_write.html" class="button write large primary"><span>작성완료</span></a>
-                                        </div>
-                                    </div><!-- // bbs-module -->
+<p>
+    주)세진에듀(이하 “회사”)는 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련 법령에 의거한 개인정보취급방침을 정하여 이용자 권익 보호에 최선을 다하고 있습니다. 본 개인정보취급방침은 회사가 제공하는 에듀온 서비스의 이용에 적용되며 다음과 같은 내용을 담고 있습니다.
+</p>
 
-                                </div><!-- // notice -->
+<h4>제 1장 개인정보 수집 및 이용 목적</h4>
+
+<p>
+    회사는 다음과 같은 목적으로 개인정보를 수집 및 이용합니다.
+</p>
+
+<ul>
+    <li>서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산, 콘텐츠 제공, 구매 및 요금 결제, 물품배송 또는 청구지 등 발송 금융거래 본인  인증 및 금융 서비스</li>
+    <li>회원 관리 : 회원제 서비스 이용에 따른 본인확인, 개인 식별, 불량회원의 부정 이용 방지와 비인가 사용 방지, 가입 의사 확인 고지사항 전달</li>
+    <li>마케팅 및 광고에 활용 : 이벤트 등 광고성 정보 전달, 접속 빈도 파악 또는 회원의 서비스 이용에 대한 통계</li>
+</ul>
+
+<h4>제 2장 수집하는 개인정보 항목 및 수집방법</h4>
+
+<p>회사는 다음과 같은 개인정보를 수집하고 있습니다.</p>
+
+<ul>
+    <li>수집항목 : 회원명, ID, 비밀번호, 이메일, 생년월일(삭제), 자택 주소(삭제), 자택 전화번호, 휴대폰번호, 서비스 이용기록, 접속 로그, 쿠키, 접속 IP 정보, 결제기록</li>
+    <li>개인정보 수집방법 : 홈페이지(회원가입), 경품 행사 응모, 교재배송</li>
+</ul>
+
+<h4>제 3장 개인정보 보유 및 이용기간</h4>
+
+<p>
+    원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.
+</p>
+
+<p>
+    1) 회원탈퇴시 보존 개인정보
+</p>
+
+<ul>
+    <li>보존항목 : 회원이 제공한 이름, 아이디, 이메일주소, 주소, 전화번호</li>
+    <li>보존근거 : 불량 이용자의 재가입 방지, 명예훼손 등 권리침해 분쟁 및 수사협조</li>
+    <li>보존기간 : 회원탈퇴 후 1년</li>
+</ul>
+
+<p>
+    2) 상거래 관련 보존 개인정보
+</p>
+
+<ul>
+    <li>보존항목 : 상거래이력</li>
+    <li>보존근거 : 상법, 전자상거래등에서의 소비자보호에 관한 법률</li>
+    <li>보존기간 : 계약 또는 청약철회 등에 관한 기록 5년, 대금결제 및 재화등의 공급에 관한 기록 5년, 소비자의 불만 또는 분쟁처리에 관한 기록 3년</li>
+</ul>
+
+<h4>제 4장 개인정보 파기절차 및 방법</h4>
+
+<p>
+    회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체없이 파기 합니 다. 파기절차 및 방법은 다음과 같습니다.
+</p>
+
+<ul>
+    <li>파기절차 : 회원님이 회원가입 등을 위해 입력하신 정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함) 내부 방침 및 기타 관련 법령에 의한 정보보호 사유에 따라 (보유 및 이용기간 참조) 일정 기간 저장된 후 파기되어 집니다. 별도 DB로 옮겨진 개인정보 는 법률에 의한 경우가 아니고서는 보유되어지는 이외의 다른 목적으로 이용되지 않습니다.</li>
+    <li>파기방법 : 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.</li>
+</ul>
+
+<h4>
+    제 5장 개인정보 취급위탁
+</h4>
+
+<p>
+    회사의 개인정보 위탁처리 기관 및 위탁업무 내용은 다음과 같습니다.
+</p>
+
+<table cellspacing="0">
+    <thead>
+        <tr>
+            <th>수탁업체</th>
+            <th>위탁업무 내용</th>
+            <th>개인정보의 보유 및 이용기간</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>닷넷피아</td>
+            <td>호스팅</td>
+            <td rowspan="4" class="text-center">회원 탈퇴 시 또는 위탁계약 종료시까지</td>
+        </tr>
+        <tr>
+            <td>CATENOID</td>
+            <td>미디어서버관리</td>
+        </tr>
+        <tr>
+            <td>LG U+</td>
+            <td>전자결제</td>
+        </tr>
+        <tr>
+            <td>우체국택배, CJ택배</td>
+            <td>도서배송</td>
+        </tr>
+        <tr>
+            <td>로그</td>
+            <td>접속 로그 관리</td>
+            <td class="text-center">회원 탈퇴시 또는 수강 종료 후 1년까지</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>제 6장 이용자 및 법정대리인 권리와 그 행사벙법</h4>
+
+<p>
+    이용자 및 법정 대리인은 언제든지 등록되어 있는 자신 혹은 당해 만 14세 미만 아동의 개인정 보를 조회하거나 수정할 수 있으며 가입해지를 요청할 수도 있습니다. 이용자 혹은 만 14세 미 만 아동의 개인정보 조회/수정을 위해서는 ‘개인정보변경’ (또는 ‘회원정보수정’ 등)을 가입해지(동 의철회)를 위해서는 “회원탈퇴”를 클릭하여 본인 확인 절차를 거치신 후 직접 열람, 정정 또는 탈퇴가 가능합니다. 혹은 개인정보관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체 없이 조치하겠습니다. 귀하가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정 보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체 없이 통지하여 정정이 이루어지도록 하겠습니다. 회사는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제된 개인정보는 “회사가 수집하는 개인정보의 보유 및 이용기간”에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.
+</p>
+
+<h4>제 7장 자동수집장치 설치, 운영, 거부</h4>
+
+<p>
+    회사는 이용자의 정보를 수시로 저장하고 찾아내는 ‘쿠키(cookie)’ 등을 운용합니다. 쿠키란 웹사 이트를 운영하는데 이용되는 서버가 귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하 의 컴퓨터 하드디스크에 저장됩니다. 회사는 다음과 같은 목적을 위해 쿠키를 사용합니다.
+</p>
+
+<ul>
+    <li>쿠키 등 사용 목적 : 회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관 심분야를 파악 및 자취 추적,  각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마 케팅 및 개인 맞춤 서비스 제공</li>
+    <li>쿠키 거부 : 이용자는 쿠키 설치에 대한 선택권을 가지고 있습니다. 따라서, 이용자는 웹브라 우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거 나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다.</li>
+    <li>쿠키 설정 거부 방법 : 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다. 설정방법 예(인터넷 익스플로어의 경우) : 웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정 보단, 귀하께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.</li>
+</ul>
+
+<h4>제 8장 개인정보관리책임자</h4>
+
+<p>
+    회사는 귀하의 정보를 수시로 저장하고 찾아내는 ‘쿠키(cookie)’ 등을 운용합니다. 쿠키란 웹사이트를 운영하는데 이용되는 서버가 귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의 컴퓨터 하드디스크에 저장됩니다. 회사는 다음과 같은 목적을 위해 쿠키를 사용합니다.
+</p>
+
+<ul>
+    <li>성명 : 이흥직</li>
+    <li>소속 : (주)세진에듀</li>
+    <li>연락처 : 1599-9477</li>
+    <li>팩스 : 02-2179-9477</li>
+</ul>
+
+<br />
+
+<p>
+    기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.
+</p>
+
+<p>
+    1.개인분쟁조정위원회 (<a href="www.1336.or.kr/1336" target="_blank" title="새창으로 열기">www.1336.or.kr/1336</a>)<br />
+    2.정보보호마크인증위원회 (<a href="www.eprivacy.or.kr" target="_blank" title="새창으로 열기">www.eprivacy.or.kr</a>/02-580-0533~4)<br />
+    3.대검찰청 인터넷범죄수사센터 (<a href="http://icic.sppo.go.kr" target="_blank" title="새창으로 열기">http://icic.sppo.go.kr</a>/02-3480-3600)<br />
+    4.경찰청 사이버테러대응센터 (<a href="www.ctrc.go.kr" target="_blank" title="새창으로 열기">www.ctrc.go.kr</a>/02-392-0330)
+</p>
+
+
+
+
+
+
+                                </div>
+
 
                             </div><!-- // classroom notice -->
 
